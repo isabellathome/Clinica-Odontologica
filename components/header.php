@@ -1,23 +1,9 @@
-<!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Administrador Geral </title>
-        
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-        <link rel="shortcut icon" href="../so-icon.svg" type="image/x-icon">
-        <link rel="stylesheet" href="/public/css/sidebar.css">
-        
-    </head>
-    <body>
-
         <!--========== HEADER ==========-->
         <header class="header">
             <div class="header__container">
                 <img src="../public/images/perfil01.jpg" alt="" class="header__img">
 
-                <a href="#" class="header__logo"> Sorriso Odonto </a>
+                <a href="../src/Dashboard.php" class="header__logo"> Sorriso Odonto </a>
     
                 <div class="header__search">
                     <input type="search" placeholder="Pesquisa" class="header__input">
@@ -34,14 +20,14 @@
         <div class="nav" id="navbar">
             <nav class="nav__container">
                 <div>
-                    <a href="#" class="nav__link nav__logo">
+                    <a href="../src/Dashboard.php" class="nav__link nav__logo">
                         <i class='bx bx-wink-smile bx-tada bx-sm' ></i>
                         <span class="nav__logo-name"> Sorriso Odonto </span>
                     </a>
     
                     <div class="nav__list">
                         <div class="nav__items">
-                            <h3 class="nav__subtitle"> Admin Geral </h3>
+                            <h3 class="nav__subtitle"> <?php echo $_SESSION['funcao']; ?> </h3>
     
                             <a href="#" class="nav__link active">
                                 <i class='bx bx-home nav__icon' ></i>
@@ -82,10 +68,10 @@
 
                                 <div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="/src/pageFuncionarios.html" class="nav__dropdown-item"> Funcionários </a>
-                                        <a href="/src/pageFuncionarios.html" class="nav__dropdown-item"> Pacientes </a>
-                                        <a href="/src/pageFuncionarios.html" class="nav__dropdown-item"> Consultas </a>
-                                        <a href="/src/pageFuncionarios.html" class="nav__dropdown-item"> Financeiro </a>
+                                        <a href="pageFuncionarios.php" class="nav__dropdown-item"> Funcionários </a>
+                                        <a href="pagePacientes.php" class="nav__dropdown-item"> Pacientes </a>
+                                        <a href="pageConsultas.php" class="nav__dropdown-item"> Consultas </a>
+                                        <a href="pageFinanceiro.php" class="nav__dropdown-item"> Financeiro </a>
                                     </div>
                                 </div>
 
@@ -99,23 +85,9 @@
                     </div>
                 </div>
 
-                <a href="#" class="nav__link nav__logout">
+                <a href="pageSair.php" class="nav__link nav__logout">
                     <i class='bx bx-log-out nav__icon' ></i>
                     <span class="nav__name"> Sair </span>
                 </a>
             </nav>
         </div>
-
-        <!--========== CONTENTS ==========-->
-        <main>
-            <section>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt vel illum fuga unde cum, voluptates magni molestias eveniet culpa autem ut, totam veniam, suscipit tempore ullam pariatur est at asperiores?</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt vel illum fuga unde cum, voluptates magni molestias eveniet culpa autem ut, totam veniam, suscipit tempore ullam pariatur est at asperiores?</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt vel illum fuga unde cum, voluptates magni molestias eveniet culpa autem ut, totam veniam, suscipit tempore ullam pariatur est at asperiores?</p>
-            </section>
-        </main>
-
-        <!--========== MAIN JS ==========-->
-        <script src="../public/scripts/sidebar.js"> </script>
-    </body>
-</html>
