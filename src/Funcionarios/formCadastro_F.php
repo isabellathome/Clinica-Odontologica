@@ -1,7 +1,7 @@
 <?php
     session_start();
     ob_start();
-    include_once "../../database/conexao.php";
+    include_once "../conexao.php";
 
     if((!isset($_SESSION['id'])) AND (!isset($_SESSION['funcao']))){
         $_SESSION['msg'] = "<p style='color: #ff0000; margin-bottom: 45px'>Erro: Necessário realizar o login para acessar a página!</p>";
@@ -9,7 +9,7 @@
     }
 ?>
 
-<?php include ("../../components/header.php") ?>
+<?php include ("../components/header.php") ?>
 
 <!DOCTYPE html>
     <html lang="pt-br">
@@ -24,6 +24,23 @@
 
         <link rel="stylesheet" type="text/css" href="../../public/css/sidebar.css">
         <link rel="stylesheet" href="../../public/css/form.css">
+
+        <script src="sweetalert2.min.js"></script>
+        <link rel="stylesheet" href="sweetalert2.min.css">
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script>
+            document.getElementById("cadastrar").addEventListener("click, modalSuccess");
+
+            function modalSuccess() {
+                Swal.fire(
+                'Tudo certo!',
+                'Funcionário cadastrado com sucesso!',
+                'success'
+                )
+            }
+
+        </script>
         
     </head>
     <body>
@@ -35,7 +52,7 @@
     <div class="container">
         <header> Cadastro </header>
 
-                <form action="#">
+                <form action="cadastrarF.php" method="post">
                     <div class="form first">
                         <div class="details personal">
                             <span class="title"> Informações </span>
@@ -43,37 +60,32 @@
                             <div class="fields">
                                 <div class="input-field">
                                     <label> Nome completo </label>
-                                    <input type="text" placeholder="Digite seu nome">
+                                    <input type="text" name="nome" required>
+                                </div>
+
+                                <div class="input-field">
+                                    <label>CPF</label>
+                                    <input type="text" name="cpf">
                                 </div>
 
                                 <div class="input-field">
                                     <label>Data de nascimento</label>
-                                    <input type="date" placeholder="Digite sua data de nascimento">
+                                    <input type="date" name="nascimento">
                                 </div>
 
                                 <div class="input-field">
                                     <label>Email</label>
-                                    <input type="text" placeholder="Enter your email">
+                                    <input type="text" name="email">
                                 </div>
 
                                 <div class="input-field">
                                     <label>Número celular</label>
-                                    <input type="number" placeholder="Enter mobile number">
-                                </div>
-
-                                <div class="input-field">
-                                    <label> Genero</label>
-                                    <select>
-                                        <option disabled selected>Select gender</option>
-                                        <option>Male</option>
-                                        <option>Female</option>
-                                        <option>Others</option>
-                                    </select>
+                                    <input type="number" name="celular">
                                 </div>
 
                                 <div class="input-field">
                                     <label> Salário </label>
-                                    <input type="text" placeholder="Enter your ccupation">
+                                    <input type="text" name="salario">
                                 </div>
                             </div>
                         </div>
@@ -84,17 +96,17 @@
                             <div class="fields">
                                 <div class="input-field">
                                     <label> Nome de usuário </label>
-                                    <input type="text" placeholder="Enter ID type">
+                                    <input type="text" name="usuario">
                                 </div>
 
                                 <div class="input-field">
                                     <label> Senha </label>
-                                    <input type="text" placeholder="Enter ID type">
+                                    <input type="text" name="senha">
                                 </div>
 
                                 <div class="input-field">
                                     <label> Função </label>
-                                    <input type="text" placeholder="Enter ID number">
+                                    <input type="text" name="funcao">
                                 </div>
                             </div>
                         </div> 
@@ -105,37 +117,37 @@
                             <div class="fields">
                                 <div class="input-field">
                                     <label>Logradouro</label>
-                                    <input type="text" placeholder="Permanent or Temporary">
+                                    <input type="text" name="logradouro">
                                 </div>
 
                                 <div class="input-field">
                                     <label>CEP</label>
-                                    <input type="text" placeholder="Enter nationality">
+                                    <input type="text" name="cep">
                                 </div>
 
                                 <div class="input-field">
                                     <label>Número</label>
-                                    <input type="text" placeholder="Enter your state">
+                                    <input type="text" name="numero">
                                 </div>
 
                                 <div class="input-field">
                                     <label>Bairro</label>
-                                    <input type="text" placeholder="Enter your district">
+                                    <input type="text" name="bairro">
                                 </div>
 
                                 <div class="input-field">
                                     <label>Complemento</label>
-                                    <input type="number" placeholder="Enter block number">
+                                    <input type="number" name="complemento">
                                 </div>
 
                                 <div class="input-field">
                                     <label>Cidade</label>
-                                    <input type="number" placeholder="Enter ward number">
+                                    <input type="number" name="cidade">
                                 </div>
 
                                 <div class="input-field">
                                     <label>Estado</label>
-                                    <input type="number" placeholder="Enter ward number">
+                                    <input type="number" name="estado">
                                 </div>
                             </div>
                         </div>
@@ -155,6 +167,7 @@
         </main>
 
         <!--========== MAIN JS ==========-->
-        <script src="../../public/scripts/sidebar.js"> </script>        
+        <script src="../../public/scripts/sidebar.js"> </script>   
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>     
     </body>
 </html>

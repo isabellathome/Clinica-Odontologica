@@ -1,5 +1,5 @@
-<?php include ("../components/session.php") ?>
-<?php include ("../components/header.php") ?>
+<?php include ("../src/session.php") ?>
+<?php include ("../src/components/header.php") ?>
 
 <!DOCTYPE html>
     <html lang="pt-br">

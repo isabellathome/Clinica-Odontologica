@@ -1,9 +1,7 @@
         <!--========== HEADER ==========-->
         <header class="header">
-            <div class="header__container">
-                <img src="../public/images/perfil01.jpg" alt="" class="header__img">
-
-                <a href="../src/Dashboard.php" class="header__logo"> Sorriso Odonto </a>
+            <div class="header__container">                
+                <a href="Dashboard.php" class="header__logo"> Sorriso Odonto </a>
     
                 <div class="header__search">
                     <input type="search" placeholder="Pesquisa" class="header__input">
