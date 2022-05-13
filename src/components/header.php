@@ -18,7 +18,7 @@
         <div class="nav" id="navbar">
             <nav class="nav__container">
                 <div>
-                    <a href="../src/Dashboard.php" class="nav__link nav__logo">
+                    <a href="../Dashboard.php" class="nav__link nav__logo">
                         <i class='bx bx-wink-smile bx-tada bx-sm' ></i>
                         <span class="nav__logo-name"> Sorriso Odonto </span>
                     </a>
@@ -83,7 +83,7 @@
                     </div>
                 </div>
 
-                <a href="pageSair.php" class="nav__link nav__logout">
+                <a href="../src/pageSair.php" class="nav__link nav__logout">
                     <i class='bx bx-log-out nav__icon' ></i>
                     <span class="nav__name"> Sair </span>
                 </a>

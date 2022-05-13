@@ -87,9 +87,9 @@
                                     echo "<td> $funcao </td> ";
                                     echo "<td> $email </td> ";
                                     echo "<td> $celular </td> ";
-                                    echo "<td> <a  href='View/detalhesF.php?id=".$row_funcionario['id'] ."'> <i class='bx bxs-user-detail bx-sm'></i> </a> </td> </td> ";
-                                    echo "<td> <a href='View/formEditarF.php?id=".$row_funcionario['id'] ."'> <i class='bx bxs-edit bx-sm'></i> </a> </td>";
-                                    echo "<td> <a class='btn-del' href='excluirF.php?id=".$row_funcionario['id'] ."'> Excluir </a> </td>";
+                                    echo "<td> <a href='Funcionarios/detalhesF.php?id=".$row_funcionario['id'] ."'> <i class='bx bxs-user-detail bx-sm'></i> </a> </td> </td> ";
+                                    echo "<td> <a href='Funcionarios/formEditarF.php?id=".$row_funcionario['id'] ."'> <i class='bx bxs-edit bx-sm'></i> </a> </td>";
+                                    echo "<td> <a class='btn-del' href='excluirF.php?id=".$row_funcionario['id'] ."'> <i class='bx bxs-trash bx-sm'></i> </a> </td>";
                                     echo "<tr>";
                                 }
                             ?>

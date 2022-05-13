@@ -10,8 +10,6 @@
 
     $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-    var_dump($dados);
-
     //Verificar se o usuario clicou no botao
     if(!empty($dados)){
         $query_funcionario = "INSERT INTO funcionarios (nome, cpf, nascimento, email, celular, salario, funcao) VALUES (:nome, :cpf, :nascimento, :email, :celular, :salario, :funcao)";
@@ -39,6 +37,14 @@
         $cad_endereco->bindParam(':estado', $dados['estado'], PDO::PARAM_STR);
         $cad_endereco->bindParam(':funcionario_id', $id_funcionario, PDO::PARAM_INT);
         $cad_endereco->execute();
+
+        $query_usuario= "INSERT INTO usuarios (usuario, senha_usuario, funcao, funcionario_id) VALUES (:usuario, :senha_usuario, :funcao, :funcionario_id)";
+        $cad_usuario = $conn->prepare($query_usuario);
+        $cad_usuario->bindParam(':usuario', $dados['usuario'], PDO::PARAM_STR);
+        $cad_usuario->bindParam(':senha_usuario', $dados['senha_usuario'], PDO::PARAM_STR);
+        $cad_usuario->bindParam(':funcao', $dados['funcao'], PDO::PARAM_STR);
+        $cad_usuario->bindParam(':funcionario_id', $id_funcionario, PDO::PARAM_INT);
+        $cad_usuario->execute();
 
         //Criar a variavel global para salvar a mensagem de sucesso
         $_SESSION['msg'] = "<p style='color: green;'>Funcionário cadastrado com sucesso!</p>";
