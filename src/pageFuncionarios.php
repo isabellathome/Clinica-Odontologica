@@ -21,24 +21,25 @@
     <body>
 
         <script>
-            $('.btn-del').on('click', function(e) {
-                 e.preventDefault();
-                const href = $(this).attr('href')
-
-                    Swal.fire({
-                        title: 'Você tem certeza?',
-                        text: 'Os dados serão deletados',
-                        type: 'warning',
-                        showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        confirmButtonText: 'Excluir',
-                    }).then((result) => {
-                        if (result.value) {
-                            document.location.href = href;
-                        }
-                    })
-            })
+            document.getElementById('btn-del').onclick = function(){
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+};
             </script>
     
 
@@ -89,9 +90,10 @@
                                     echo "<td> $celular </td> ";
                                     echo "<td> <a href='Funcionarios/detalhesF.php?id=".$row_funcionario['id'] ."'> <i class='bx bxs-user-detail bx-sm'></i> </a> </td> </td> ";
                                     echo "<td> <a href='Funcionarios/formEditarF.php?id=".$row_funcionario['id'] ."'> <i class='bx bxs-edit bx-sm'></i> </a> </td>";
-                                    echo "<td> <a class='btn-del' href='excluirF.php?id=".$row_funcionario['id'] ."'> <i class='bx bxs-trash bx-sm'></i> </a> </td>";
+                                    echo "<td> <a id='btn-del' > <i class='bx bxs-trash bx-sm'></i> </a> </td>";
                                     echo "<tr>";
                                 }
+                                // href='excluirF.php?id=".$row_funcionario['id'] ."'
                             ?>
 
                         </tr>
@@ -103,11 +105,14 @@
 
         <!--========== MAIN JS ==========-->
         <script src="../public/scripts/sidebar.js"> </script>
-        <script src="components/jquery-3.6.0.min.js"></script>
+        <!-- <script src="components/jquery-3.6.0.min.js"></script>
         
         <script src="components/sweetalert.js"></script>
 
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- <script src="../public/scripts/sweetAlert.js"></script> -->
 
     </body>
 </html>

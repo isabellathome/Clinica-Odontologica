@@ -25,7 +25,7 @@
 
         if (!empty($dados['SendLogin'])) {
             //var_dump($dados);
-            $query_usuario = "SELECT id, funcao, usuario, senha_usuario 
+            $query_usuario = "SELECT id_usuario, funcao, usuario, senha_usuario 
                             FROM usuarios 
                             WHERE usuario =:usuario  
                             LIMIT 1";
@@ -35,9 +35,9 @@
 
             if(($result_usuario) AND ($result_usuario->rowCount() != 0)){
                 $row_usuario = $result_usuario->fetch(PDO::FETCH_ASSOC);
-                //var_dump($row_usuario);
+                var_dump($row_usuario);
                 if(password_verify($dados['senha_usuario'], $row_usuario['senha_usuario'])){
-                    $_SESSION['id'] = $row_usuario['id'];
+                    $_SESSION['id_usuario'] = $row_usuario['id_usuario'];
                     $_SESSION['funcao'] = $row_usuario['funcao'];
                     header("Location: Dashboard.php");
                 }else{

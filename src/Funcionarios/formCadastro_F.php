@@ -137,17 +137,17 @@
 
                                 <div class="input-field">
                                     <label>Complemento</label>
-                                    <input type="number" name="complemento">
+                                    <input type="text" name="complemento">
                                 </div>
 
                                 <div class="input-field">
                                     <label>Cidade</label>
-                                    <input type="number" name="cidade">
+                                    <input type="text" name="cidade">
                                 </div>
 
                                 <div class="input-field">
                                     <label>Estado</label>
-                                    <input type="number" name="estado">
+                                    <input type="text" name="estado">
                                 </div>
                             </div>
                         </div>

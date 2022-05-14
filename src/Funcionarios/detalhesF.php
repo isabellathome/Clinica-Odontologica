@@ -149,17 +149,17 @@
 
                                     <div class="input-field">
                                         <label>Complemento</label>
-                                        <input type="number" name="complemento" value="<?php echo $complemento; ?>" disabled>
+                                        <input type="text" name="complemento" value="<?php echo $complemento; ?>" disabled>
                                     </div>
 
                                     <div class="input-field">
                                         <label>Cidade</label>
-                                        <input type="number" name="cidade" value="<?php echo $cidade; ?>" disabled>
+                                        <input type="text" name="cidade" value="<?php echo $cidade; ?>" disabled>
                                     </div>
 
                                     <div class="input-field">
                                         <label>Estado</label>
-                                        <input type="number" name="estado" value="<?php echo $estado; ?>" disabled>
+                                        <input type="text" name="estado" value="<?php echo $estado; ?>" disabled>
                                     </div>
                                 </div>
                             </div>
