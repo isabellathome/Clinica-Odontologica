@@ -27,7 +27,7 @@ p {
 }
 
 #tabela {
-    border-collapse: collapse;
+    /* border-collapse: collapse; */
     width: 95%;
     margin: 0 15px;
   }
@@ -36,10 +36,6 @@ p {
     padding: 8px;
     text-align: center;
     color: #000;
-}
-
-#tabela tr:nth-child(even){
-    background-color: #c19ee0;
 }
 
 #tabela tr:hover {
@@ -61,4 +57,16 @@ a {
 
 .space {
     margin: 30px;
+}
+
+.btn-del {
+    border: none;
+    background-color: #F9F6FD;
+    margin-top: 10px;
+    padding: 5px 8px;
+    border-radius: 4px;
+}
+
+.btn-del:hover {
+    background-color: #8f63af;
 }

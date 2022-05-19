@@ -43,6 +43,10 @@ li {
     color: #fff;
 }
 
+.navbar:hover {
+    background-color: black;
+}
+
 .nav-links a {
     color: #fff;
 }
