@@ -1,12 +1,12 @@
         <!--========== HEADER ==========-->
         <header class="header">
             <div class="header__container">                
-                <a href="Dashboard.php" class="header__logo"> Sorriso Odonto </a>
+                <a href="../AdminGeral/Dashboard.php" class="header__logo"> Sorriso Odonto </a>
     
-                <div class="header__search">
-                    <input type="search" placeholder="Pesquisa" class="header__input">
-                    <i class='bx bx-search header__icon'></i>
-                </div>
+                <form class="header__search" action="../View/Search.php?a=buscar" method="post">
+                    <input type="search" placeholder="Pesquisa" name="palavra" class="header__input">                        
+                    <button class="btn-search" type="submit"> <i class='bx bx-search'></i> </button>
+                </form>
     
                 <div class="header__toggle">
                     <i class='bx bx-menu' id="header-toggle"></i>
@@ -18,7 +18,7 @@
         <div class="nav" id="navbar">
             <nav class="nav__container">
                 <div>
-                    <a href="../Dashboard.php" class="nav__link nav__logo">
+                    <a href="../AdminGeral/Dashboard.php" class="nav__link nav__logo">
                         <i class='bx bx-wink-smile bx-tada bx-sm' ></i>
                         <span class="nav__logo-name"> Sorriso Odonto </span>
                     </a>
@@ -27,7 +27,7 @@
                         <div class="nav__items">
                             <h3 class="nav__subtitle"> <?php echo $_SESSION['funcao']; ?> </h3>
     
-                            <a href="#" class="nav__link active">
+                            <a href="../AdminGeral/Dashboard.php" class="nav__link active">
                                 <i class='bx bx-home nav__icon' ></i>
                                 <span class="nav__name"> Home </span>
                             </a>
@@ -66,8 +66,9 @@
 
                                 <div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="pageFuncionarios.php" class="nav__dropdown-item"> Funcionários </a>
+                                        <a href="../FuncionariosDao/listar.php" class="nav__dropdown-item"> Funcionários </a>
                                         <a href="pagePacientes.php" class="nav__dropdown-item"> Pacientes </a>
+                                        <a href="pageFinanceiro.php" class="nav__dropdown-item"> Prontuários </a>
                                         <a href="pageConsultas.php" class="nav__dropdown-item"> Consultas </a>
                                         <a href="pageFinanceiro.php" class="nav__dropdown-item"> Financeiro </a>
                                     </div>
@@ -83,7 +84,7 @@
                     </div>
                 </div>
 
-                <a href="../src/pageSair.php" class="nav__link nav__logout">
+                <a href="../pageSair.php" class="nav__link nav__logout">
                     <i class='bx bx-log-out nav__icon' ></i>
                     <span class="nav__name"> Sair </span>
                 </a>

@@ -1,12 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
 a {
   text-decoration: none;
-  color: #36f;
+  color: #3C096C;
+}
+
+body {
+  background-color: #ccc;
 }
 
 .content {
   align-items: center;
   height: 80vh;
   margin-left: 300px;
+  background-color: #fff;
 }
 
 .flex {
@@ -16,6 +29,7 @@ a {
 .bold {
   font-weight: bold;
   font-size: large;
+  color: #9c1c1c;
 }
 
 .modal {
@@ -69,13 +83,3 @@ a {
 .modal__cta--red:hover {
   background-color: rgb(221, 22, 22);
 }
-
-#background {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-    height: 100%;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-  }

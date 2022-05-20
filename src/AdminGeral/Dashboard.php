@@ -1,5 +1,5 @@
-<?php include ("../src/session.php") ?>
-<?php include ("../src/components/header.php") ?>
+<?php include ("../session.php") ?>
+<?php include ("../components/header.php") ?>
 
 <!DOCTYPE html>
     <html lang="pt-br">
@@ -10,10 +10,10 @@
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
         
-        <link rel="shortcut icon" href="../so-icon.svg" type="image/x-icon">
+        <link rel="shortcut icon" href="../../so-icon.svg" type="image/x-icon">
 
-        <link rel="stylesheet" type="text/css" href="../public/css/sidebar.css">
-        <link rel="stylesheet" href="../public/css/dashboard.css">
+        <link rel="stylesheet" type="text/css" href="../../public/css/sidebar.css">
+        <link rel="stylesheet" href="../../public/css/dashboard.css">
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     </head>
     <body>
@@ -168,7 +168,7 @@
           </li>
           </ul>
           <div class="button">
-            <a href="#">See All</a>
+            <a href="#">Ver Mais</a>
           </div>
         </div>
       </div>
@@ -178,7 +178,7 @@
         </main>
 
         <!--========== MAIN JS ==========-->
-        <script src="../public/scripts/sidebar.js"> </script>
+        <script src="../../public/scripts/sidebar.js"> </script>
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     </body>
 </html>

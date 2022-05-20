@@ -101,6 +101,14 @@ img {
   padding: .40rem .75rem;
   background-color: var(--first-color-light);
   border-radius: .25rem;
+  margin-bottom: -1px;
+}
+
+.btn-search {
+  width: 50px;
+  height: 25px;
+  background-color: #F4F0FA;
+  border: 0;
 }
 
 .header__input {
@@ -281,6 +289,7 @@ img {
   .header__search {
     width: 300px;
     padding: .55rem .75rem;
+    margin-bottom: -1px;
   }
   .header__toggle {
     display: none;

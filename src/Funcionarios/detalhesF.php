@@ -167,7 +167,7 @@
                             <div class="buttons">                                                         
                                 <button class="sumbit">
                                     <span class="btnText"> Voltar </span>
-                                    <a href="../pageFuncionarios.php">
+                                    <a href="listar.php">
                                         <i class="uil uil-navigator"></i>
                                     </a>
                                 </button>

@@ -37,7 +37,7 @@
             echo "<table id='tabela'>";
             echo "<thead>";
             echo "  <tr>";
-            echo "      <th> Matrícula </th> ";
+            echo "      <th> ID </th> ";
             echo "      <th> Nome </th> ";
             echo "      <th> Visualizar </th> ";
             echo "      <th> Editar </th> ";
@@ -48,7 +48,7 @@
             foreach ($array as $array) {
                 echo "<tr>";
                 echo "<td>". $array['matricula'] . "</td>";
-                echo "<td>". $array['nome']      . "</td>";	
+                echo "<td>". $array['nome']      . "</td>";
                 echo "<td> ";
 
                 ?>
@@ -70,7 +70,7 @@
                 echo "</td> ";
                 echo  "<td> "; 
                 ?>
-                <form action="Modal.php" method="get">
+                <form action="../View/Modal.php" method="get">
                         <input type=hidden value= <?php echo $array['matricula'];?> name=matricula>
                         <button class="btn-del"> <i class='bx bxs-trash bx-sm'></i></button>
                 </form>		  

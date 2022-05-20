@@ -39,7 +39,7 @@
                 if(password_verify($dados['senha_usuario'], $row_usuario['senha_usuario'])){
                     $_SESSION['id_usuario'] = $row_usuario['id_usuario'];
                     $_SESSION['funcao'] = $row_usuario['funcao'];
-                    header("Location: Dashboard.php");
+                    header("Location: AdminGeral/Dashboard.php");
                 }else{
                     $_SESSION['msg'] = "<p style='color: #ff0000; margin-bottom: 45px'>Erro: Usuário ou senha inválida!</p>";
                 }
