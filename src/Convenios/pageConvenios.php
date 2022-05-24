@@ -1,5 +1,5 @@
-<?php require_once 'ClassUsuario.php'; ?>
-<?php require_once 'ClassUsuarioDAO.php'; ?>
+<?php require_once 'ClassConvenio.php'; ?>
+<?php require_once 'ClassConvenioDAO.php'; ?>
 <?php include ("../session.php") ?>
 <?php include ("../components/header.php") ?>
 
@@ -8,7 +8,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Funcionários </title>
+        <title> Convênios </title>
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
         
@@ -24,15 +24,15 @@
             <section>
 
                 <p>
-                    Funcionários
-                    <a class="btn-new" href="inicio.php">
-                        Novo Funcionário
+                    Convênios
+                    <a class="btn-new" href="formConvenio.php">
+                        Novo Convênio
                     </a>
                </p>
 
         <?php
-            $classUsuarioDAO = new ClassUsuarioDAO();
-            $array= $classUsuarioDAO->listar();
+            $classConvenioDAO = new ClassConvenioDAO();
+            $array= $classConvenioDAO->listar();
             echo "<div class='container'>";
             echo "<table id='tabela'>";
             echo "<thead>";

@@ -7,6 +7,9 @@
   font-family: 'Poppins', sans-serif;
 }
 
+
+
+
 .home-section{
   position: relative;
   background: #f5f5f5;
@@ -207,11 +210,11 @@ nav .profile-details i{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 10px;
 }
 .sales-boxes .box .title{
   font-size: 24px;
   font-weight: 500;
-  /* margin-bottom: 10px; */
 }
 .sales-boxes .sales-details li.topic{
   font-size: 20px;
@@ -274,7 +277,7 @@ nav .profile-details i{
   text-decoration: none;
 }
 .sales-boxes .top-sales li .product,
-.price{
+.acessar{
   font-size: 17px;
   font-weight: 400;
   color: #333;

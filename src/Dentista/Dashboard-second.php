@@ -1,5 +1,5 @@
 <?php include ("../session.php") ?>
-<?php include ("../components/header.php") ?>
+<?php include ("../components/header-second.php") ?>
 
 <!DOCTYPE html>
     <html lang="pt-br">
@@ -28,7 +28,7 @@
         <div class="box">
           <div class="right-side">
             <div class="box-topic">Pacientes</div>
-            <div class="number">15,739</div>
+            <div class="number">532</div>
             <div class="indicator">
               <i class='bx bx-up-arrow-alt'></i>
               <span class="text">Em tratamento</span>
@@ -38,19 +38,19 @@
         </div>
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">Financeiro</div>
-            <div class="number">138,876</div>
+            <div class="box-topic">Avisos</div>
+            <div class="number">1</div>
             <div class="indicator">
-              <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">Total em reais</span>
+              <i class='bx bx-up-arrow-alt'></i> 
+              <span class="text">Total</span>
             </div>
           </div>
-          <i style="margin-left: 45px" class='bx bx-dollar cart two'></i>
+          <i style="margin-left: 45px" class='bx bx-bell cart two'></i>
         </div>
         <div class="box">
           <div class="right-side">
             <div class="box-topic">Consultas</div>
-            <div class="number">2,383</div>
+            <div class="number">472</div>
             <div class="indicator">
               <i class='bx bx-up-arrow-alt'></i>
               <span class="text">Total ao mês</span>
@@ -61,7 +61,7 @@
         <div class="box">
           <div class="right-side">
             <div class="box-topic">Prontuários</div>
-            <div class="number">16,142</div>
+            <div class="number">5143</div>
             <div class="indicator">
               <i class='bx bx-down-arrow-alt down'></i>
               <span class="text">Total</span>
@@ -73,78 +73,73 @@
 
       <div class="sales-boxes">
         <div class="recent-sales box">
-          <div class="title">Últimos lançamentos do financeiro</div>
+          <div class="title">Consultas Recentes</div>
           <div class="sales-details">
             <ul class="details">
               <li class="topic">Data</li>
-              <li><a href="#">17 Maio 2022</a></li>
-              <li><a href="#">17 Maio 2022</a></li>
-              <li><a href="#">17 Maio 2022</a></li>
-              <li><a href="#">17 Maio 2022</a></li>
-              <li><a href="#">17 Maio 2022</a></li>
-              <li><a href="#">17 Maio 2022</a></li>
-              <li><a href="#">17 Maio 2022</a></li>
+              <li><a href="#">20 Maio 2022</a></li>
+              <li><a href="#">20 Maio 2022</a></li>
+              <li><a href="#">20 Maio 2022</a></li>
+              <li><a href="#">20 Maio 2022</a></li>
+              <li><a href="#">20 Maio 2022</a></li>
+              <li><a href="#">20 Maio 2022</a></li>
+              <li><a href="#">20 Maio 2022</a></li>
               
             </ul>
             <ul class="details">
-            <li class="topic">Tipo</li>
-            <li><a href="#">Entrada</a></li>
-            <li><a href="#">Entrada</a></li>
-            <li><a href="#">Saída</a></li>
-            <li><a href="#">Entrada</a></li>
-            <li><a href="#">Saída</a></li>
-            <li><a href="#">Saída</a></li>
-             <li><a href="#">Entrada</a></li>
+            <li class="topic">Hora</li>
+            <li><a href="#">08:00</a></li>
+            <li><a href="#">08:40</a></li>
+            <li><a href="#">09:00</a></li>
+            <li><a href="#">09:20</a></li>
+            <li><a href="#">09:40</a></li>
+            <li><a href="#">10:00</a></li>
+            <li><a href="#">10:20</a></li>
           </ul>
           <ul class="details">
-            <li class="topic">Motivo</li>
-            <li><a href="#">Tratamento paciente</a></li>
-            <li><a href="#">Tratamento paciente</a></li>
-            <li><a href="#">Salários</a></li>
-            <li><a href="#">Tratamento paciente</a></li>
-            <li><a href="#">Material de limpeza</a></li>
-            <li><a href="#">Café</a></li>
-            <li><a href="#">Tratamento paciente</a></li>
+            <li class="topic">Paciente</li>
+            <li><a href="#">Eloah Oliveira</a></li>
+            <li><a href="#">Lucas Azevedo</a></li>
+            <li><a href="#">Thomas Lopes</a></li>
+            <li><a href="#">Nellie Caldeira</a></li>
+            <li><a href="#">Carlos Eduardo Costa</a></li>
+            <li><a href="#">Ben Santos</a></li>
+            <li><a href="#">Samuel da Conceição</a></li>
           </ul>
           <ul class="details">
-            <li class="topic">Total</li>
-            <li><a href="#">R$ 204.98</a></li>
-            <li><a href="#">R$ 24.55</a></li>
-            <li><a href="#">R$ 25.88</a></li>
-            <li><a href="#">R$ 170.66</a></li>
-            <li><a href="#">R$ 56.56</a></li>
-            <li><a href="#">R$ 44.95</a></li>
-            <li><a href="#">R$ 67.33</a></li>
+            <li class="topic">Procedimento</li>
+            <li><a href="#"></a></li>
+            <li><a href="#">Ortodôntico</a></li>
+            <li><a href="#">Ortodôntico</a></li>
+            <li><a href="#">Ortodôntico</a></li>
+            <li><a href="#">Ortodôntico</a></li>
+            <li><a href="#">Ortodôntico</a></li>
+            <li><a href="#">Ortodôntico</a></li>
+            <li><a href="#">Ortodôntico</a></li>
           </ul>
           </div>
           <div class="button">
-            <a href="#">Ver tudo</a>
+            <a href="#">Ver todas</a>
           </div>
         </div>
         <div class="top-sales box">
-          <div class="title">Últimas consultas</div>
+          <div class="title">Últimos prontuários acessados</div>
           <ul class="top-sales-details">
             <li>
             <a href="#">
-              <span class="product">Ana Carolina Dias</span>
+              <span class="product">Samuel da Conceiçãos</span>
             </a>
             <span class="acessar">Acessar</span>
           </li>
           <li>
             <a href="#">
-              <span class="product">Juan da Luz</span>
+              <span class="product">Ben Santos</span>
             </a>
             <span class="acessar">Acessar</span>
           </li>
           <li>
             <a href="#">
-              <span class="product">Thomas Lopes</span>
-            </a>
-            <span class="acessar">Acessar</span>
-          </li>
-          <li>
-            <a href="#">
-              <span class="product">Caroline Ribeiro</span>
+              <span class="product">Carlos Eduardo Costa</span>
             </a>
             <span class="acessar">Acessar</span>
           </li>
@@ -156,13 +151,13 @@
           </li>
           <li>
             <a href="#">
-              <span class="product">Davi Lucca da Cruz</span>
+              <span class="product">Thomas Lopes</span>
             </a>
             <span class="acessar">Acessar</span>
           </li>
-            <li>
+          <li>
             <a href="#">
-              <span class="product">Leonardo Moraes</span>
+              <span class="product">Lucas Azevedo</span>
             </a>
             <span class="acessar">Acessar</span>
           </li>

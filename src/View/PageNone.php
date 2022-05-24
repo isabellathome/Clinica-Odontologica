@@ -33,7 +33,7 @@
                             <a href="../Pacientes/pagePacientes.php" class="nav__link">Pacientes</a>
                         </li>
                         <li class="nav__item">
-                            <a href="../FuncionariosDao/listar.php" class="nav__link">Funcionários</a>
+                            <a href="../Consultas/listar.php" class="nav__link">Consultas</a>
                         </li>
                     </ul>
 

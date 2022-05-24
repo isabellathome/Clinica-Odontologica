@@ -1,7 +1,7 @@
         <!--========== HEADER ==========-->
         <header class="header">
             <div class="header__container">                
-                <a href="../AdminGeral/Dashboard.php" class="header__logo"> Sorriso Odonto </a>
+                <a href="../Dentista/Dashboard-second.php" class="header__logo"> Sorriso Odonto </a>
     
                 <form class="header__search" action="../View/Search.php?a=buscar" method="post">
                     <input type="search" placeholder="Pesquisar" name="palavra" class="header__input">                        
@@ -18,7 +18,7 @@
         <div class="nav" id="navbar">
             <nav class="nav__container">
                 <div>
-                    <a href="../AdminGeral/Dashboard.php" class="nav__link nav__logo">
+                    <a href="../Dentista/Dashboard-second.php" class="nav__link nav__logo">
                         <i class='bx bx-wink-smile bx-tada bx-sm' ></i>
                         <span class="nav__logo-name"> Sorriso Odonto </span>
                     </a>
@@ -27,7 +27,7 @@
                         <div class="nav__items">
                             <h3 class="nav__subtitle"> <?php echo $_SESSION['funcao']; ?> </h3>
     
-                            <a href="../AdminGeral/Dashboard.php" class="nav__link active">
+                            <a href="../Dentista/Dashboard-second.php" class="nav__link active">
                                 <i class='bx bx-home nav__icon' ></i>
                                 <span class="nav__name"> Home </span>
                             </a>
@@ -41,13 +41,13 @@
 
                                 <div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="../AdminGeral/pageInfo.php" class="nav__dropdown-item"> Informações </a>
-                                        <a href="../AdminGeral/pagePag.php" class="nav__dropdown-item"> Pagamentos </a>
+                                        <a href="../Dentista/pageInfo.php" class="nav__dropdown-item"> Informações </a>
+                                        <a href="../Dentista/pagePag.php" class="nav__dropdown-item"> Pagamentos </a>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- <a href="../Avisos/pageAvisos.php" class="nav__link">
+                            <!-- <a href="#" class="nav__link">
                                 <i class='bx bx-message-rounded nav__icon' ></i>
                                 <span class="nav__name"> Avisos </span>
                             </a> -->
@@ -65,18 +65,15 @@
 
                                 <div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="../FuncionariosDao/listar.php" class="nav__dropdown-item"> Funcionários </a>
                                         <a href="../Pacientes/pagePacientes.php" class="nav__dropdown-item"> Pacientes </a>
-                                        <a href="../Prontuarios/pageProntuarios.php" class="nav__dropdown-item"> Prontuários </a>
+                                        <a href="../Financeiro/pageFinanceiro.php" class="nav__dropdown-item"> Prontuários </a>
                                         <a href="../Consultas/listar.php" class="nav__dropdown-item"> Consultas </a>
-                                        <a href="../Convenios/pageConvenios.php" class="nav__dropdown-item"> Convênios </a>
-                                        <a href="../Financeiro/pageFinanceiro.php" class="nav__dropdown-item"> Financeiro </a>
                                     </div>
                                 </div>
 
                             </div>
 
-                            <a href="../Carga-horaria/pageValidar.php" class="nav__link">
+                            <a href="../Carga-horaria/pageCarga.php" class="nav__link">
                                 <i class='bx bx-time-five nav__icon' ></i>
                                 <span class="nav__name"> Carga-horária </span>
                             </a>

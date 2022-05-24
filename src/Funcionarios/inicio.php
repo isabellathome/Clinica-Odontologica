@@ -1,14 +1,31 @@
-<?php
-    session_start();
-    ob_start();
-    include_once "../conexao.php";
+<!-- index.php 
+<html>
+    <head>
+        <meta charset="UTF-8">
+	
+    </head>
+    <body style="background-image:url('imagem/praia.jpg');">
+	 <center>
+	  <div style="background-color:yellow; width:200px;opacity:0.7;">
+        <form action="ControleUsuario.php" method="POST" >
+          <h1>Formulário</h1>
+		   Matrícula:<br>
+           <input type="text" name="matricula" />
+		   <br>
+           Nome:
+		   <br>
+           <input type="text" name="nome">
+		   <br> <br>
+         <input type="submit" value="Cadastrar"/>
+         <input type="reset" value="Apagar" />
+       </form>
+	   <br>
+	   </div>
+	</center>
+    </body>
+</html>-->
 
-    if((!isset($_SESSION['id'])) AND (!isset($_SESSION['funcao']))){
-        $_SESSION['msg'] = "<p style='color: #ff0000; margin-bottom: 45px'>Erro: Necessário realizar o login para acessar a página!</p>";
-        header("Location: login.php");
-    }
-?>
-
+<?php include ("../session.php") ?>
 <?php include ("../components/header.php") ?>
 
 <!DOCTYPE html>
@@ -24,23 +41,6 @@
 
         <link rel="stylesheet" type="text/css" href="../../public/css/sidebar.css">
         <link rel="stylesheet" href="../../public/css/form.css">
-
-        <script src="sweetalert2.min.js"></script>
-        <link rel="stylesheet" href="sweetalert2.min.css">
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-        <script>
-            document.getElementById("cadastrar").addEventListener("click, modalSuccess");
-
-            function modalSuccess() {
-                Swal.fire(
-                'Tudo certo!',
-                'Funcionário cadastrado com sucesso!',
-                'success'
-                )
-            }
-
-        </script>
         
     </head>
     <body>
@@ -157,17 +157,15 @@
                                 <span class="btnText"> Cadastrar </span>
                                 <i class="uil uil-navigator"></i>
                             </button>
-                            </div>
                         </div>
-
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
+        </div>
         </section>
         </main>
 
         <!--========== MAIN JS ==========-->
-        <script src="../../public/scripts/sidebar.js"> </script>   
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>     
+        <script src="../../public/scripts/sidebar.js"> </script>      
     </body>
 </html>

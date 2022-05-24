@@ -22,7 +22,7 @@
         <!--========== CONTENTS ==========-->
         <main>
             <section>
-                <p>
+                <p style="margin-bottom: -20px;">
                     Resultados da sua pesquisa:
                </p>
 
@@ -40,8 +40,21 @@
         $numRegistros = mysqli_num_rows($resultado);
             if($numRegistros!=0) {
                 while($exibe=mysqli_fetch_object($resultado)) {
-                    echo "-->   ". $exibe->nome ."   |   ";
-                    echo $exibe->matricula ."<br>";
+                    echo "<div class='container'>";
+                    echo "<table id='tabela'>";
+                    echo "<thead>";
+                    echo "  <tr>";
+                    echo "      <th> Nome </th> ";
+                    echo "      <th> ID </th> ";
+                    echo "      <th> Ocupação </th> ";
+                    echo "      <th> Visualizar </th> ";
+                    echo "  </tr>";
+                    echo "</thead>";
+                    echo "  <tr> ";
+                    echo "<td> ". $exibe->nome ."   </td>   ";
+                    echo "<td> ".$exibe->matricula ." </td> <br> ";
+                    echo "<td>  Dentista  </td>   ";
+                    echo "<td> Acessar </td> <br> ";
                 } 
             } else {
                 header("Location: PageNone.php");

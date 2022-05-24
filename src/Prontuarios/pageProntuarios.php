@@ -1,5 +1,5 @@
-<?php require_once 'ClassUsuario.php'; ?>
-<?php require_once 'ClassUsuarioDAO.php'; ?>
+<?php require_once '../FuncionariosDao/ClassUsuario.php'; ?>
+<?php require_once '../FuncionariosDao/ClassUsuarioDAO.php'; ?>
 <?php include ("../session.php") ?>
 <?php include ("../components/header.php") ?>
 
@@ -8,7 +8,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Funcionários </title>
+        <title> Prontuários | SO </title>
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
         
@@ -24,9 +24,9 @@
             <section>
 
                 <p>
-                    Funcionários
+                    Prontuários
                     <a class="btn-new" href="inicio.php">
-                        Novo Funcionário
+                        Novo Prontuário
                     </a>
                </p>
 
@@ -38,13 +38,16 @@
             echo "<thead>";
             echo "  <tr>";
             echo "      <th> ID </th> ";
-            echo "      <th> Nome </th> ";
+            echo "      <th> Nome do paciente </th> ";
+            echo "      <th> Tratamento </th> ";
+            echo "      <th> Dentista Responsável </th> ";
             echo "      <th> Visualizar </th> ";
+            echo "      <th> Relatório </th> ";
             echo "      <th> Editar </th> ";
             echo "      <th> Excluir </th>";
             echo "  <tr>";
             echo "</thead>";
-
+/*
             foreach ($array as $array) {
                 echo "<tr>";
                 echo "<td>". $array['matricula'] . "</td>";
@@ -78,8 +81,8 @@
                 echo "</td> ";
                 echo "</tr>";               		      
             }
+         */
         ?>
-
         </section>
             </main>
 

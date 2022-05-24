@@ -10,64 +10,55 @@
 ?>
 
 <?php include ("../components/header.php") ?>
-<?php require_once 'ClassUsuario.php'; ?>
-<?php require_once 'ClassUsuarioDAO.php';?>
 
 <!DOCTYPE html>
     <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Editar | Funcionários </title>
+        <title> Perfil | Funcionário </title>
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
         
         <link rel="shortcut icon" href="../../so-icon.svg" type="image/x-icon">
 
         <link rel="stylesheet" type="text/css" href="../../public/css/sidebar.css">
-        <link rel="stylesheet" href="../../public/css/form.css">       
+        <link rel="stylesheet" href="../../public/css/form.css">
+
     </head>
-
     <body>
-
-<?php
-$matricula =$_GET['matricula']; 
-$nome      =$_GET['nome'];
-?>
-
- <!--========== CONTENTS ==========-->
-     <main>
+        <!--========== CONTENTS ==========-->
+        <main>
             <section>
-                <h2> Funcionários </h2>
+                <h2> <?php echo $_SESSION['funcao']; ?> </h2>
 
             <div class="container">
-                <header> Visualizar </header>
-
-                    <form action="listar.php">
+                <header> Perfil </header>
+                    <form action="Dashboard.php">
                         <div class="form first">
                             <div class="details personal">
                                 <span class="title"> Informações </span>
 
-                                <input type="hidden" name="id" value="<?php echo $id; ?>" disabled>
-                                <!--  -->
+                                <input type="hidden" name="id"  disabled>
+                                <!-- value="<?php // echo $id; ?>" -->
 
                                 <div class="fields">
                                     <div class="input-field">
                                         <label> Nome completo </label>
-                                        <input type="text" name="nome" value="<?php echo $nome; ?>" disabled>
-                                        <!--  -->
+                                        <input type="text" name="nome"  disabled>
+                                        <!-- value="<?php // echo $nome; ?>" -->
                                     </div>
 
                                     <div class="input-field">
                                         <label>CPF</label>
-                                        <input type="text" name="cpf" value="<?php echo $matricula; ?>" disabled>
-                                        <!--  -->
+                                        <input type="text" name="cpf"  disabled>
+                                        <!-- value="<?php // echo $matricula; ?>" -->
                                     </div>
 
                                     <div class="input-field">
                                         <label>Data de nascimento</label>
                                         <input type="date" name="nascimento"  disabled>
-                                        <!-- value="<?php // // echo $nascimento; ?>" -->
+                                        <!-- value="<?php // echo $nascimento; ?>" -->
                                     </div>
 
                                     <div class="input-field">
@@ -162,31 +153,20 @@ $nome      =$_GET['nome'];
                                 </div>
                             </div>
                             
-                            <!-- <div class="buttons">                                                         
+                            <div class="buttons">                                                         
                                 <button class="sumbit">
-                                    <a href="listar.php">
-                                        <span class="btnText"> Voltar </span>                                    
+                                    <span class="btnText"> Voltar </span>
+                                    <a href="Dashboard.php">
                                         <i class="uil uil-navigator"></i>
                                     </a>
                                 </button>
                                 </div>
-                            </div> -->
-
-                            <div class="buttons">       
-
-                                <button class="sumbit">
-                                    <a href="listar.php" >
-                                        <span class="btnText"> Voltar </span>
-                                        <i class="uil uil-navigator"></i>
-                                    </a>
-                                </button>
-                                
                             </div>
-                        </div>
+
                         </div>
                     </form>
                 </div>
-            </section>
+        </section>
         </main>
 
         <!--========== MAIN JS ==========-->

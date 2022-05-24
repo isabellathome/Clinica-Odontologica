@@ -35,11 +35,17 @@
 
             if(($result_usuario) AND ($result_usuario->rowCount() != 0)){
                 $row_usuario = $result_usuario->fetch(PDO::FETCH_ASSOC);
-                var_dump($row_usuario);
+                
                 if(password_verify($dados['senha_usuario'], $row_usuario['senha_usuario'])){
                     $_SESSION['id_usuario'] = $row_usuario['id_usuario'];
                     $_SESSION['funcao'] = $row_usuario['funcao'];
-                    header("Location: AdminGeral/Dashboard.php");
+
+                    if($dados['usuario'] == "admin") {
+                        header("Location: AdminGeral/Dashboard.php");
+                    } else {
+                        header("Location: Dentista/Dashboard-second.php");
+                    }
+                    
                 }else{
                     $_SESSION['msg'] = "<p style='color: #ff0000; margin-bottom: 45px'>Erro: Usuário ou senha inválida!</p>";
                 }
