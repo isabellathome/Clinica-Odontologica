@@ -1,17 +1,7 @@
-<?php
-    session_start();
-    ob_start();
-    include_once "../conexao.php";
-
-    if((!isset($_SESSION['id'])) AND (!isset($_SESSION['funcao']))){
-        $_SESSION['msg'] = "<p style='color: #ff0000; margin-bottom: 45px'>Erro: Necessário realizar o login para acessar a página!</p>";
-        header("Location: login.php");
-    }
-?>
-
-<?php include ("../components/header.php") ?>
 <?php require_once 'ClassConvenio.php'; ?>
-<?php require_once 'ClassConvenioDAO.php';?>
+<?php require_once 'ClassConvenioDAO.php'; ?>
+<?php include ("../session.php") ?>
+<?php include ("../components/header.php") ?>
 
 <!DOCTYPE html>
     <html lang="pt-br">
@@ -28,95 +18,90 @@
         <link rel="stylesheet" href="../../public/css/form.css">       
     </head>
 
+<?php
+     $nome   = $_GET['nome'];
+     $codigo = $_GET['codigo'];
+     $valor = $_GET['valor'];
+     $procedimento = $_GET['procedimento'];
+     $desconto = $_GET['desconto'];
+     $num_contemplados = $_GET['num_contemplados'];
+    ?>
+
     <body>
 
-<?php
-    $nome   = $_GET['nome'];
-    $codigo = $_GET['codigo'];
-    $valor = $_GET['valor'];
-    $procedimento = $_GET['procedimento'];
-    $desconto = $_GET['desconto'];
-    $num_contemplados = $_GET['num_contemplados'];
-?>
-
- <!--========== CONTENTS ==========-->
-     <main>
+        <!--========== CONTENTS ==========-->
+        <main>
             <section>
-                <h2> Funcionários </h2>
+                <h2> Convênios </h2>
 
             <div class="container">
-                <header> Visualizar </header>
+                <header> Editar </header>
 
-                    <form action="pageConvenios.php">
+                    <form action="editar.php" method="GET">
                         <div class="form first">
                             <div class="details personal">
                                 <span class="title"> Informações </span>
 
-                                <input type="hidden" name="id" value="<?php echo $id; ?>" disabled>
+                                <input type="hidden" name="id" value="<?php echo $id; ?>">
                                 <!--  -->
 
                                 <div class="fields">
                                     <div class="input-field">
                                         <label> Nome </label>
-                                        <input type="text" name="nome" value="<?php echo $nome; ?>" disabled>
+                                        <input type="text" name="nome" value="<?php echo $nome; ?>">
                                         <!--  -->
                                     </div>
 
                                     <div class="input-field">
                                         <label> Código </label>
-                                        <input type="text" name="codigo" value="<?php echo $codigo; ?>" disabled>
+                                        <input type="text" name="codigo" value="<?php echo $codigo; ?>">
                                         <!--  -->
                                     </div>
 
                                     <div class="input-field">
                                         <label> Valor </label>
-                                        <input type="number" name="valor" value="<?php echo $valor; ?>" disabled>
+                                        <input type="number" name="valor" value="<?php echo $valor; ?>">
                                         <!--  -->
                                     </div>
 
                                     <div class="input-field">
                                         <label> Procedimento </label>
-                                        <input type="text" name="procedimento" value="<?php echo $procedimento; ?>" disabled>
+                                        <input type="text" name="procedimento" value="<?php echo $procedimento; ?>">
                                         <!--  -->
                                     </div>
 
                                     <div class="input-field">
                                         <label> Desconto </label>
-                                        <input type="number" name="desconto" value="<?php echo $desconto; ?>" disabled>
+                                        <input type="number" name="desconto" value="<?php echo $desconto; ?>">
                                         <!--  -->
                                     </div>
 
                                     <div class="input-field">
                                         <label> Números de Contemplados </label>
-                                        <input type="text" name="num_contemplados" value="<?php echo $num_contemplados; ?>" disabled>
+                                        <input type="text" name="num_contemplados" value="<?php echo $num_contemplados; ?>">
                                         <!--  -->
                                     </div>
                                 </div>
                             </div>
-
                             
-                            
-                            <!-- <div class="buttons">                                                         
-                                <button class="sumbit">
-                                    <a href="listar.php">
-                                        <span class="btnText"> Voltar </span>                                    
-                                        <i class="uil uil-navigator"></i>
-                                    </a>
-                                </button>
-                                </div>
-                            </div> -->
-
                             <div class="buttons">       
 
                                 <button class="sumbit">
-                                    <a href="listar.php" >
+                                    <span class="btnText"> Salvar </span>
+                                    <i class="uil uil-navigator"></i>
+                                </button>
+
+                                <button class="sumbit">
+                                    <a href="pageConvenios.php" >
                                         <span class="btnText"> Voltar </span>
                                         <i class="uil uil-navigator"></i>
                                     </a>
                                 </button>
                                 
                             </div>
-                        </div>
+
+                            </div>
+
                         </div>
                     </form>
                 </div>
@@ -124,6 +109,7 @@
         </main>
 
         <!--========== MAIN JS ==========-->
-        <script src="../../public/scripts/sidebar.js"> </script>       
+        <script src="../../public/scripts/sidebar.js"> </script>   
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>     
     </body>
 </html>

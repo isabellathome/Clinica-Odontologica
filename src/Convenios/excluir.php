@@ -1,16 +1,17 @@
 <!-- excluir.php -->
-<?php require_once 'ClassUsuario.php'; ?>
-<?php require_once 'ClassUsuarioDAO.php'; ?>
+<?php require_once 'ClassConvenio.php'; ?>
+<?php require_once 'ClassConvenioDAO.php'; ?>
 <?php
-   $classUsuarioDAO = new ClassUsuarioDAO();
-   $array = $classUsuarioDAO->listar();
- 	if (isset($_GET['matricula'])) {
+
+   $classConvenioDAO = new ClassConvenioDAO();
+   $array = $classConvenioDAO->listar();
+ 	if (isset($_GET['codigo'])) {
 	
-            $matricula = $_GET['matricula'];
-            $classUsuarioDAO = new ClassUsuarioDAO();
-            $array = $classUsuarioDAO->excluir($matricula);
+            $codigo = $_GET['codigo'];
+            $classConvenioDAO = new ClassConvenioDAO();
+            $array = $classConvenioDAO->excluir($codigo);
             if ($array==TRUE) {
-                 header('Location:listar.php');
+                 header('Location: pageConvenios.php');
             }else {
               echo "Erro";
 			}

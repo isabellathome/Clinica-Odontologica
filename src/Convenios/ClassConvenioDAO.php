@@ -29,7 +29,7 @@
             public function listar() {
                 try {
                     $pdo=Conexao::getInstance(); // PARA ACESSAR O MÉTODO NA CLASS CONEXAO INSTACIANDO O OBJETO CHAMADO PDO
-                    $sql="SELECT matricula, nome FROM contatos";
+                    $sql="SELECT * FROM convenios";
                     $stmt=$pdo->prepare($sql);
                     $stmt->execute();
 
@@ -41,12 +41,12 @@
             }
             
         // Excluir usuário pelo matricula
-            public function excluir($matricula){
+            public function excluir($codigo){
                 try {
                    $pdo=Conexao::getInstance();
-                   $sql="DELETE FROM contatos WHERE matricula =:matricula"; // depois do : é um parametro
+                   $sql="DELETE FROM convenios WHERE codigo =:codigo"; // depois do : é um parametro
                    $stmt=$pdo->prepare($sql);
-                   $stmt->bindValue(':matricula',$matricula);
+                   $stmt->bindValue(':codigo',$codigo);
                    $stmt->execute();
 
                    return true;
@@ -56,14 +56,18 @@
                 } // fim do catch 
             }
             
-        // Atualizar
-            public function alterar($matricula,$nome) {
+        // Atualizar    
+            public function alterar($id, $nome, $codigo, $valor, $procedimento, $desconto, $num_contemplados) {
                 try {
                     $pdo=Conexao::getInstance();
-                    $sql="UPDATE contatos SET matricula=:matricula, nome=:nome WHERE matricula=:matricula"; // depois do : é um parametro
+                    $sql="UPDATE convenios SET nome=:nome, codigo=:codigo, valor=:valor, procedimento=:procedimento, desconto=:desconto, num_contemplados=:num_contemplados WHERE codigo=:codigo"; // depois do : é um parametro
                     $stmt=$pdo->prepare($sql);
-                    $stmt->bindValue(':matricula',$matricula);
                     $stmt->bindValue(':nome',$nome);
+                    $stmt->bindValue(':codigo',$codigo);
+                    $stmt->bindValue(':valor',$valor);
+                    $stmt->bindValue(':procedimento',$procedimento);
+                    $stmt->bindValue(':desconto',$desconto);
+                    $stmt->bindValue(':num_contemplados',$num_contemplados);
                     $stmt->execute();
  
                     return true;

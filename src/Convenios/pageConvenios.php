@@ -37,8 +37,10 @@
             echo "<table id='tabela'>";
             echo "<thead>";
             echo "  <tr>";
-            echo "      <th> ID </th> ";
-            echo "      <th> Nome </th> ";
+            echo "      <th> Código </th> ";
+            echo "      <th> Nome  </th> ";
+            echo "      <th> Procedimento  </th> ";
+            echo "      <th> Desconto </th> ";
             echo "      <th> Visualizar </th> ";
             echo "      <th> Editar </th> ";
             echo "      <th> Excluir </th>";
@@ -47,31 +49,44 @@
 
             foreach ($array as $array) {
                 echo "<tr>";
-                echo "<td>". $array['matricula'] . "</td>";
-                echo "<td>". $array['nome']      . "</td>";
+                echo "<td>". $array['codigo'] . "</td>";
+                echo "<td>". $array['nome']  . "</td>";
+                echo "<td>". $array['procedimento']  . "</td>";
+                echo "<td>". $array['desconto']  . "</td>";
                 echo "<td> ";
 
                 ?>
                 <form action="Detalhes.php" method="get">
-                        <input type=hidden value= <?php echo $array['matricula'];?> name=matricula>
+                        <input type=hidden value= <?php echo $array['id'];?> name=id>
                         <input type=hidden value= <?php echo $array['nome'];?> name=nome>
+                        <input type=hidden value= <?php echo $array['codigo'];?> name=codigo>
+                        <input type=hidden value= <?php echo $array['valor'];?> name=valor>
+                        <input type=hidden value= <?php echo $array['procedimento'];?> name=procedimento>
+                        <input type=hidden value= <?php echo $array['desconto'];?> name=desconto>
+                        <input type=hidden value= <?php echo $array['num_contemplados'];?> name=num_contemplados>
+                        
                         <button class="btn-del"> <i class='bx bxs-user-detail bx-sm'></i> </button>
                 </form>		  
                 <?php	
                 echo "</td> ";
                 echo  "<td> "; 
                 ?>
-                <form action="alterar.php" method="get">
-                        <input type=hidden value= <?php echo $array['matricula'];?> name=matricula>
+                <form action="formEditar.php" method="get">
+                        <input type=hidden value= <?php echo $array['id'];?> name=id>
                         <input type=hidden value= <?php echo $array['nome'];?> name=nome>
+                        <input type=hidden value= <?php echo $array['codigo'];?> name=codigo>
+                        <input type=hidden value= <?php echo $array['valor'];?> name=valor>
+                        <input type=hidden value= <?php echo $array['procedimento'];?> name=procedimento>
+                        <input type=hidden value= <?php echo $array['desconto'];?> name=desconto>
+                        <input type=hidden value= <?php echo $array['num_contemplados'];?> name=num_contemplados>
                         <button class="btn-del"> <i class='bx bxs-edit bx-sm'></i></button>
                 </form>		  
                 <?php	
                 echo "</td> ";
                 echo  "<td> "; 
                 ?>
-                <form action="../View/Modal-excluir.php" method="get">
-                        <input type=hidden value= <?php echo $array['matricula'];?> name=matricula>
+                <form action="Modal-excluir.php" method="get">
+                        <input type=hidden value= <?php echo $array['codigo'];?> name=codigo>
                         <button class="btn-del"> <i class='bx bxs-trash bx-sm'></i></button>
                 </form>		  
                 <?php	
