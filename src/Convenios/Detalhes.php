@@ -42,7 +42,7 @@
  <!--========== CONTENTS ==========-->
      <main>
             <section>
-                <h2> Funcionários </h2>
+                <h2> Convênios </h2>
 
             <div class="container">
                 <header> Visualizar </header>
