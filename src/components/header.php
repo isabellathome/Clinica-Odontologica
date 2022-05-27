@@ -65,10 +65,10 @@
 
                                 <div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="../FuncionariosDao/listar.php" class="nav__dropdown-item"> Funcionários </a>
+                                        <a href="../Funcionarios/pageFuncionarios.php" class="nav__dropdown-item"> Funcionários </a>
                                         <a href="../Pacientes/pagePacientes.php" class="nav__dropdown-item"> Pacientes </a>
                                         <a href="../Prontuarios/pageProntuarios.php" class="nav__dropdown-item"> Prontuários </a>
-                                        <a href="../Consultas/listar.php" class="nav__dropdown-item"> Consultas </a>
+                                        <a href="../Consultas/pageConsultas.php" class="nav__dropdown-item"> Consultas </a>
                                         <a href="../Convenios/pageConvenios.php" class="nav__dropdown-item"> Convênios </a>
                                         <a href="../Financeiro/pageFinanceiro.php" class="nav__dropdown-item"> Financeiro </a>
                                     </div>

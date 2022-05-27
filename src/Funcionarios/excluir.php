@@ -1,16 +1,20 @@
 <!-- excluir.php -->
-<?php require_once 'ClassUsuario.php'; ?>
-<?php require_once 'ClassUsuarioDAO.php'; ?>
+<?php require_once 'ClassFuncionario.php'; ?>
+<?php require_once 'ClassFuncionarioDAO.php'; ?>
 <?php
-   $classUsuarioDAO = new ClassUsuarioDAO();
-   $array = $classUsuarioDAO->listar();
- 	if (isset($_GET['matricula'])) {
+   $classFuncionarioDAO = new ClassFuncionarioDAO();
+   $array = $classFuncionarioDAO->listar();
+ 	if (isset($_GET['id'])) {
 	
-            $matricula = $_GET['matricula'];
-            $classUsuarioDAO = new ClassUsuarioDAO();
-            $array = $classUsuarioDAO->excluir($matricula);
+            $id = $_GET['id'];
+            $classFuncionarioDAO = new ClassFuncionarioDAO();
+            $array = $classFuncionarioDAO->excluir($id);
+
+            $classUsuarioDAO = new ClassFuncionarioDAO();
+            $array = $classUsuarioDAO->excluir($id);
+
             if ($array==TRUE) {
-                 header('Location:listar.php');
+                 header('Location: pageFuncionarios.php');
             }else {
               echo "Erro";
 			}
