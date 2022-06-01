@@ -1,13 +1,13 @@
 <?php
 
-    class ClassConsulta {
+    class ClassProntuario {
         private $id;
         private $nome_paciente;
-        private $data;
-        private $hora;
         private $nome_dentista;
         private $procedimento;
         private $descricao;
+        private $data;
+        private $hora; 
 
         public function getId(){
             return $this->id;
@@ -24,23 +24,7 @@
         public function setNome_paciente($nome_paciente){
             $this->nome_paciente = $nome_paciente;
         }
-    
-        public function getData(){
-            return $this->data;
-        }
-    
-        public function setData($data){
-            $this->data = $data;
-        }
-    
-        public function getHora(){
-            return $this->hora;
-        }
-    
-        public function setHora($hora){
-            $this->hora = $hora;
-        }
-    
+        
         public function getNome_dentista(){
             return $this->nome_dentista;
         }
@@ -64,5 +48,21 @@
         public function setDescricao($descricao){
             $this->descricao = $descricao;
         }
+    
+        public function getData(){
+            return $this->data;
+        }
+    
+        public function setData($data){
+            $this->data = $data;
+        }
+    
+        public function getHora(){
+            return $this->hora;
+        }
+    
+        public function setHora($hora){
+            $this->hora = $hora;
+        }  
     } 
 ?>

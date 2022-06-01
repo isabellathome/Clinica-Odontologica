@@ -1,7 +1,7 @@
 <?php
     session_start();
     ob_start();
-    include_once "../conexao.php";
+    include_once "../ConexaoBD.php";
 
     if((!isset($_SESSION['id'])) AND (!isset($_SESSION['funcao']))){
         $_SESSION['msg'] = "<p style='color: #ff0000; margin-bottom: 45px'>Erro: Necessário realizar o login para acessar a página!</p>";
@@ -10,15 +10,15 @@
 ?>
 
 <?php include ("../components/header.php") ?>
-<?php require_once 'ClassConvenio.php'; ?>
-<?php require_once 'ClassConvenioDAO.php';?>
+<?php require_once 'ClassFinanceiro.php'; ?>
+<?php require_once 'ClassFinanceiroDAO.php';?>
 
 <!DOCTYPE html>
     <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Editar | Convênios </title>
+        <title> Visualizar | Financeiro </title>
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
         
@@ -30,24 +30,25 @@
 
     <body>
 
-<?php
-    $nome   = $_GET['nome'];
-    $codigo = $_GET['codigo'];
-    $valor = $_GET['valor'];
-    $procedimento = $_GET['procedimento'];
-    $desconto = $_GET['desconto'];
-    $num_contemplados = $_GET['num_contemplados'];
-?>
+    <?php
+       $valor = $_GET['valor'];
+       $vencimento = $_GET['vencimento'];
+       $parcelas = $_GET['parcelas'];
+       $tipo_pagamento = $_GET['tipo_pagamento'];
+       $motivo = $_GET['motivo'];
+       $autor = $_GET['autor'];
+       $status_pag = $_GET['status_pag'];
+    ?>
 
  <!--========== CONTENTS ==========-->
      <main>
             <section>
-                <h2> Convênios </h2>
+                <h2> Financeiro </h2>
 
             <div class="container">
                 <header> Visualizar </header>
 
-                    <form action="pageConvenios.php">
+                    <form action="pageFinanceiro.php">
                         <div class="form first">
                             <div class="details personal">
                                 <span class="title"> Informações </span>
@@ -57,48 +58,52 @@
 
                                 <div class="fields">
                                     <div class="input-field">
-                                        <label> Nome </label>
-                                        <input type="text" name="nome" value="<?php echo $nome; ?>" disabled>
-                                        <!--  -->
-                                    </div>
-
-                                    <div class="input-field">
-                                        <label> Código </label>
-                                        <input type="text" name="codigo" value="<?php echo $codigo; ?>" disabled>
-                                        <!--  -->
-                                    </div>
-
-                                    <div class="input-field">
                                         <label> Valor </label>
-                                        <input type="number" name="valor" value="<?php echo $valor; ?>" disabled>
+                                        <input type="text" name="valor" value="<?php echo $valor; ?>" disabled>
                                         <!--  -->
                                     </div>
 
                                     <div class="input-field">
-                                        <label> Procedimento </label>
-                                        <input type="text" name="procedimento" value="<?php echo $procedimento; ?>" disabled>
+                                        <label> Vencimento </label>
+                                        <input type="date" name="vencimento" value="<?php echo $vencimento; ?>" disabled>
                                         <!--  -->
                                     </div>
 
                                     <div class="input-field">
-                                        <label> Desconto </label>
-                                        <input type="number" name="desconto" value="<?php echo $desconto; ?>" disabled>
+                                        <label> Parcelas </label>
+                                        <input type="number" name="parcelas" value="<?php echo $parcelas; ?>" disabled>
                                         <!--  -->
                                     </div>
 
                                     <div class="input-field">
-                                        <label> Números de Contemplados </label>
-                                        <input type="text" name="num_contemplados" value="<?php echo $num_contemplados; ?>" disabled>
+                                        <label> Tipo de Pagamento </label>
+                                        <input type="text" name="tipo_pagamento" value="<?php echo $tipo_pagamento; ?>" disabled>
+                                        <!--  -->
+                                    </div>
+
+                                    <div class="input-field">
+                                        <label> Motivo </label>
+                                        <input type="number" name="motivo" value="<?php echo $motivo; ?>" disabled>
+                                        <!--  -->
+                                    </div>
+
+                                    <div class="input-field">
+                                        <label> Autor </label>
+                                        <input type="text" name="autor" value="<?php echo $autor; ?>" disabled>
+                                        <!--  -->
+                                    </div>
+
+                                    <div class="input-field">
+                                        <label> Status </label>
+                                        <input type="text" name="status_pag" value="<?php echo $status_pag; ?>" disabled>
                                         <!--  -->
                                     </div>
                                 </div>
                             </div>
-
-                            
                             
                             <!-- <div class="buttons">                                                         
                                 <button class="sumbit">
-                                    <a href="listar.php">
+                                    <a href="pageFuncionarios.php">
                                         <span class="btnText"> Voltar </span>                                    
                                         <i class="uil uil-navigator"></i>
                                     </a>
@@ -109,7 +114,7 @@
                             <div class="buttons">       
 
                                 <button class="sumbit">
-                                    <a href="listar.php" >
+                                    <a href="pageFuncionarios.php" >
                                         <span class="btnText"> Voltar </span>
                                         <i class="uil uil-navigator"></i>
                                     </a>

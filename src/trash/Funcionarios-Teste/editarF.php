@@ -5,7 +5,7 @@
 
     if((!isset($_SESSION['id'])) AND (!isset($_SESSION['funcao']))){
         $_SESSION['msg'] = "<p style='color: #ff0000; margin-bottom: 45px'>Erro: Necessário realizar o login para acessar a página!</p>";
-        header("Location: login.php");
+        header("Location: ../pagelogin.php");
     }
 
     $dados = filter_input_array(INPUT_GET, FILTER_DEFAULT);

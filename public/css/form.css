@@ -94,7 +94,7 @@ form .fields .input-field{
     margin: 4px 0;
 }
 
-.input-field label{
+.input-field label, select{
     font-size: 12px;
     font-weight: 500;
     color: #2e2e2e;

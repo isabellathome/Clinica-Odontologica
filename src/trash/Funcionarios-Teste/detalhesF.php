@@ -5,7 +5,7 @@
 
     if((!isset($_SESSION['id'])) AND (!isset($_SESSION['funcao']))){
         $_SESSION['msg'] = "<p style='color: #ff0000; margin-bottom: 45px'>Erro: Necessário realizar o login para acessar a página!</p>";
-        header("Location: login.php");
+        header("Location: ../pagelogin.php");
     }
 ?>
 
@@ -46,7 +46,7 @@
                 extract($row_endereco);
             }
 
-            $query_usuarios = "SELECT * FROM usuarios WHERE funcionario_id = $id";
+            $query_usuarios = "SELECT usuario, senha_usuario FROM usuarios WHERE funcionario_id = $id";
             $result_usuarios = $conn->prepare($query_usuarios);
             $result_usuarios->execute();
             while ($row_usuarios = $result_usuarios->fetch(PDO::FETCH_ASSOC)) {
@@ -60,65 +60,65 @@
                 <h2> Funcionários </h2>
 
             <div class="container">
-                <header> Editar </header>
+                <header> Visualizar </header>
 
-                    <form action="editarF.php?id=".$row_funcionarios['id'] method="GET">
+                    <form action="../pageFuncionarios.php">
                         <div class="form first">
                             <div class="details personal">
                                 <span class="title"> Informações </span>
 
-                                <input type="hidden" name="id" value="<?php echo $id; ?>">
+                                <input type="hidden" name="id" value="<?php echo $id; ?>" disabled>
 
                                 <div class="fields">
                                     <div class="input-field">
                                         <label> Nome completo </label>
-                                        <input type="text" name="nome" value="<?php echo $nome; ?>">
+                                        <input type="text" name="nome" value="<?php echo $nome; ?>" disabled>
                                     </div>
 
                                     <div class="input-field">
                                         <label>CPF</label>
-                                        <input type="text" name="cpf" value="<?php echo $cpf; ?>">
+                                        <input type="text" name="cpf" value="<?php echo $cpf; ?>" disabled>
                                     </div>
 
                                     <div class="input-field">
                                         <label>Data de nascimento</label>
-                                        <input type="date" name="nascimento" value="<?php echo $nascimento; ?>">
+                                        <input type="date" name="nascimento" value="<?php echo $nascimento; ?>" disabled>
                                     </div>
 
                                     <div class="input-field">
                                         <label>Email</label>
-                                        <input type="text" name="email" value="<?php echo $email; ?>">
+                                        <input type="text" name="email" value="<?php echo $email; ?>" disabled>
                                     </div>
 
                                     <div class="input-field">
                                         <label>Número celular</label>
-                                        <input type="number" name="celular" value="<?php echo $celular; ?>">
+                                        <input type="number" name="celular" value="<?php echo $celular; ?>" disabled>
                                     </div>
 
                                     <div class="input-field">
                                         <label> Salário </label>
-                                        <input type="text" name="salario" value="<?php echo $salario; ?>">
+                                        <input type="text" name="salario" value="<?php echo $salario; ?>" disabled>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="details ID">
-                                <span class="title"> Credencial </span>
+                                <span class="title">Credencial</span>
 
                                 <div class="fields">
                                     <div class="input-field">
                                         <label> Nome de usuário </label>
-                                        <input type="text" name="usuario" value="<?php echo $usuario; ?>">
+                                        <input type="text" name="usuario" value="<?php echo $usuario; ?>" disabled>
                                     </div>
 
                                     <div class="input-field">
                                         <label> Senha </label>
-                                        <input type="text" name="senha_usuario" value="<?php echo $senha_usuario; ?>">
+                                        <input type="text" name="senha_usuario" value="<?php echo $senha_usuario; ?>" disabled>
                                     </div>
 
                                     <div class="input-field">
                                         <label> Função </label>
-                                        <input type="text" name="funcao" value="<?php echo $funcao; ?>">
+                                        <input type="text" name="funcao" value="<?php echo $funcao; ?>" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -129,45 +129,47 @@
                                 <div class="fields">
                                     <div class="input-field">
                                         <label>Logradouro</label>
-                                        <input type="text" name="logradouro" value="<?php echo $logradouro; ?>">
+                                        <input type="text" name="logradouro" value="<?php echo $logradouro; ?>" disabled>
                                     </div>
 
                                     <div class="input-field">
                                         <label>CEP</label>
-                                        <input type="text" name="cep" value="<?php echo $cep; ?>">
+                                        <input type="text" name="cep" value="<?php echo $cep; ?>" disabled>
                                     </div>
 
                                     <div class="input-field">
                                         <label>Número</label>
-                                        <input type="text" name="numero" value="<?php echo $numero; ?>">
+                                        <input type="text" name="numero" value="<?php echo $numero; ?>" disabled>
                                     </div>
 
                                     <div class="input-field">
                                         <label>Bairro</label>
-                                        <input type="text" name="bairro" value="<?php echo $bairro; ?>">
+                                        <input type="text" name="bairro" value="<?php echo $bairro; ?>" disabled>
                                     </div>
 
                                     <div class="input-field">
                                         <label>Complemento</label>
-                                        <input type="text" name="complemento" value="<?php echo $complemento; ?>">
+                                        <input type="text" name="complemento" value="<?php echo $complemento; ?>" disabled>
                                     </div>
 
                                     <div class="input-field">
                                         <label>Cidade</label>
-                                        <input type="text" name="cidade" value="<?php echo $cidade; ?>">
+                                        <input type="text" name="cidade" value="<?php echo $cidade; ?>" disabled>
                                     </div>
 
                                     <div class="input-field">
                                         <label>Estado</label>
-                                        <input type="text" name="estado" value="<?php echo $estado; ?>">
+                                        <input type="text" name="estado" value="<?php echo $estado; ?>" disabled>
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="buttons">                                                         
                                 <button class="sumbit">
-                                    <span class="btnText"> Salvar </span>
-                                    <i class="uil uil-navigator"></i>
+                                    <span class="btnText"> Voltar </span>
+                                    <a href="listar.php">
+                                        <i class="uil uil-navigator"></i>
+                                    </a>
                                 </button>
                                 </div>
                             </div>

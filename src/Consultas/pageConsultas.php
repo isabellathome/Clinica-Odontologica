@@ -1,5 +1,5 @@
-<?php require_once 'ClassProntuario.php'; ?>
-<?php require_once 'ClassProntuarioDAO.php'; ?>
+<?php require_once 'ClassConsulta.php'; ?>
+<?php require_once 'ClassConsultaDAO.php'; ?>
 <?php include ("../session.php") ?>
 <?php include ("../components/header.php") ?>
 
@@ -8,7 +8,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Prontuários | SO </title>
+        <title> Consultas | SO </title>
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
         
@@ -24,26 +24,27 @@
             <section>
 
                 <p>
-                    Prontuários
+                    Consultas
                     <a class="btn-new" href="formCadastro.php">
-                        Novo Prontuário
+                        Nova Consulta
                     </a>
                </p>
 
         <?php
-            $classProntuarioDAO = new ClassProntuarioDAO();
-            $array= $classProntuarioDAO->listar();
+            $classConsultaDAO = new ClassConsultaDAO();
+            $array= $classConsultaDAO->listar();
             echo "<div class='container'>";
             echo "<table id='tabela'>";
             echo "<thead>";
             echo "  <tr>";
             echo "      <th> ID </th> ";
-            echo "      <th> Nome do paciente </th> ";
-            echo "      <th> Tratamento </th> ";
-            echo "      <th> Dentista Responsável </th> ";
+            echo "      <th> Paciente </th> ";
+            echo "      <th> Data </th> ";
+            echo "      <th> Hora </th> ";
+            echo "      <th> Notificar </th> ";
             echo "      <th> Visualizar </th> ";
-            echo "      <th> Relatório </th> ";
             echo "      <th> Editar </th> ";
+            echo "      <th> Excluir </th>";
             echo "  <tr>";
             echo "</thead>";
 
@@ -51,34 +52,34 @@
                 echo "<tr>";
                 echo "<td>". $array['id']            . "</td>";
                 echo "<td>". $array['nome_paciente'] . "</td>";
-                echo "<td>". $array['procedimento']          .   "</td>";
-                echo "<td>". $array['nome_dentista']          . "</td>";
+                echo "<td>". $array['data']          .   "</td>";
+                echo "<td>". $array['hora']          . "</td>";
                 echo "<td> ";
 
                 ?>
-                <form action="Detalhes.php" method="get">
+                <form action="Notificacao.php" method="get">
                     <input type=hidden value= <?php echo $array['id'];?> name=id>
                     <input type=hidden value= <?php echo $array['nome_paciente'];?> name=nome_paciente>
+                    <input type=hidden value= <?php echo $array['data'];?> name=data>
+                    <input type=hidden value= <?php echo $array['hora'];?> name=hora>
                     <input type=hidden value= <?php echo $array['nome_dentista'];?> name=nome_dentista>
                     <input type=hidden value= <?php echo $array['procedimento'];?> name=procedimento>
                     <input type=hidden value= <?php echo $array['descricao'];?> name=descricao>
-                    <input type=hidden value= <?php echo $array['data'];?> name=data>
-                    <input type=hidden value= <?php echo $array['hora'];?> name=hora>                    
-                    <button class="btn-del"> <i class='bx bxs-user-detail bx-sm'></i> </button>
+                    <button class="btn-del"> <i class='bx bxs-bell-ring bx-sm'></i> </button>
                 </form>		  
                 <?php	
                 echo "</td> ";
                 echo  "<td> "; 
                 ?>
-                <form action="Relatorios.php" method="get">
+                <form action="Detalhes.php" method="get">
                     <input type=hidden value= <?php echo $array['id'];?> name=id>
                     <input type=hidden value= <?php echo $array['nome_paciente'];?> name=nome_paciente>
+                    <input type=hidden value= <?php echo $array['data'];?> name=data>
+                    <input type=hidden value= <?php echo $array['hora'];?> name=hora>
                     <input type=hidden value= <?php echo $array['nome_dentista'];?> name=nome_dentista>
                     <input type=hidden value= <?php echo $array['procedimento'];?> name=procedimento>
                     <input type=hidden value= <?php echo $array['descricao'];?> name=descricao>
-                    <input type=hidden value= <?php echo $array['data'];?> name=data>
-                    <input type=hidden value= <?php echo $array['hora'];?> name=hora> 
-                    <button class="btn-del"> <i class='bx bx-notepad bx-sm'></i> </button>
+                    <button class="btn-del"> <i class='bx bxs-user-detail bx-sm'></i> </button>
                 </form>		  
                 <?php	
                 echo "</td> ";
@@ -87,17 +88,24 @@
                 <form action="formEditar.php" method="get">
                     <input type=hidden value= <?php echo $array['id'];?> name=id>
                     <input type=hidden value= <?php echo $array['nome_paciente'];?> name=nome_paciente>
+                    <input type=hidden value= <?php echo $array['data'];?> name=data>
+                    <input type=hidden value= <?php echo $array['hora'];?> name=hora>
                     <input type=hidden value= <?php echo $array['nome_dentista'];?> name=nome_dentista>
                     <input type=hidden value= <?php echo $array['procedimento'];?> name=procedimento>
                     <input type=hidden value= <?php echo $array['descricao'];?> name=descricao>
-                    <input type=hidden value= <?php echo $array['data'];?> name=data>
-                    <input type=hidden value= <?php echo $array['hora'];?> name=hora>  
                     <button class="btn-del"> <i class='bx bxs-edit bx-sm'></i></button>
                 </form>		  
                 <?php	
                 echo "</td> ";
-                ?>	  
-                <?php            		      
+                echo  "<td> "; 
+                ?>
+                <form action="Modal-excluir.php" method="get">
+                        <input type=hidden value= <?php echo $array['id'];?> name=id>
+                        <button class="btn-del"> <i class='bx bxs-trash bx-sm'></i></button>
+                </form>		  
+                <?php	
+                echo "</td> ";
+                echo "</tr>";               		      
             }
      
         ?>

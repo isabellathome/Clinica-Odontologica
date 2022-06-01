@@ -1,20 +1,18 @@
-<!-- excluir.php -->
-<?php require_once 'ClassUsuario.php'; ?>
-<?php require_once 'ClassUsuarioDAO.php'; ?>
+<?php require_once 'ClassConsulta.php'; ?>
+<?php require_once 'ClassConsultaDAO.php'; ?>
 <?php
-   $classUsuarioDAO = new ClassUsuarioDAO();
-   $array = $classUsuarioDAO->listar();
- 	if (isset($_GET['matricula'])) {
+
+   $classConsultaDAO = new ClassConsultaDAO();
+   $array = $classConsultaDAO->listar();
+ 	if (isset($_GET['id'])) {
 	
-            $matricula = $_GET['matricula'];
-            $classUsuarioDAO = new ClassUsuarioDAO();
-            $array = $classUsuarioDAO->excluir($matricula);
+            $id = $_GET['id'];
+            $classConsultaDAO = new ClassConsultaDAO();
+            $array = $classConsultaDAO->excluir($id);
             if ($array==TRUE) {
-                 header('Location:listar.php');
+                 header('Location: pageConsultas.php');
             }else {
               echo "Erro";
 			}
     }
 ?>
- 
-

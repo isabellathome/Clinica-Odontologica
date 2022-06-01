@@ -61,7 +61,7 @@
                             O que você buscou, não foi encontrado <br> nenhum resultado. Tente novamente!
                         </p>
                       
-                        <button class="home__button" onclick="history.back()"> Voltar </button>
+                        <a href="../AdminGeral/Dashboard.php"> <button class="home__button"> Voltar </button> </a>
 
                     </div>
 

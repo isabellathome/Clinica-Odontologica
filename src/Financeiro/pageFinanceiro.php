@@ -1,5 +1,5 @@
-<?php require_once '../FuncionariosDao/ClassUsuario.php'; ?>
-<?php require_once '../FuncionariosDao/ClassUsuarioDAO.php'; ?>
+<?php require_once 'ClassFinanceiro.php'; ?>
+<?php require_once 'ClassFinanceiroDAO.php'; ?>
 <?php include ("../session.php") ?>
 <?php include ("../components/header.php") ?>
 
@@ -25,61 +25,78 @@
 
                 <p>
                     Financeiro
-                    <a class="btn-new" href="inicio.php">
+                    <a class="btn-new" href="formCadastro.php">
                         Novo Pagamento
                     </a>
                </p>
 
         <?php
-            $classUsuarioDAO = new ClassUsuarioDAO();
-            $array= $classUsuarioDAO->listar();
+            $classFinanceiroDAO = new ClassFinanceiroDAO();
+            $array= $classFinanceiroDAO->listar();
             echo "<div class='container'>";
             echo "<table id='tabela'>";
             echo "<thead>";
             echo "  <tr>";
             echo "      <th> ID </th> ";
             echo "      <th> Valor </th> ";
-            echo "      <th> Motivo </th> ";
+            echo "      <th> Vencimento </th> ";
+            echo "      <th> Autor </th> ";
+            echo "      <th> Status </th> ";
             echo "      <th> Visualizar </th> ";
-            echo "      <th> Relatório </th> ";
             echo "      <th> Editar </th> ";
+            echo "      <th> Relatório </th> ";
             echo "  <tr>";
             echo "</thead>";
-/*
+
             foreach ($array as $array) {
                 echo "<tr>";
-                echo "<td>". $array['matricula'] . "</td>";
-                echo "<td>". $array['nome']      . "</td>";
+                echo "<td>". $array['id']         . "</td>";
+                echo "<td>". $array['valor']      . "</td>";
+                echo "<td>". $array['vencimento'] . "</td>";
+                echo "<td>". $array['autor']      . "</td>";
+                echo "<td>". $array['status_pag']     . "</td>";
                 echo "<td> ";
 
                 ?>
                 <form action="Detalhes.php" method="get">
-                        <input type=hidden value= <?php echo $array['matricula'];?> name=matricula>
-                        <input type=hidden value= <?php echo $array['nome'];?> name=nome>
-                        <button class="btn-del"> <i class='bx bxs-user-detail bx-sm'></i> </button>
+                    <input type=hidden value= <?php echo $array['id'];?> name=id>
+                    <input type=hidden value= <?php echo $array['valor'];?> name=valor>
+                    <input type=hidden value= <?php echo $array['vencimento'];?> name=vencimento>
+                    <input type=hidden value= <?php echo $array['parcelas'];?> name=parcelas>
+                    <input type=hidden value= <?php echo $array['tipo_pagamento'];?> name=tipo_pagamento>
+                    <input type=hidden value= <?php echo $array['motivo'];?> name=motivo>
+                    <input type=hidden value= <?php echo $array['autor'];?> name=autor>
+                    <input type=hidden value= <?php echo $array['status_pag'];?> name=status_pag>
+                    <button class="btn-del"> <i class='bx bxs-user-detail bx-sm'></i> </button>
                 </form>		  
                 <?php	
                 echo "</td> ";
                 echo  "<td> "; 
                 ?>
-                <form action="alterar.php" method="get">
-                        <input type=hidden value= <?php echo $array['matricula'];?> name=matricula>
-                        <input type=hidden value= <?php echo $array['nome'];?> name=nome>
-                        <button class="btn-del"> <i class='bx bxs-edit bx-sm'></i></button>
+                <form action="formEditar.php" method="get">
+                    <input type=hidden value= <?php echo $array['id'];?> name=id>
+                    <input type=hidden value= <?php echo $array['valor'];?> name=valor>
+                    <input type=hidden value= <?php echo $array['vencimento'];?> name=vencimento>
+                    <input type=hidden value= <?php echo $array['parcelas'];?> name=parcelas>
+                    <input type=hidden value= <?php echo $array['tipo_pagamento'];?> name=tipo_pagamento>
+                    <input type=hidden value= <?php echo $array['motivo'];?> name=motivo>
+                    <input type=hidden value= <?php echo $array['autor'];?> name=autor>
+                    <input type=hidden value= <?php echo $array['status_pag'];?> name=status_pag>
+                    <button class="btn-del"> <i class='bx bxs-edit bx-sm'></i></button>
                 </form>		  
                 <?php	
                 echo "</td> ";
                 echo  "<td> "; 
                 ?>
-                <form action="../View/Modal-excluir.php" method="get">
-                        <input type=hidden value= <?php echo $array['matricula'];?> name=matricula>
+                <form action="Modal-excluir.php" method="get">
+                        <input type=hidden value= <?php echo $array['id'];?> name=id>
                         <button class="btn-del"> <i class='bx bxs-trash bx-sm'></i></button>
                 </form>		  
                 <?php	
                 echo "</td> ";
                 echo "</tr>";               		      
             }
-         */
+         
         ?>
         </section>
             </main>

@@ -1,5 +1,5 @@
-<?php require_once '../FuncionariosDao/ClassUsuario.php'; ?>
-<?php require_once '../FuncionariosDao/ClassUsuarioDAO.php'; ?>
+<?php require_once '../Pacientes/ClassPaciente.php'; ?>
+<?php require_once '../Pacientes/classPacienteDAO.php'; ?>
 <?php include ("../session.php") ?>
 <?php include ("../components/header.php") ?>
 
@@ -8,7 +8,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Funcionários </title>
+        <title> Pesquisar </title>
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
         
@@ -34,7 +34,7 @@
 
     if($a=="buscar") {
         $palavra=trim($_POST["palavra"]);
-        $sql="SELECT * FROM contatos WHERE nome LIKE '%$palavra' ORDER BY nome"; 
+        $sql="SELECT * FROM pacientes WHERE nome LIKE '%$palavra' ORDER BY nome"; 
         $resultado = mysqli_query($conexao, $sql);
 
         $numRegistros = mysqli_num_rows($resultado);
@@ -46,15 +46,15 @@
                     echo "  <tr>";
                     echo "      <th> Nome </th> ";
                     echo "      <th> ID </th> ";
-                    echo "      <th> Ocupação </th> ";
-                    echo "      <th> Visualizar </th> ";
+                    echo "      <th> Celular </th> ";
+                    echo "      <th> Email </th> ";
                     echo "  </tr>";
                     echo "</thead>";
                     echo "  <tr> ";
-                    echo "<td> ". $exibe->nome ."   </td>   ";
-                    echo "<td> ".$exibe->matricula ." </td> <br> ";
-                    echo "<td>  Dentista  </td>   ";
-                    echo "<td> Acessar </td> <br> ";
+                    echo "<td> " . $exibe->nome    ."   </td>   ";
+                    echo "<td> " . $exibe->id      ." </td> <br> ";
+                    echo "<td> " . $exibe->celular ."  </td>   ";
+                    echo "<td> " . $exibe->email ." </td> <br> ";
                 } 
             } else {
                 header("Location: PageNone.php");
