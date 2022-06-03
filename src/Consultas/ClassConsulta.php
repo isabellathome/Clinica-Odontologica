@@ -24,6 +24,14 @@
         public function setNome_paciente($nome_paciente){
             $this->nome_paciente = $nome_paciente;
         }
+
+        public function getEmail(){
+            return $this->email;
+        }
+    
+        public function setEmail($email){
+            $this->email = $email;
+        }
     
         public function getData(){
             return $this->data;

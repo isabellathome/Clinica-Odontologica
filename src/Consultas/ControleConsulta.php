@@ -5,6 +5,7 @@
 <?php
     
     $nome_paciente = $_POST['nome_paciente'];
+    $email = $_POST['email'];
     $data = $_POST['data'];
     $hora = $_POST['hora'];
     $nome_dentista = $_POST['nome_dentista'];
@@ -14,6 +15,7 @@
     $novaConsulta = new ClassConsulta();
 
     $novaConsulta->setNome_paciente($nome_paciente);
+    $novaConsulta->setEmail($email);
     $novaConsulta->setData($data);
     $novaConsulta->setHora($hora);
     $novaConsulta->setNome_dentista($nome_dentista);

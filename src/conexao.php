@@ -1,17 +1,19 @@
 <?php
 
-	$servidor = "localhost";
-	$usuario = "root";
-	$senha = "";
+	$host = "localhost";
+	$user = "root";
+	$pass = "";
 	$dbname = "clinica_odontologica";
-	
-	//Criar a conexao
-	$conexao = mysqli_connect($servidor, $usuario, $senha, $dbname);
-	
-	if(!$conexao){
-		die("Falha na conexao: " . mysqli_connect_error());
-	}else{
-		//echo "Conexao realizada com sucesso";
-	}	
-	
-    ?>
+	$port = 3306;
+
+	try{
+		//Conexão com a porta
+		$conn = new PDO("mysql:host=$host;port=$port;dbname=" . $dbname, $user, $pass);
+
+		//Conexão sem a porta
+		//$conn = new PDO("mysql:host=$host;dbname=" . $dbname, $user, $pass);
+		//echo "Conexão com banco de dados realizado com sucesso!";
+	}catch(PDOException $err){
+		//echo "Erro: Conexão com banco de dados não realizado com sucesso. Erro gerado " . $err->getMessage();
+	}
+?>

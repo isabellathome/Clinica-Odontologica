@@ -21,6 +21,7 @@
 <?php
     $id = $_GET['id'];
     $nome_paciente = $_GET['nome_paciente'];
+    $email = $_GET['email'];
     $data = $_GET['data'];
     $hora = $_GET['hora'];
     $nome_dentista = $_GET['nome_dentista'];
@@ -49,37 +50,36 @@
                                     <div class="input-field">
                                         <label> Nome do Paciente </label>
                                         <input type="text" name="nome" value="<?php echo $nome_paciente; ?>" disabled>
-    
+                                    </div>
+
+                                    <div class="input-field">
+                                        <label> Email </label>
+                                        <input type="email" name="email" value="<?php echo $email; ?>" disabled>
                                     </div>
 
                                     <div class="input-field">
                                         <label> Data </label>
                                         <input type="date" name="data" value="<?php echo $data; ?>" disabled>
-    
                                     </div>
 
                                     <div class="input-field">
                                         <label>Hora</label>
                                         <input type="time" name="hora" value="<?php echo $hora; ?>" disabled>
-    
                                     </div>
 
                                     <div class="input-field">
                                         <label> Nome do Dentista </label>
                                         <input type="text" name="nome_dentista" value="<?php echo $nome_dentista; ?>" disabled>
-    
                                     </div>
 
                                     <div class="input-field">
                                         <label>Número procedimento</label>
                                         <input type="text" name="procedimento" value="<?php echo $procedimento; ?>" disabled>
-    
                                     </div>
 
                                     <div class="input-field">
                                         <label> Descrição </label>
                                         <input type="text" name="descricao" value="<?php echo $descricao; ?>" disabled>
-    
                                     </div>
                                 </div>
                             </div>

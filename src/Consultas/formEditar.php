@@ -63,6 +63,11 @@
                                     </div>
 
                                     <div class="input-field">
+                                        <label> Email </label>
+                                        <input type="email" name="email" value="<?php echo $email; ?>">
+                                    </div>
+
+                                    <div class="input-field">
                                         <label> Data </label>
                                         <input type="date" name="data" value="<?php echo $data; ?>">
     

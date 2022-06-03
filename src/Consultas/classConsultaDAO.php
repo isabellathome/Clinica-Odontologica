@@ -6,14 +6,15 @@
             public function cadastrar($novaConsulta) {
                 try {
                    $pdo=Conexao::getInstance();
-                   $sql="INSERT INTO consultas(nome_paciente, data, hora, nome_dentista, procedimento, descricao) VALUES(?,?,?,?,?,?)";
+                   $sql="INSERT INTO consultas(nome_paciente, email, data, hora, nome_dentista, procedimento, descricao) VALUES(?,?,?,?,?,?,?)";
                    $stmt=$pdo->prepare($sql);
                    $stmt->bindValue(1,$novaConsulta->getNome_paciente());
-                   $stmt->bindValue(2,$novaConsulta->getData());
-                   $stmt->bindValue(3,$novaConsulta->getHora());
-                   $stmt->bindValue(4,$novaConsulta->getNome_dentista());
-                   $stmt->bindValue(5,$novaConsulta->getProcedimento());
-                   $stmt->bindValue(6,$novaConsulta->getDescricao());
+                   $stmt->bindValue(2,$novaConsulta->getEmail());
+                   $stmt->bindValue(3,$novaConsulta->getData());
+                   $stmt->bindValue(4,$novaConsulta->getHora());
+                   $stmt->bindValue(5,$novaConsulta->getNome_dentista());
+                   $stmt->bindValue(6,$novaConsulta->getProcedimento());
+                   $stmt->bindValue(7,$novaConsulta->getDescricao());
                    $stmt->execute();
 
                    return true;
@@ -52,13 +53,14 @@
                 } 
             }
 
-            public function alterar($id, $nome_paciente, $data, $hora, $nome_dentista, $procedimento, $descricao) {
+            public function alterar($id, $nome_paciente, $email, $data, $hora, $nome_dentista, $procedimento, $descricao) {
                 try {
                     $pdo=Conexao::getInstance();
-                    $sql="UPDATE consultas SET id=:id, nome_paciente=:nome_paciente, data=:data, hora=:hora, nome_dentista=:nome_dentista, procedimento=:procedimento, descricao=:descricao WHERE id=:id"; 
+                    $sql="UPDATE consultas SET id=:id, nome_paciente=:nome_paciente, email=:email, data=:data, hora=:hora, nome_dentista=:nome_dentista, procedimento=:procedimento, descricao=:descricao WHERE id=:id"; 
                     $stmt=$pdo->prepare($sql);
                     $stmt->bindValue(':id',$id);
                     $stmt->bindValue(':nome_paciente',$nome_paciente);
+                    $stmt->bindValue(':email',$email);
                     $stmt->bindValue(':data',$data);
                     $stmt->bindValue(':hora',$hora);
                     $stmt->bindValue(':nome_dentista',$nome_dentista);

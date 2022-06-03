@@ -1,5 +1,5 @@
 <?php include ("../session.php") ?>
-<?php include ("../conexao.php") ?>
+<?php include ("conexao.php") ?>
 <?php include ("../components/header.php") ?>
 <?php include ("../ConexaoBD.php") ?>
 
@@ -47,6 +47,11 @@
                                             }
                                         ?>   
 				                    </select>
+                                </div>
+
+                                <div class="input-field">
+                                    <label> Email </label>
+                                    <input type="text" name="email">
                                 </div>
 
                                 <div class="input-field">
