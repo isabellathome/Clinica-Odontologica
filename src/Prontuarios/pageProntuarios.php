@@ -70,7 +70,7 @@
                 echo "</td> ";
                 echo  "<td> "; 
                 ?>
-                <form action="Relatorios.php" method="get">
+                <form action="relatorio.php" method="get">
                     <input type=hidden value= <?php echo $array['id'];?> name=id>
                     <input type=hidden value= <?php echo $array['nome_paciente'];?> name=nome_paciente>
                     <input type=hidden value= <?php echo $array['nome_dentista'];?> name=nome_dentista>

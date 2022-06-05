@@ -7,13 +7,13 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Mensagem para Consulta | SO</title>
+        <title> Mensagem para Consulta | SO </title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
         
         <link rel="shortcut icon" href="../../so-icon.svg" type="image/x-icon">
 
         <link rel="stylesheet" type="text/css" href="../../public/css/sidebar.css">
-        <link rel="stylesheet" href="../../public/css/form.css">       
+        <link rel="stylesheet" type="text/css" href="../../public/css/table.css">
     </head>
 
     <?php
@@ -54,12 +54,13 @@
             
             $mail->isHTML(true);                                 
             $mail->Subject = 'Lembra da sua consulta?';
-            $mail->Body = "Olá ".$nome_paciente."! Passando para te lembrar da sua consulta na Clinica Sorriso Odonto. <br> Se houver um imprevisto e você não puder comparecer, envie uma mensagem comunicando para o nosso whatsapp. Obrigado! Tenha um excelente dia!";
+            $mail->Body = "Olá ".$nome_paciente."! Passando para te lembrar da sua consulta na Clinica Sorriso Odonto. <br> Data: ".$data." Hora: ".$hora." <br> Se houver um imprevisto e você não puder comparecer, envie uma mensagem comunicando para o nosso whatsapp. Obrigado! Tenha um excelente dia!";
             $mail->AltBody = "Se houver um imprevisto e você não puder comparecer, envie uma mensagem comunicando para o nosso whatsapp. Obrigado! Tenha um excelente dia!";
 
             $mail->send();
             
-            echo ' <p> E-mail enviado com sucesso! <a class="btn-new" href="pageConsultas.php"> Voltar </a> </p>';
+            echo ' <p style="margin-left: 100px"> E-mail enviado com sucesso! <br> <br> <br> <a class="btn-new" href="pageConsultas.php"> Voltar </a> </p>';
+            echo '';
         } catch (Exception $e) {
             echo "Erro: E-mail não enviado. Error PHPMailer: {$mail->ErrorInfo}";
             //echo "Erro: E-mail não enviado com sucesso.<br>";
