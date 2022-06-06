@@ -1,6 +1,6 @@
-<!--  ControleUsuario.php -->
-<?php require_once "ClassConvenio.php" ?> <!-- tem os metodos get e set -->
-<?php require_once "ClassConvenioDAO.php" ?> <!-- tem o metodo cadastrar -->
+
+<?php require_once "ClassConvenio.php" ?> 
+<?php require_once "ClassConvenioDAO.php" ?> 
 
 <?php
 
@@ -11,7 +11,7 @@
     $desconto = $_POST['desconto'];
     $num_contemplados = $_POST['num_contemplados'];
 
-    $novoConvenio = new ClassConvenio(); // Forma de proteger os dados: GET() e SET(atribuir)
+    $novoConvenio = new ClassConvenio(); 
 
     $novoConvenio->setNome($nome);
     $novoConvenio->setCodigo($codigo);

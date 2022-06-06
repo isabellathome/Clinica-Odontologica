@@ -41,8 +41,6 @@
 
                                 <div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="../AdminGeral/pageInfo.php" class="nav__dropdown-item"> Informações </a>
-                                        <a href="../AdminGeral/pagePag.php" class="nav__dropdown-item"> Pagamentos </a>
                                     </div>
                                 </div>
                             </div>

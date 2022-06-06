@@ -41,8 +41,6 @@
 
                                 <div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="../Dentista/pageInfo.php" class="nav__dropdown-item"> Informações </a>
-                                        <a href="../Dentista/pagePag.php" class="nav__dropdown-item"> Pagamentos </a>
                                     </div>
                                 </div>
                             </div>
@@ -65,9 +63,9 @@
 
                                 <div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="../Pacientes/pagePacientes.php" class="nav__dropdown-item"> Pacientes </a>
-                                        <a href="../Financeiro/pageFinanceiro.php" class="nav__dropdown-item"> Prontuários </a>
-                                        <a href="../Consultas/listar.php" class="nav__dropdown-item"> Consultas </a>
+                                        <a href="../Dentista/pagePacientes.php" class="nav__dropdown-item"> Pacientes </a>
+                                        <a href="../Dentista/pageProntuarios.php" class="nav__dropdown-item"> Prontuários </a>
+                                        <a href="../Dentista/pageConsultas.php" class="nav__dropdown-item"> Consultas </a>
                                     </div>
                                 </div>
 

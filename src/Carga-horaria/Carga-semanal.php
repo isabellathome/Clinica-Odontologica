@@ -16,10 +16,22 @@
 
         <link rel="stylesheet" type="text/css" href="../../public/css/sidebar.css">
         <link rel="stylesheet" href="../../public/css/table.css">
-        <link rel="stylesheet" href="../../public/css/button-validar.css">
 
     </head>
     <body>
+
+    <?php
+        $nome_funcionario = $_GET['nome_funcionario'];
+        $data_saida = $_GET['data_saida'];
+        $hora_entrada = $_GET['hora_entrada'];
+        $hora_saida = $_GET['hora_saida'];
+
+        $tempo1 = $hora_saida;
+        $tempo2 = $hora_entrada;
+ 
+	    $tempo = gmdate('H:i:s', abs( strtotime( $tempo1 ) - strtotime( $tempo2 )));
+    ?>
+
     <main>
             <section>
 
@@ -36,47 +48,24 @@
             echo "<thead>";
             echo "  <tr>";
             echo "      <th> Nome do Funcionário </th> ";
-            echo "      <th> Data </th> ";
             echo "      <th> Horário de entrada </th> ";
             echo "      <th> Horário de saída </th> ";
-            echo "      <th> Visualizar </th> ";
-            echo "      <th> Validar </th> ";
+            echo "      <th> Total de horas diária </th> ";
+            echo "      <th> Horas semanais </th> ";
             echo "  <tr>";
             echo "</thead>";
 
             foreach ($array as $array) {
                 echo "<tr>";
                 echo "<td>". $array['nome_funcionario']  . "</td>";
-                echo "<td>". $array['data_saida']        . "</td>";
  
                 foreach ($arrayE as $arrayE) {
                     echo "<td>". $arrayE['hora_entrada'] . "</td>";
                 }
 
                 echo "<td>". $array['hora_saida']        . "</td>";
-                echo "<td> ";
-                       		      
-                ?>
-
-                <form action="Carga-semanal.php" method="get">
-                    <input type=hidden value= <?php echo $array['nome_funcionario'];?> name=nome_funcionario>
-                    <input type=hidden value= <?php echo $array['data_saida'];?> name=data_saida>
-                    <input type=hidden value= <?php echo $arrayE['hora_entrada'];?> name=hora_entrada>
-                    <input type=hidden value= <?php echo $array['hora_saida'];?> name=hora_saida>
-                    
-                    <button class="btn-del"> <i class='bx bxs-user-detail bx-sm'></i> </button>
-                </form>		  
-                <?php	
-                echo "</td> ";
-                echo "<td> ";
-
-                ?>
-                    
-                <button style="margin-top: -10px;" class="btn-del"> <i class='bx bx-user-check bx-sm'></i> </button>
-	  
-                <?php	
-                echo "</td> ";
-                
+                echo "<td>". $tempo ." </td>";
+                echo "<td> horas semana </td>";
             }            
         ?>
         </section>
@@ -84,7 +73,6 @@
 
             <!--========== MAIN JS ==========-->
             <script src="../../public/scripts/sidebar.js"> </script>
-            <script src="../../public/scripts/button-validar.js"></script>
 
     </div>
     </body>

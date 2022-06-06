@@ -44,19 +44,24 @@
                 </div>
 
         <div id="entrada" style="display: none;">
-            <form class="carga" action="Entrada.php" method="post">
+            <form class="carga" action="ControleCargaE.php" method="post">
                 <div class="details personal">
                     <span class="title"> Informações de entrada </span>
 
                         <div class="fields">
                             <div class="input-field">
+                                <label> Confirme seu nome </label>
+                                <input type="text"  id="nome_funcionario" name="nome_funcionario">
+                            </div>
+
+                            <div class="input-field">
                                 <label> Data </label>
-                                <input type="date"  id="data" name="data" value='<?php echo date("Y-m-d"); ?>' disabled>
+                                <input type="date"  id="data_entrada" name="data_entrada" value='<?php echo date("Y-m-d"); ?>'>
                             </div>                            
 
                             <div class="input-field">
                                 <label> Hora </label>
-                                <input type="time" name="hora" value='<?php echo $hora; ?>' disabled>
+                                <input type="time" name="hora_entrada" value='<?php echo $hora; ?>'>
                             </div>
                         </div>
                 </div>
@@ -72,19 +77,24 @@
 
                
         <div id="saida" style="display: none;">
-            <form action="Saida.php" method="post">
+            <form action="ControleCargaS.php" method="post">
                 <div class="details personal">
                     <span class="title"> Informações de saída </span>
 
                         <div class="fields">
                             <div class="input-field">
+                                <label> Confirme seu nome </label>
+                                <input type="text"  id="nome_funcionario" name="nome_funcionario">
+                            </div>
+
+                            <div class="input-field">
                                 <label> Data </label>
-                                <input type="date"  id="hora" name="data" value='<?php echo date("Y-m-d"); ?>' disabled>
+                                <input type="date"  id="data_saida" name="data_saida" value='<?php echo date("Y-m-d"); ?>'>
                             </div>                            
 
                             <div class="input-field">
                                 <label> Hora </label>
-                                <input type="time" name="hora" value='<?php echo $hora; ?>' disabled>
+                                <input type="time" name="hora_saida" value='<?php echo $hora; ?>'>
                             </div>
                         </div>
                 </div>
