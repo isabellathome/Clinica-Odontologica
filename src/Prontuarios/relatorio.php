@@ -1,5 +1,5 @@
 <?php	
-    require 'dompdf/autoload.inc.php';
+    require '../../lib/dompdf/autoload.inc.php';
     require 'config.php';
 
     use Dompdf\Dompdf;
@@ -25,13 +25,11 @@
 
     $dompdf->setPaper('A4', 'portrait');
 
-    // Render the HTML as PDF
     $dompdf->render();
 
-    // Output the generated PDF to Browser
-    $dompdf->stream('prontuarios.php',
+    $dompdf->stream('Prontuários',
         array(
-            "Attachment" => false //Para realizar o download somente alterar para true
+            "Attachment" => false 
         )
     );
 

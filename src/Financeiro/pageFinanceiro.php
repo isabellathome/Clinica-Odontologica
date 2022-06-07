@@ -88,9 +88,16 @@
                 echo "</td> ";
                 echo  "<td> "; 
                 ?>
-                <form action="Modal-excluir.php" method="get">
-                        <input type=hidden value= <?php echo $array['id'];?> name=id>
-                        <button class="btn-del"> <i class='bx bxs-trash bx-sm'></i></button>
+                <form action="relatorio.php" method="get">
+                    <input type=hidden value= <?php echo $array['id'];?> name=id>
+                    <input type=hidden value= <?php echo $array['valor'];?> name=valor>
+                    <input type=hidden value= <?php echo $array['vencimento'];?> name=vencimento>
+                    <input type=hidden value= <?php echo $array['parcelas'];?> name=parcelas>
+                    <input type=hidden value= <?php echo $array['tipo_pagamento'];?> name=tipo_pagamento>
+                    <input type=hidden value= <?php echo $array['motivo'];?> name=motivo>
+                    <input type=hidden value= <?php echo $array['autor'];?> name=autor>
+                    <input type=hidden value= <?php echo $array['status_pag'];?> name=status_pag>
+                    <button class="btn-del"> <i class='bx bx-notepad bx-sm'></i> </button>
                 </form>		  
                 <?php	
                 echo "</td> ";

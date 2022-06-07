@@ -34,7 +34,7 @@
     
     <body>
         <nav class="navbar">        
-            <img style="width: 700px; height: 300px; margin-top: -15px" src="../../public/images/header-so.png" alt="Logo-img">
+            <img style="width: 700px; height: 300px; margin-top: -15px" src="../../public/images/header-so2.png" alt="Logo-img">
             
             <h1> Prontuário </h1>
         </nav>
