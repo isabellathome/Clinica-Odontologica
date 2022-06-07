@@ -1,30 +1,21 @@
-const button = document.querySelector("button"),
-      toast = document.querySelector(".toast")
-      closeIcon = document.querySelector(".close"),
-      progress = document.querySelector(".progress");
+/*=============== SHOW MODAL ===============*/
+const showModal = (openButton, modalContent) =>{
+    const openBtn = document.getElementById(openButton),
+    modalContainer = document.getElementById(modalContent)
+    
+    if(openBtn && modalContainer){
+        openBtn.addEventListener('click', ()=>{
+            modalContainer.classList.add('show-modal')
+        })
+    }
+}
+showModal('open-modal','modal-container')
 
-      let timer1, timer2;
+/*=============== CLOSE MODAL ===============*/
+const closeBtn = document.querySelectorAll('.close-modal')
 
-      button.addEventListener("click", () => {
-        toast.classList.add("active");
-        progress.classList.add("active");
-
-        timer1 = setTimeout(() => {
-            toast.classList.remove("active");
-        }, 5000); //1s = 1000 milliseconds
-
-        timer2 = setTimeout(() => {
-          progress.classList.remove("active");
-        }, 5300);
-      });
-      
-      closeIcon.addEventListener("click", () => {
-        toast.classList.remove("active");
-        
-        setTimeout(() => {
-          progress.classList.remove("active");
-        }, 300);
-
-        clearTimeout(timer1);
-        clearTimeout(timer2);
-      });
+function closeModal(){
+    const modalContainer = document.getElementById('modal-container')
+    modalContainer.classList.remove('show-modal')
+}
+closeBtn.forEach(c => c.addEventListener('click', closeModal))

@@ -4,14 +4,15 @@
 <?php 
 
         class ClassCargaDAO {
-            public function cadastrarEntrada($novaCargaE) {
+            public function cadastrar($novaCarga) {
                 try {
                    $pdo=Conexao::getInstance();
-                   $sql="INSERT INTO carga_entrada(nome_funcionario, data_entrada, hora_entrada) VALUES(?,?,?)";
+                   $sql="INSERT INTO carga(nome_funcionario, data, hora_entrada, hora_saida) VALUES(?,?,?,?)";
                    $stmt=$pdo->prepare($sql);
-                   $stmt->bindValue(1,$novaCargaE->getNome_funcionario());
-                   $stmt->bindValue(2,$novaCargaE->getData_entrada());
-                   $stmt->bindValue(3,$novaCargaE->getHora_entrada());
+                   $stmt->bindValue(1,$novaCarga->getNome_funcionario());
+                   $stmt->bindValue(2,$novaCarga->getData());
+                   $stmt->bindValue(3,$novaCarga->getHora_entrada());
+                   $stmt->bindValue(4,$novaCarga->getHora_saida());
                    $stmt->execute();
 
                    return true;
@@ -38,10 +39,10 @@
             }             
        }
 
-            public function listarEntrada() {
+            public function listar() {
                 try {
                     $pdo=Conexao::getInstance(); 
-                    $sql="SELECT hora_entrada FROM carga_entrada";
+                    $sql="SELECT * FROM carga";
                     $stmt=$pdo->prepare($sql);
                     $stmt->execute();
 

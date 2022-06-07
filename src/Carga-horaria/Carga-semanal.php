@@ -21,59 +21,57 @@
     <body>
 
     <?php
+    
         $nome_funcionario = $_GET['nome_funcionario'];
-        $data_saida = $_GET['data_saida'];
+        $data = $_GET['data'];
         $hora_entrada = $_GET['hora_entrada'];
         $hora_saida = $_GET['hora_saida'];
 
-        $tempo1 = $hora_saida;
-        $tempo2 = $hora_entrada;
+        $saida = $hora_saida;
+        $entrada = $hora_entrada;
+        $semana = 5;
  
-	    $tempo = gmdate('H:i:s', abs( strtotime( $tempo1 ) - strtotime( $tempo2 )));
+	    $diario = gmdate('H:i:s', abs(strtotime($saida) - strtotime($entrada)));
+        //$semanal = gmdate('H:i:s', abs( strtotime( $diario )) * 7);
+
+        $semanal = date("H:i:s", strtotime($diario) * $semana);
+
     ?>
 
     <main>
             <section>
 
-                <p>
-                    Carga Horária
-               </p>
+                <p> Carga Horária </p>
 
-        <?php
-            $classCargaDAO = new ClassCargaDAO();
-            $arrayE= $classCargaDAO->listarEntrada();
-            $array= $classCargaDAO->listarSaida();
-            echo "<div class='container'>";
-            echo "<table id='tabela'>";
-            echo "<thead>";
-            echo "  <tr>";
-            echo "      <th> Nome do Funcionário </th> ";
-            echo "      <th> Horário de entrada </th> ";
-            echo "      <th> Horário de saída </th> ";
-            echo "      <th> Total de horas diária </th> ";
-            echo "      <th> Horas semanais </th> ";
-            echo "  <tr>";
-            echo "</thead>";
+                <?php
+                    $classCargaDAO = new ClassCargaDAO();
+                    $array= $classCargaDAO->listar();
 
-            foreach ($array as $array) {
-                echo "<tr>";
-                echo "<td>". $array['nome_funcionario']  . "</td>";
- 
-                foreach ($arrayE as $arrayE) {
-                    echo "<td>". $arrayE['hora_entrada'] . "</td>";
-                }
+                    echo "<div class='container'>";
+                    echo "<table id='tabela'>";
+                    echo "<thead>";
+                    echo "  <tr>";
+                    echo "      <th> Nome do Funcionário </th> ";
+                    echo "      <th> Horário de entrada </th> ";
+                    echo "      <th> Horário de saída </th> ";                
+                    echo "      <th> Total de horas diária </th> ";
+                    echo "      <th> Semanais </th> ";
+                    echo "  <tr>";
+                    echo "</thead>";
 
-                echo "<td>". $array['hora_saida']        . "</td>";
-                echo "<td>". $tempo ." </td>";
-                echo "<td> horas semana </td>";
-            }            
-        ?>
-        </section>
-            </main>
+                    foreach ($array as $array) {
+                        echo "<tr>";
+                        echo "<td>". $array['nome_funcionario']  . "</td>";   
+                        echo "<td>". $array['hora_entrada']        . "</td>";
+                        echo "<td>". $array['hora_saida'] . "</td>";                  
+                        echo "<td>". $diario ." </td>";
+                        echo "<td>". $semanal ." </td>";         
+                    }            
+                ?>
+            </section>
+    </main>
 
             <!--========== MAIN JS ==========-->
             <script src="../../public/scripts/sidebar.js"> </script>
-
-    </div>
     </body>
 </html>

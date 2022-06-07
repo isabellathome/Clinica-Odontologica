@@ -27,26 +27,9 @@
         <div class="container">
             <header> Carga Horária </header>
 
-                <div class="wrapper">
-                    <input type="radio" value="entrada" name="select" id="option-1" onclick="Carga(this.value);">
-                    <input type="radio" value="saida" name="select" id="option-2" onclick="Carga(this.value);">
-                    
-                    <label for="option-1" class="option option-1">
-                        <div class="dot"></div>
-                        <span>Entrada</span>
-                    </label>
-
-                    <label for="option-2" class="option option-2">
-                        <div class="dot"></div>
-                        <span>Saída</span>
-                    </label>
-
-                </div>
-
-        <div id="entrada" style="display: none;">
-            <form class="carga" action="ControleCargaE.php" method="post">
+            <form class="carga" action="ControleCarga.php" method="post">
                 <div class="details personal">
-                    <span class="title"> Informações de entrada </span>
+                    <span class="title"> Informações </span>
 
                         <div class="fields">
                             <div class="input-field">
@@ -56,12 +39,17 @@
 
                             <div class="input-field">
                                 <label> Data </label>
-                                <input type="date"  id="data_entrada" name="data_entrada" value='<?php echo date("Y-m-d"); ?>'>
+                                <input type="date"  id="data" name="data" value='<?php echo date("Y-m-d"); ?>'>
                             </div>                            
 
                             <div class="input-field">
-                                <label> Hora </label>
-                                <input type="time" name="hora_entrada" value='<?php echo $hora; ?>'>
+                                <label> Hora de entrada </label>
+                                <input type="time" name="hora_entrada">
+                            </div>
+
+                            <div class="input-field">
+                                <label> Hora de saída </label>
+                                <input type="time" name="hora_saida" value='<?php echo $hora; ?>'>
                             </div>
                         </div>
                 </div>
@@ -75,42 +63,7 @@
             </form>
         </div>
 
-               
-        <div id="saida" style="display: none;">
-            <form action="ControleCargaS.php" method="post">
-                <div class="details personal">
-                    <span class="title"> Informações de saída </span>
-
-                        <div class="fields">
-                            <div class="input-field">
-                                <label> Confirme seu nome </label>
-                                <input type="text"  id="nome_funcionario" name="nome_funcionario">
-                            </div>
-
-                            <div class="input-field">
-                                <label> Data </label>
-                                <input type="date"  id="data_saida" name="data_saida" value='<?php echo date("Y-m-d"); ?>'>
-                            </div>                            
-
-                            <div class="input-field">
-                                <label> Hora </label>
-                                <input type="time" name="hora_saida" value='<?php echo $hora; ?>'>
-                            </div>
-                        </div>
-                </div>
-
-                <div class="buttons">                                                         
-                    <button class="sumbit" id="botao">
-                        <span class="btnText"> Enviar </span>
-                        <i class="uil uil-navigator"></i>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-
         <!--========== MAIN JS ==========-->
-        <script src="../../public/scripts/sidebar.js"> </script> 
-        <script src="../../public/scripts/validar.js"> </script>     
+        <script src="../../public/scripts/sidebar.js"> </script>     
     </body>
 </html>

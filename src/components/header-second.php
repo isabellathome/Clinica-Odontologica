@@ -71,7 +71,7 @@
 
                             </div>
 
-                            <a href="../Carga-horaria/pageCarga.php" class="nav__link">
+                            <a href="../Carga-horaria/pageModal.php" class="nav__link">
                                 <i class='bx bx-time-five nav__icon' ></i>
                                 <span class="nav__name"> Carga-horária </span>
                             </a>

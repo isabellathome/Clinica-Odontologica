@@ -1,113 +1,155 @@
-.toast{
-    position: absolute;
-    top: 25px;
-    right: 30px;
-    border-radius: 12px;
-    background: #fff;
-    padding: 20px 35px 20px 25px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    border-left: 6px solid #4070f4;
-    overflow: hidden;
-    transform: translateX(calc(100% + 30px));
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+:root {
+  
+  --hue: 240;
+  --first-color: hsl(var(--hue), 16%, 18%);
+  --first-color-alt: hsl(var(--hue), 16%, 12%);
+  --title-color: hsl(var(--hue), 8%, 15%);
+  --text-color: hsl(var(--hue), 8%, 35%);
+  --body-color: hsl(var(--hue), 100%, 99%);
+  --container-color: #FFF;
+
+  --body-font: 'Poppins', sans-serif;
+  --big-font-size: 1.5rem;
+  --normal-font-size: .938rem;
+
+  --z-modal: 1000;
 }
 
-.toast.active{
-    transform: translateX(0%);
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 1.75rem;
+    --normal-font-size: 1rem;
+  }
 }
 
-.toast .toast-content{
-    display: flex;
-    align-items: center;
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.toast-content .check{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 35px;
-    width: 35px;
-    background-color: #4070f4;
-    color: #fff;
-    font-size: 20px;
-    border-radius: 50%;
+button{
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
 }
 
-.toast-content .message{
-    display: flex;
-    flex-direction: column;
-    margin: 0 20px;
+
+button{
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
 
-.message .text{
-    font-size: 20px;
-    font-weight: 400;;
-    color: #666666;
+img{
+  max-width: 100%;
+  height: auto;
 }
 
-.message .text.text-1{
-    font-weight: 600;
-    color: #333;
+.container{
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
-.toast .close{
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    padding: 5px;
-    cursor: pointer;
-    opacity: 0.7;
+
+.modal__button{
+  display: inline-block;
+  background-color: #3C096C;
+  color: #fff;
+  padding: 5px 11px;
+  border: 1px solid #3C096C;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all .3s ease;
+  float: right;
+  margin-bottom: 25px;
 }
 
-.toast .close:hover{
-    opacity: 1;
+.modal__button:hover{
+  background-color: #fff;
+  color: #3C096C;
 }
 
-.toast .progress{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    width: 100%;
-    background: #ddd;
+.modal__container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: hsla(var(--hue), 18%, 75%, .8);
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: flex-end;
+  overflow: hidden;
+  transition: all .3s;
+  z-index: var(--z-modal);
+  visibility: hidden;
+  opacity: 0;
 }
 
-.toast .progress:before{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #4070f4;
+.modal__content{
+  position: relative;
+  background-color: var(--container-color);
+  text-align: center;
+  padding: 3rem 2rem 2rem;
+  border-radius: 1rem 1rem 0 0;
+  transition: all .3s;
+
+  transform: translateY(10%);
 }
 
-.progress.active:before{
-    animation: progress 5s linear forwards;
+.modal__img{
+  width: 150px;
+  margin-bottom: .75rem;
 }
 
-@keyframes progress {
-    100%{
-        right: 100%;
-    }
+.modal__close{
+  display: inline-flex;
+  background-color: var(--first-color);
+  border-radius: .25rem;
+  color: #FFF;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
 }
 
-.button{
-    padding: 12px 20px;
-    font-size: 20px;
-    outline: none;
-    border: none;
-    background-color: #4070f4;
-    color: #fff;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
+.modal__title{
+  font-size: var(--big-font-size);
+  color: var(--title-color);
+  font-weight: 500;
 }
 
-.button:hover{
-    background-color: #0e4bf1;
+.modal__description{
+  margin-bottom: 1.5rem;
 }
 
-.toast.active ~ .button{
-    pointer-events: none;
+.modal__button-link{
+  display: block;
+  margin: 10px 10px 2px 130px;
+  background-color: transparent;
+  color: #3C096C;
+  font-weight: 500;
+}
+
+.show-modal{
+  visibility: visible;
+  opacity: 1;
+}
+
+.show-modal .modal__content{
+  transform: translateY(0);
+}
+
+@media screen and (min-width: 576px){
+  .modal__content{
+    margin: auto;
+    width: 380px;
+    border-radius: 1.25rem;
+  }
+
+  .modal__img{
+    width: 170px;
+    margin-left: 20px;
+  }
 }

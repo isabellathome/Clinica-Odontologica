@@ -4,9 +4,8 @@
     class ClassCarga {
         private $id_entrada;
         private $nome_funcionario;
-        private $data_entrada;
+        private $data;
         private $hora_entrada;
-        private $data_saida;
         private $hora_saida;
 
         public function getId_entrada(){
@@ -25,12 +24,12 @@
             $this->nome_funcionario = $nome_funcionario;
         }
     
-        public function getData_entrada(){
-            return $this->data_entrada;
+        public function getData(){
+            return $this->data;
         }
     
-        public function setData_entrada($data_entrada){
-            $this->data_entrada = $data_entrada;
+        public function setData($data){
+            $this->data = $data;
         }
     
         public function getHora_entrada(){
@@ -39,14 +38,6 @@
     
         public function setHora_entrada($hora_entrada){
             $this->hora_entrada = $hora_entrada;
-        }
-
-        public function getData_saida(){
-            return $this->data_saida;
-        }
-    
-        public function setData_saida($data_saida){
-            $this->data_saida = $data_saida;
         }
     
         public function getHora_saida(){
