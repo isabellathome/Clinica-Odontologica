@@ -12,7 +12,7 @@
     $descricao = $_GET['descricao'];
     
     $classConsultaDAO = new ClassConsultaDAO();
-    $array = $classConsultaDAO->alterar($id, $nome_paciente, $data, $hora, $nome_dentista, $procedimento, $descricao);
+    $array = $classConsultaDAO->alterar($id, $nome_paciente, $email, $data, $hora, $nome_dentista, $procedimento, $descricao);
 
     if($array==true) {
         header('Location: pageConsultas.php');
