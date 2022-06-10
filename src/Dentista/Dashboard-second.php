@@ -1,5 +1,6 @@
 <?php include ("../session.php") ?>
 <?php include ("../components/header-second.php") ?>
+<?php include ("../Prontuarios/config.php") ?>
 
 <!DOCTYPE html>
     <html lang="pt-br">
@@ -15,11 +16,58 @@
         <link rel="stylesheet" type="text/css" href="../../public/css/sidebar.css">
         <link rel="stylesheet" href="../../public/css/dashboard.css">
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <?php
+
+      $x = 0;
+      $y = 0;
+      $z = 0;
+
+        $result_desconto_ava = "SELECT * FROM convenios";
+        $resultado_desconto_ava = mysqli_query($con, $result_desconto_ava);
+          while($row_desconto_ava = mysqli_fetch_assoc($resultado_desconto_ava)){
+            if($row_desconto_ava['desconto'] == "10"){
+                $x++;
+            } else  if($row_desconto_ava['desconto'] == "30"){
+                $y++;
+            } if($row_desconto_ava['desconto'] == "60"){
+                $z++;
+          }
+        }
+    ?>
+
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Desconto', 'por Convênio'],
+          ['10%', <?=$x?>], 
+          ['30%', <?=$y?>], 
+          ['60%', <?=$z?>] 
+        ]);
+
+        var options = {
+          colors: ['#2BD47D', '#66b0ff', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
     </head>
     <body>
 
 <!--========== CONTENTS ==========-->
-        <main>
+  <main>
  
   <section class="home-section">
    
@@ -27,44 +75,84 @@
       <div class="overview-boxes">
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">Pacientes</div>
-            <div class="number">532</div>
+            <div class="box-topic"> Pacientes </div>
+                <?php 
+                    $pacientes_query = "SELECT * FROM pacientes";
+                    $pacientes_query_run = mysqli_query($con, $pacientes_query);
+
+                    if($pacientes_total = mysqli_num_rows($pacientes_query_run)) {
+                        echo '<div class="number"> '.$pacientes_total.' </div>';
+                    }
+                    else {
+                        echo '<div class="number"> Nenhum dado </div>';
+                    }           
+                ?>            
             <div class="indicator">
               <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">Em tratamento</span>
+              <span class="text"> Em tratamento </span>
             </div>
           </div>
           <i style="margin-left: 45px" class='bx bx-group cart'></i>
         </div>
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">Avisos</div>
-            <div class="number">1</div>
+            <div class="box-topic"> Convênios </div>
+                  <?php 
+                    $convenios_query = "SELECT * FROM convenios";
+                    $convenios_query_run = mysqli_query($con, $convenios_query);
+
+                    if($convenios_total = mysqli_num_rows($convenios_query_run)) {
+                        echo '<div class="number"> '.$convenios_total.' </div>';
+                    }
+                    else {
+                        echo '<div class="number"> Nenhum dado </div>';
+                    }           
+                  ?>      
             <div class="indicator">
-              <i class='bx bx-up-arrow-alt'></i> 
-              <span class="text">Total</span>
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text"> Ativos </span>
             </div>
           </div>
-          <i style="margin-left: 45px" class='bx bx-bell cart two'></i>
+          <i style="margin-left: 45px" class='bx bx-dollar cart two'></i>
         </div>
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">Consultas</div>
-            <div class="number">472</div>
+            <div class="box-topic"> Consultas </div>
+                  <?php 
+                    $consultas_query = "SELECT * FROM consultas";
+                    $consultas_query_run = mysqli_query($con, $consultas_query);
+
+                    if($consultas_total = mysqli_num_rows($consultas_query_run)) {
+                        echo '<div class="number"> '.$consultas_total.' </div>';
+                    }
+                    else {
+                        echo '<div class="number"> Nenhum dado </div>';
+                    }           
+                ?>      
             <div class="indicator">
               <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">Total ao mês</span>
+              <span class="text"> Total ao mês </span>
             </div>
           </div>
           <i style="margin-left: 45px" class='bx bx-clinic cart three'></i>
         </div>
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">Prontuários</div>
-            <div class="number">5143</div>
+            <div class="box-topic"> Prontuários </div>
+                  <?php 
+                    $prontuario_query = "SELECT * FROM prontuarios";
+                    $prontuario_query_run = mysqli_query($con, $prontuario_query);
+
+                    if($prontuario_total = mysqli_num_rows($prontuario_query_run)) {
+                        echo '<div class="number"> '.$prontuario_total.' </div>';
+                    }
+                    else {
+                        echo '<div class="number"> Nenhum dado </div>';
+                    }           
+                  ?>      
             <div class="indicator">
-              <i class='bx bx-down-arrow-alt down'></i>
-              <span class="text">Total</span>
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text"> Total </span>
             </div>
           </div>
           <i style="margin-left: 45px" class='bx bx-paste cart four'></i>
@@ -73,107 +161,77 @@
 
       <div class="sales-boxes">
         <div class="recent-sales box">
-          <div class="title">Consultas Recentes</div>
-          <div class="sales-details">
-            <ul class="details">
-              <li class="topic">Data</li>
-              <li><a href="#">20 Maio 2022</a></li>
-              <li><a href="#">20 Maio 2022</a></li>
-              <li><a href="#">20 Maio 2022</a></li>
-              <li><a href="#">20 Maio 2022</a></li>
-              <li><a href="#">20 Maio 2022</a></li>
-              <li><a href="#">20 Maio 2022</a></li>
-              <li><a href="#">20 Maio 2022</a></li>
+          <div class="title"> Olá! </div>              
+              <p style="margin-top: 15px;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus sequi, libero accusamus at obcaecati </p>
+
+                <br>
+
+              <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod excepturi itaque enim, culpa repellendus assumenda fugit exercitationem sequi doloremque magnam distinctio, vitae recusandae, est id fugiat fuga! Quibusdam, sit similique. </p>
               
-            </ul>
-            <ul class="details">
-            <li class="topic">Hora</li>
-            <li><a href="#">08:00</a></li>
-            <li><a href="#">08:40</a></li>
-            <li><a href="#">09:00</a></li>
-            <li><a href="#">09:20</a></li>
-            <li><a href="#">09:40</a></li>
-            <li><a href="#">10:00</a></li>
-            <li><a href="#">10:20</a></li>
-          </ul>
-          <ul class="details">
-            <li class="topic">Paciente</li>
-            <li><a href="#">Eloah Oliveira</a></li>
-            <li><a href="#">Lucas Azevedo</a></li>
-            <li><a href="#">Thomas Lopes</a></li>
-            <li><a href="#">Nellie Caldeira</a></li>
-            <li><a href="#">Carlos Eduardo Costa</a></li>
-            <li><a href="#">Ben Santos</a></li>
-            <li><a href="#">Samuel da Conceição</a></li>
-          </ul>
-          <ul class="details">
-            <li class="topic">Procedimento</li>
-            <li><a href="#"></a></li>
-            <li><a href="#">Ortodôntico</a></li>
-            <li><a href="#">Ortodôntico</a></li>
-            <li><a href="#">Ortodôntico</a></li>
-            <li><a href="#">Ortodôntico</a></li>
-            <li><a href="#">Ortodôntico</a></li>
-            <li><a href="#">Ortodôntico</a></li>
-            <li><a href="#">Ortodôntico</a></li>
-          </ul>
-          </div>
-          <div class="button">
-            <a href="#">Ver todas</a>
-          </div>
-        </div>
+                  <br>
+              <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, quisquam. Ex ullam nostrum quidem deserunt? Porro molestias in nostrum natus quibusdam, obcaecati ut eaque consequatur officia dicta neque nobis accusamus! </p>
+            </div>
+
         <div class="top-sales box">
-          <div class="title">Últimos prontuários acessados</div>
-          <ul class="top-sales-details">
-            <li>
-            <a href="#">
-              <span class="product">Samuel da Conceiçãos</span>
-            </a>
-            <span class="acessar">Acessar</span>
-          </li>
-          <li>
-            <a href="#">
-              <span class="product">Ben Santos</span>
-            </a>
-            <span class="acessar">Acessar</span>
-          </li>
-          <li>
-            <a href="#">
-              <span class="product">Carlos Eduardo Costa</span>
-            </a>
-            <span class="acessar">Acessar</span>
-          </li>
-          <li>
-            <a href="#">
-              <span class="product">Nellie Caldeira</span>
-            </a>
-            <span class="acessar">Acessar</span>
-          </li>
-          <li>
-            <a href="#">
-              <span class="product">Thomas Lopes</span>
-            </a>
-            <span class="acessar">Acessar</span>
-          </li>
-          <li>
-            <a href="#">
-              <span class="product">Lucas Azevedo</span>
-            </a>
-            <span class="acessar">Acessar</span>
-          </li>
-          </ul>
-          <div class="button">
-            <a href="#">Ver Mais</a>
-          </div>
+          <div class="title">Descontos de Convênios (%)</div>
+          <div id="donutchart" style="width: 392px; height: 310px;"></div>
         </div>
       </div>
     </div>
+
   </section>
-
-        </main>
-
+  </main>
         <!--========== MAIN JS ==========-->
         <script src="../../public/scripts/sidebar.js"> </script>
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+        <script>
+            // === include 'setup' then 'config' above ===
+            const labels = <?php echo json_encode($tipo_pagamento) ?>;
+            const data = {
+              labels: labels,
+              datasets: [{
+                label: 'Valor - Tipo de pagamento',
+                data: <?php echo json_encode($valor) ?>,
+                backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 205, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(201, 203, 207, 0.2)'
+                ],
+                borderColor: [
+                  'rgb(255, 99, 132)',
+                  'rgb(255, 159, 64)',
+                  'rgb(255, 205, 86)',
+                  'rgb(75, 192, 192)',
+                  'rgb(54, 162, 235)',
+                  'rgb(153, 102, 255)',
+                  'rgb(201, 203, 207)'
+                ],
+                borderWidth: 1
+              }]
+            };
+
+            const config = {
+              type: 'line',
+              data: data,
+              options: {
+                scales: {
+                  y: {
+                    beginAtZero: true
+                  }
+                }
+              },
+            };
+
+            var myChart = new Chart(
+              document.getElementById('myChart'),
+              config
+            );
+        </script>
+
     </body>
 </html>

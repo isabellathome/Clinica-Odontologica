@@ -14,6 +14,9 @@
 
         <link rel="stylesheet" type="text/css" href="../../public/css/sidebar.css">
         <link rel="stylesheet" href="../../public/css/form.css">
+
+        <script src="../../public/scripts/validar-input.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         
     </head>
     <body>
@@ -38,7 +41,7 @@
 
                                 <div class="input-field">
                                     <label>CPF</label>
-                                    <input type="text" name="cpf">
+                                    <input type="text" id="input" name="cpf"/><span id="resposta"></span>
                                 </div>
 
                                 <div class="input-field">
@@ -48,12 +51,12 @@
 
                                 <div class="input-field">
                                     <label>Email</label>
-                                    <input type="text" name="email">
+                                    <input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                                 </div>
 
                                 <div class="input-field">
                                     <label>Número celular</label>
-                                    <input type="text" name="celular">
+                                    <input type="text" maxlength="15" id="OpTelefone" patern="(\(?\d{2}\)?\s)?(\d{4,5}\-\d{4})" name="celular">
                                 </div>
 
                                 <div class="input-field">
@@ -89,37 +92,37 @@
 
                             <div class="fields">
                                 <div class="input-field">
-                                    <label>Logradouro</label>
+                                    <label for="logradouro">Logradouro</label>
                                     <input type="text" name="logradouro">
                                 </div>
 
                                 <div class="input-field">
                                     <label>CEP</label>
-                                    <input type="text" name="cep">
+                                    <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);">
                                 </div>
 
                                 <div class="input-field">
-                                    <label>Número</label>
+                                    <label for="numero">Número</label>
                                     <input type="text" name="numero">
                                 </div>
 
                                 <div class="input-field">
-                                    <label>Bairro</label>
+                                    <label for="bairro">Bairro</label>
                                     <input type="text" name="bairro">
                                 </div>
 
                                 <div class="input-field">
-                                    <label>Complemento</label>
+                                    <label for="complemento">Complemento</label>
                                     <input type="text" name="complemento">
                                 </div>
 
                                 <div class="input-field">
-                                    <label>Cidade</label>
+                                    <label for="cidade">Cidade</label>
                                     <input type="text" name="cidade">
                                 </div>
 
                                 <div class="input-field">
-                                    <label>Estado</label>
+                                    <label for="estado">Estado</label>
                                     <input type="text" name="estado">
                                 </div>
                             </div>
@@ -139,6 +142,10 @@
         </main>
 
         <!--========== MAIN JS ==========-->
-        <script src="../../public/scripts/sidebar.js"> </script>      
+        <script src="../../public/scripts/sidebar.js"> </script>  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="../../public/scripts/validar-input.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </body>
 </html>

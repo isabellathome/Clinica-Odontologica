@@ -19,6 +19,49 @@
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <?php
+
+      $x = 0;
+      $y = 0;
+      $z = 0;
+
+        $result_desconto_ava = "SELECT * FROM convenios";
+        $resultado_desconto_ava = mysqli_query($con, $result_desconto_ava);
+          while($row_desconto_ava = mysqli_fetch_assoc($resultado_desconto_ava)){
+            if($row_desconto_ava['desconto'] == "10"){
+                $x++;
+            } else  if($row_desconto_ava['desconto'] == "30"){
+                $y++;
+            } if($row_desconto_ava['desconto'] == "60"){
+                $z++;
+          }
+        }
+    ?>
+
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Desconto', 'por Convênio'],
+          ['10%', <?=$x?>], 
+          ['30%', <?=$y?>], 
+          ['60%', <?=$z?>] 
+        ]);
+
+        var options = {
+          colors: ['#2BD47D', '#66b0ff', '#ec8f6e', '#f3b49f', '#f6c7b6']
+        };
+          
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
     </head>
     <body>
 
@@ -117,137 +160,83 @@
 
       <div class="sales-boxes">
         <div class="recent-sales box">
-          <div class="title">Últimos lançamentos do financeiro</div>
-          <div class="sales-details">
-            <?php 
-              $query = $con->query("SELECT * FROM financeiro");
+          <div class="title">Lançamentos do financeiro</div>
+              <div class="sales-details">
+                <?php 
+                  $query = $con->query("SELECT * FROM financeiro");
 
-              foreach($query as $data)
-              {
-                $nome[] = $data['valor'];
-                $funcao[] = $data['tipo_pagamento'];
-              }
-
-            ?>
-
-        <div style="width: 500px;">
-            <canvas id="myChart"></canvas>
-          </div>
-          
-        </div>
-          <div class="button">
-            <a href="#">Ver tudo</a>
+                  foreach($query as $data)
+                  {
+                    $valor[] = $data['valor'];
+                    $tipo_pagamento[] = $data['tipo_pagamento'];
+                  }
+                ?>
+            <div style="width: 500px; margin-left: 70px; margin-top: 25px;">
+                <canvas id="myChart"></canvas>
+            </div>          
           </div>
         </div>
+
         <div class="top-sales box">
-          <div class="title">Últimas consultas</div>
-          <ul class="top-sales-details">
-            <li>
-            <a href="#">
-              <span class="product">Ana Carolina Dias</span>
-            </a>
-            <span class="acessar">Acessar</span>
-          </li>
-          <li>
-            <a href="#">
-              <span class="product">Juan da Luz</span>
-            </a>
-            <span class="acessar">Acessar</span>
-          </li>
-          <li>
-            <a href="#">
-              <span class="product">Thomas Lopes</span>
-            </a>
-            <span class="acessar">Acessar</span>
-          </li>
-          <li>
-            <a href="#">
-              <span class="product">Caroline Ribeiro</span>
-            </a>
-            <span class="acessar">Acessar</span>
-          </li>
-          <li>
-            <a href="#">
-              <span class="product">Nellie Caldeira</span>
-            </a>
-            <span class="acessar">Acessar</span>
-          </li>
-          <li>
-            <a href="#">
-              <span class="product">Davi Lucca da Cruz</span>
-            </a>
-            <span class="acessar">Acessar</span>
-          </li>
-            <li>
-            <a href="#">
-              <span class="product">Leonardo Moraes</span>
-            </a>
-            <span class="acessar">Acessar</span>
-          </li>
-          </ul>
-          <div class="button">
-            <a href="#">Ver Mais</a>
-          </div>
+          <div class="title">Descontos de Convênios (%)</div>
+          <div id="piechart" style="width: 392px; height: 310px;"></div>
         </div>
       </div>
     </div>
+
   </section>
-
-
-
-        </main>
-
+  </main>
         <!--========== MAIN JS ==========-->
         <script src="../../public/scripts/sidebar.js"> </script>
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
         <script>
-  // === include 'setup' then 'config' above ===
-  const labels = <?php echo json_encode($funcao) ?>;
-  const data = {
-    labels: labels,
-    datasets: [{
-      label: 'Financeiro',
-      data: <?php echo json_encode($nome) ?>,
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(255, 159, 64, 0.2)',
-        'rgba(255, 205, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(201, 203, 207, 0.2)'
-      ],
-      borderColor: [
-        'rgb(255, 99, 132)',
-        'rgb(255, 159, 64)',
-        'rgb(255, 205, 86)',
-        'rgb(75, 192, 192)',
-        'rgb(54, 162, 235)',
-        'rgb(153, 102, 255)',
-        'rgb(201, 203, 207)'
-      ],
-      borderWidth: 1
-    }]
-  };
+            // === include 'setup' then 'config' above ===
+            const labels = <?php echo json_encode($tipo_pagamento) ?>;
+            const data = {
+              labels: labels,
+              datasets: [{
+                label: 'Valor - Tipo de pagamento',
+                data: <?php echo json_encode($valor) ?>,
+                backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 205, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(201, 203, 207, 0.2)'
+                ],
+                borderColor: [
+                  'rgb(255, 99, 132)',
+                  'rgb(255, 159, 64)',
+                  'rgb(255, 205, 86)',
+                  'rgb(75, 192, 192)',
+                  'rgb(54, 162, 235)',
+                  'rgb(153, 102, 255)',
+                  'rgb(201, 203, 207)'
+                ],
+                borderWidth: 1
+              }]
+            };
 
-  const config = {
-    type: 'bar',
-    data: data,
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    },
-  };
+            const config = {
+              type: 'bar',
+              data: data,
+              options: {
+                scales: {
+                  y: {
+                    beginAtZero: true
+                  }
+                }
+              },
+            };
 
-  var myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  );
-</script>
+            var myChart = new Chart(
+              document.getElementById('myChart'),
+              config
+            );
+        </script>
 
     </body>
 </html>
