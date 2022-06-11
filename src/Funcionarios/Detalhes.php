@@ -62,12 +62,12 @@
                             <div class="details personal">
                                 <span class="title"> Informações </span>
 
-                                <input type="hidden" name="id" value="<?php echo $id; ?>" disabled>
+                                <input type="hidden" name="id" value="<?php echo $id; ?>" >
                                 <!--  -->
 
                                 <div class="fields">
                                     <div class="input-field">
-                                        <label> Nome completo </label>
+                                        <label> Nome </label>
                                         <input type="text" name="nome" value="<?php echo $nome; ?>" disabled>
                                         <!--  -->
                                     </div>
@@ -81,25 +81,21 @@
                                     <div class="input-field">
                                         <label>Data de nascimento</label>
                                         <input type="date" name="nascimento" value="<?php echo $nascimento; ?>" disabled>
-                                        <!--  -->
                                     </div>
 
                                     <div class="input-field">
                                         <label>Email</label>
                                         <input type="text" name="email" value="<?php echo $email; ?>" disabled>
-                                        <!--  -->
                                     </div>
 
                                     <div class="input-field">
                                         <label>Número celular</label>
-                                        <input type="number" name="celular" value="<?php echo $celular; ?>" disabled>
-                                        <!--  -->
+                                        <input type="text" name="celular" value="<?php echo $celular; ?>" disabled>
                                     </div>
 
                                     <div class="input-field">
                                         <label> Salário </label>
                                         <input type="text" name="salario" value="<?php echo $salario; ?>" disabled>
-                                        <!--  -->
                                     </div>
                                 </div>
                             </div>
@@ -111,19 +107,16 @@
                                     <div class="input-field">
                                         <label> Nome de usuário </label>
                                         <input type="text" name="usuario" value="<?php echo $usuario; ?>" disabled>
-                                        <!--  -->
                                     </div>
 
                                     <div class="input-field">
                                         <label> Senha </label>
                                         <input type="text" name="senha_usuario" value="<?php echo $senha_usuario; ?>" disabled>
-                                        <!--  -->
                                     </div>
 
                                     <div class="input-field">
                                         <label> Função </label>
                                         <input type="text" name="funcao" value="<?php echo $funcao; ?>" disabled>
-                                        <!--  -->
                                     </div>
                                 </div>
                             </div>
@@ -135,19 +128,16 @@
                                     <div class="input-field">
                                         <label>Logradouro</label>
                                         <input type="text" name="logradouro" value="<?php echo $logradouro; ?>" disabled>
-                                        <!--  -->
                                     </div>
 
                                     <div class="input-field">
                                         <label>CEP</label>
                                         <input type="text" name="cep" value="<?php echo $cep; ?>" disabled>
-                                        <!--  -->
                                     </div>
 
                                     <div class="input-field">
                                         <label>Número</label>
                                         <input type="text" name="numero" value="<?php echo $numero; ?>" disabled>
-                                        <!--  -->
                                     </div>
 
                                     <div class="input-field">

@@ -15,7 +15,7 @@
         <link rel="shortcut icon" href="../../so-icon.svg" type="image/x-icon">
 
         <link rel="stylesheet" type="text/css" href="../../public/css/sidebar.css">
-        <link rel="stylesheet" type="text/css" href="../../public/css/form.css">
+        <link rel="stylesheet" type="text/css" href="../../public/css/form-second.css">
 
     </head>
     <body>

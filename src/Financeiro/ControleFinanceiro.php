@@ -1,6 +1,6 @@
-<!--  ControleFuncionario.php -->
-<?php require_once "ClassFinanceiro.php" ?> <!-- tem os metodos get e set -->
-<?php require_once "ClassFinanceiroDAO.php" ?> <!-- tem o metodo cadastrar -->
+
+<?php require_once "ClassFinanceiro.php" ?> 
+<?php require_once "ClassFinanceiroDAO.php" ?> 
 
 <?php
 
@@ -12,7 +12,7 @@
     $autor = $_POST['autor'];
     $status_pag = $_POST['status_pag'];
 
-    $novoFinanceiro = new ClassFinanceiro(); // Forma de proteger os dados: GET() e SET(atribuir)
+    $novoFinanceiro = new ClassFinanceiro(); 
 
     $novoFinanceiro->setValor($valor);
     $novoFinanceiro->setVencimento($vencimento);

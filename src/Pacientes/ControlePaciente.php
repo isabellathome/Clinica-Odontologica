@@ -1,6 +1,6 @@
-<!--  ControleUsuario.php -->
-<?php require_once "ClassPaciente.php" ?> <!-- tem os metodos get e set -->
-<?php require_once "ClassPacienteDAO.php" ?> <!-- tem o metodo cadastrar -->
+
+<?php require_once "ClassPaciente.php" ?> 
+<?php require_once "ClassPacienteDAO.php" ?> 
 
 <?php
 
@@ -21,7 +21,7 @@
     $cidade = $_POST['cidade'];
     $estado = $_POST['estado'];
 
-    $novoPaciente = new ClassPaciente(); // Forma de proteger os dados: GET() e SET(atribuir)
+    $novoPaciente = new ClassPaciente(); 
 
     $novoPaciente->setNome($nome);
     $novoPaciente->setCpf($cpf);

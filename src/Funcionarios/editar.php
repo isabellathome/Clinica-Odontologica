@@ -1,4 +1,4 @@
-<!-- alterarProcesso.php -->
+
 <?php require_once 'ClassFuncionario.php'; ?>
 <?php require_once 'ClassFuncionarioDAO.php';?>
 
@@ -23,12 +23,11 @@
     $estado = $_GET['estado'];
     
     $classFuncionarioDAO = new ClassFuncionarioDAO();
-    $array = $classFuncionarioDAO->alterar($id, $nome, $cpf, $nascimento, $email, $celular, $salario, $usuario, $senha_usuario, $funcao, $logradouro, $cep, $numero, $bairro, $complemento, $cidade, $estado);
+    $array = $classFuncionarioDAO->alterar($id,$nome,$cpf,$nascimento,$email,$celular,$salario,$usuario,$senha_usuario,$funcao,$logradouro,$cep,$numero,$bairro,$complemento,$cidade,$estado);
 
     $classUsuarioDAO = new ClassFuncionarioDAO();
-    $array = $classUsuarioDAO->alterarUsuario($id, $usuario, $senha_usuario, $funcao);
-    
-    // echo $array;
+    $array = $classUsuarioDAO->alterarUsuario($id,$usuario,$senha_usuario,$funcao);
+  
     if($array==true) {
         header('Location: pageFuncionarios.php');
     } else {

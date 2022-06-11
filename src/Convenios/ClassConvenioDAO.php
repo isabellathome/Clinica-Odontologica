@@ -1,9 +1,8 @@
-<!--  ClassUsuarioDAO.php  -->
+
 <?php require_once '../ConexaoBD.php' ?>
 
 <?php 
 
-    // Cadastrar os usuarios
         class ClassConvenioDAO {
             public function cadastrar($novoConvenio) {
                 try {
@@ -22,13 +21,12 @@
 
                 } catch(PDOException $erro) {
                     echo $erro->getMessage();
-                } // fim do catch            
+                }             
            }
 
-        // Listar todos os usuarios
             public function listar() {
                 try {
-                    $pdo=Conexao::getInstance(); // PARA ACESSAR O MÉTODO NA CLASS CONEXAO INSTACIANDO O OBJETO CHAMADO PDO
+                    $pdo=Conexao::getInstance(); 
                     $sql="SELECT * FROM convenios";
                     $stmt=$pdo->prepare($sql);
                     $stmt->execute();
@@ -37,14 +35,13 @@
 
                 } catch(PDOException $erro) {
                     echo $erro->getMessage();
-                } // fim do catch 
+                }  
             }
-            
-        // Excluir usuário pelo matricula
+       
             public function excluir($codigo){
                 try {
                    $pdo=Conexao::getInstance();
-                   $sql="DELETE FROM convenios WHERE codigo =:codigo"; // depois do : é um parametro
+                   $sql="DELETE FROM convenios WHERE codigo =:codigo"; 
                    $stmt=$pdo->prepare($sql);
                    $stmt->bindValue(':codigo',$codigo);
                    $stmt->execute();
@@ -53,10 +50,9 @@
 
                 } catch(PDOException $erro) {
                     echo $erro->getMessage();
-                } // fim do catch 
+                }  
             }
-            
-        // Atualizar    
+               
             public function alterar($id, $nome, $codigo, $valor, $procedimento, $desconto, $num_contemplados) {
                 try {
                     $pdo=Conexao::getInstance();
@@ -74,7 +70,7 @@
  
                  } catch(PDOException $erro) {
                      echo $erro->getMessage();
-                 } // fim do catch 
+                 }  
             }
         }
 ?>

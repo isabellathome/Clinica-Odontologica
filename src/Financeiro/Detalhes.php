@@ -54,63 +54,45 @@
                                 <span class="title"> Informações </span>
 
                                 <input type="hidden" name="id" value="<?php echo $id; ?>" disabled>
-                                <!--  -->
 
                                 <div class="fields">
                                     <div class="input-field">
                                         <label> Valor </label>
                                         <input type="text" name="valor" value="<?php echo $valor; ?>" disabled>
-                                        <!--  -->
                                     </div>
 
                                     <div class="input-field">
                                         <label> Vencimento </label>
-                                        <input type="date" name="vencimento" value="<?php echo $vencimento; ?>" disabled>
-                                        <!--  -->
+                                        <input type="date" name="vencimento" value="<?php echo $vencimento; ?>" disabled>  
                                     </div>
 
                                     <div class="input-field">
                                         <label> Parcelas </label>
                                         <input type="number" name="parcelas" value="<?php echo $parcelas; ?>" disabled>
-                                        <!--  -->
                                     </div>
 
                                     <div class="input-field">
                                         <label> Tipo de Pagamento </label>
                                         <input type="text" name="tipo_pagamento" value="<?php echo $tipo_pagamento; ?>" disabled>
-                                        <!--  -->
                                     </div>
 
                                     <div class="input-field">
                                         <label> Motivo </label>
-                                        <input type="number" name="motivo" value="<?php echo $motivo; ?>" disabled>
-                                        <!--  -->
+                                        <input type="text" name="motivo" value="<?php echo $motivo; ?>" disabled>
                                     </div>
 
                                     <div class="input-field">
                                         <label> Autor </label>
                                         <input type="text" name="autor" value="<?php echo $autor; ?>" disabled>
-                                        <!--  -->
                                     </div>
 
                                     <div class="input-field">
                                         <label> Status </label>
                                         <input type="text" name="status_pag" value="<?php echo $status_pag; ?>" disabled>
-                                        <!--  -->
                                     </div>
                                 </div>
                             </div>
                             
-                            <!-- <div class="buttons">                                                         
-                                <button class="sumbit">
-                                    <a href="pageFuncionarios.php">
-                                        <span class="btnText"> Voltar </span>                                    
-                                        <i class="uil uil-navigator"></i>
-                                    </a>
-                                </button>
-                                </div>
-                            </div> -->
-
                             <div class="buttons">       
 
                                 <button class="sumbit">

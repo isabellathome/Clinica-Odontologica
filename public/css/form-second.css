@@ -1,4 +1,4 @@
-
+/* ===== Google Font Import - Poppins ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700;800;900&display=swap');
 
 *{
@@ -42,7 +42,7 @@ h2 {
 .container form{
     position: relative;
     margin-top: 16px;
-    min-height: 710px;
+    min-height: 360px;
     background-color: #fff;
     overflow: hidden;
 }

@@ -1,7 +1,6 @@
-<!-- ClassUsuario.php -->
+
 <?php
 
-    // é a classe responsavel pelo get e set
     class ClassConvenio {
         private $id;
         private $nome;

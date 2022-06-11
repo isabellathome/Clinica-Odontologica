@@ -1,4 +1,4 @@
-<!-- alterarProcesso.php -->
+
 <?php require_once 'ClassFinanceiro.php'; ?>
 <?php require_once 'ClassFinanceiroDAO.php';?>
 
@@ -15,8 +15,7 @@
 
     $classFinanceiroDAO = new ClassFinanceiroDAO();
     $array = $classFinanceiroDAO->alterar($id, $valor, $vencimento, $parcelas, $tipo_pagamento, $motivo, $autor, $status_pag);
-    
-    // echo $array;
+ 
     if($array==true) {
         header('Location: pageFinanceiro.php');
     } else {

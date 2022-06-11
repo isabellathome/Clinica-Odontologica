@@ -1,9 +1,8 @@
-<!--  ClassUsuarioDAO.php  -->
+
 <?php require_once '../ConexaoBD.php' ?>
 
 <?php 
 
-    // Cadastrar os usuarios
         class ClassPacienteDAO {
             public function cadastrar($novoPaciente) {
                 try {
@@ -32,13 +31,12 @@
 
                 } catch(PDOException $erro) {
                     echo $erro->getMessage();
-                } // fim do catch            
+                }           
            }
 
-        // Listar todos os usuarios
             public function listar() {
                 try {
-                    $pdo=Conexao::getInstance(); // PARA ACESSAR O MÉTODO NA CLASS CONEXAO INSTACIANDO O OBJETO CHAMADO PDO
+                    $pdo=Conexao::getInstance();
                     $sql="SELECT * FROM pacientes";
                     $stmt=$pdo->prepare($sql);
                     $stmt->execute();
@@ -47,14 +45,13 @@
 
                 } catch(PDOException $erro) {
                     echo $erro->getMessage();
-                } // fim do catch 
+                }  
             }
             
-        // Excluir usuário pelo matricula
             public function excluir($id){
                 try {
                    $pdo=Conexao::getInstance();
-                   $sql="DELETE FROM pacientes WHERE id =:id"; // depois do : é um parametro
+                   $sql="DELETE FROM pacientes WHERE id =:id"; 
                    $stmt=$pdo->prepare($sql);
                    $stmt->bindValue(':id',$id);
                    $stmt->execute();
@@ -63,14 +60,13 @@
 
                 } catch(PDOException $erro) {
                     echo $erro->getMessage();
-                } // fim do catch 
+                }  
             }
-            
-        // Atualizar    nome, , , , , , , , , , , , , , , 
+
             public function alterar($id, $nome, $cpf, $nascimento, $email, $celular, $telefone, $ultimo_trat, $quimio, $alergias, $logradouro, $cep, $numero, $bairro, $complemento, $cidade, $estado) {
                 try {
                     $pdo=Conexao::getInstance();
-                    $sql="UPDATE pacientes SET id=:id, nome=:nome, cpf=:cpf, nascimento=:nascimento, email=:email, celular=:celular, telefone=:telefone, ultimo_trat=:ultimo_trat, quimio=:quimio, alergias=:alergias, logradouro=:logradouro, cep=:cep, numero=:numero, bairro=:bairro, complemento=:complemento, cidade=:cidade, estado=:estado WHERE id=:id"; // depois do : é um parametro
+                    $sql="UPDATE pacientes SET id=:id, nome=:nome, cpf=:cpf, nascimento=:nascimento, email=:email, celular=:celular, telefone=:telefone, ultimo_trat=:ultimo_trat, quimio=:quimio, alergias=:alergias, logradouro=:logradouro, cep=:cep, numero=:numero, bairro=:bairro, complemento=:complemento, cidade=:cidade, estado=:estado WHERE id=:id"; 
                     $stmt=$pdo->prepare($sql);
                     $stmt->bindValue(':id',$id);
                     $stmt->bindValue(':nome',$nome);
@@ -95,7 +91,7 @@
  
                  } catch(PDOException $erro) {
                      echo $erro->getMessage();
-                 } // fim do catch 
+                 }  
             }
         }
 ?>

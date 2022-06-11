@@ -4,7 +4,7 @@
                 <a href="../Dentista/Dashboard-second.php" class="header__logo"> Sorriso Odonto </a>
     
                 <form class="header__search" action="../View/Search.php?a=buscar" method="post">
-                    <input type="search" placeholder="Pesquisar" name="palavra" class="header__input">                        
+                    <input type="search" placeholder="Pesquise paciente por sobrenome" name="palavra" class="header__input">                        
                     <button class="btn-search" type="submit"> <i class='bx bx-search'></i> </button>
                 </form>
     
@@ -44,11 +44,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- <a href="#" class="nav__link">
-                                <i class='bx bx-message-rounded nav__icon' ></i>
-                                <span class="nav__name"> Avisos </span>
-                            </a> -->
                         </div>
     
                         <div class="nav__items">
@@ -63,7 +58,6 @@
 
                                 <div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="../Dentista/pagePacientes.php" class="nav__dropdown-item"> Pacientes </a>
                                         <a href="../Dentista/pageProntuarios.php" class="nav__dropdown-item"> Prontuários </a>
                                         <a href="../Dentista/pageConsultas.php" class="nav__dropdown-item"> Consultas </a>
                                     </div>

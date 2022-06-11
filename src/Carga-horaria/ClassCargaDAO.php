@@ -1,4 +1,4 @@
-<!--  ClassUsuarioDAO.php  -->
+
 <?php require_once '../ConexaoBD.php' ?>
 
 <?php 

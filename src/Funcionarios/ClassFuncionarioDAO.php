@@ -1,9 +1,8 @@
-<!--  ClassUsuarioDAO.php  -->
+
 <?php require_once '../ConexaoBD.php' ?>
 
 <?php 
 
-    // Cadastrar os usuarios
         class ClassFuncionarioDAO {
             public function cadastrar($novoFuncionario) {
                 try {
@@ -32,7 +31,7 @@
 
                 } catch(PDOException $erro) {
                     echo $erro->getMessage();
-                } // fim do catch            
+                }            
            }
 
            public function cadastrarUsuario($novoUsuario) {
@@ -49,13 +48,13 @@
 
             } catch(PDOException $erro) {
                 echo $erro->getMessage();
-            } // fim do catch            
+            }            
         }
 
-        // Listar todos os usuarios
+    
             public function listar() {
                 try {
-                    $pdo=Conexao::getInstance(); // PARA ACESSAR O MÉTODO NA CLASS CONEXAO INSTACIANDO O OBJETO CHAMADO PDO
+                    $pdo=Conexao::getInstance(); 
                     $sql="SELECT * FROM funcionarios";
                     $stmt=$pdo->prepare($sql);
                     $stmt->execute();
@@ -64,14 +63,13 @@
 
                 } catch(PDOException $erro) {
                     echo $erro->getMessage();
-                } // fim do catch 
+                } 
             }
-            
-        // Excluir usuário pelo matricula
+
             public function excluir($id){
                 try {
                    $pdo=Conexao::getInstance();
-                   $sql="DELETE FROM funcionarios WHERE id =:id"; // depois do : é um parametro
+                   $sql="DELETE FROM funcionarios WHERE id =:id"; 
                    $stmt=$pdo->prepare($sql);
                    $stmt->bindValue(':id',$id);
                    $stmt->execute();
@@ -80,13 +78,13 @@
 
                 } catch(PDOException $erro) {
                     echo $erro->getMessage();
-                } // fim do catch 
+                } 
             }
 
             public function excluirUsuario($id){
                 try {
                    $pdo=Conexao::getInstance();
-                   $sql="DELETE FROM funcionarios WHERE id =:id"; // depois do : é um parametro
+                   $sql="DELETE FROM funcionarios WHERE id =:id"; 
                    $stmt=$pdo->prepare($sql);
                    $stmt->bindValue(':id',$id);
                    $stmt->execute();
@@ -95,14 +93,13 @@
 
                 } catch(PDOException $erro) {
                     echo $erro->getMessage();
-                } // fim do catch 
+                }
             }
-            
-        // Atualizar
-            public function alterar($id, $nome, $cpf, $nascimento, $email, $celular, $salario, $usuario, $senha_usuario, $funcao, $logradouro, $cep, $numero, $bairro, $complemento, $cidade, $estado) {
+
+            public function alterar($id,$nome,$cpf,$nascimento,$email,$celular,$salario,$usuario,$senha_usuario,$funcao,$logradouro,$cep,$numero,$bairro,$complemento,$cidade,$estado) {
                 try {
                     $pdo=Conexao::getInstance();
-                    $sql="UPDATE funcionarios SET id=:id, nome=:nome, cpf=:cpf, nascimento=:nascimento, email=:email, celular=:celular, salario=:salario, usuario=:usuario, senha_usuario=:senha_usuario, funcao=:funcao, logradouro=:logradouro, cep=:cep, numero=:numero, bairro=:bairro, complemento=:complemento, cidade=:cidade, estado=:estado WHERE id=:id"; // depois do : é um parametro
+                    $sql="UPDATE funcionarios SET id=:id,nome=:nome,cpf=:cpf,nascimento=:nascimento,email=:email,celular=:celular,salario=:salario,usuario=:usuario,senha_usuario=:senha_usuario,funcao=:funcao,logradouro=:logradouro,cep=:cep,numero=:numero,bairro=:bairro,complemento=:complemento,cidade=:cidade,estado=:estado WHERE id=:id"; 
                     $stmt=$pdo->prepare($sql);
                     $stmt->bindValue(':id',$id);
                     $stmt->bindValue(':nome',$nome);
@@ -127,7 +124,7 @@
  
                  } catch(PDOException $erro) {
                      echo $erro->getMessage();
-                 } // fim do catch 
+                 } 
             }
 
             public function alterarUsuario($id, $usuario, $senha_usuario, $funcao) {
@@ -145,7 +142,7 @@
  
                  } catch(PDOException $erro) {
                      echo $erro->getMessage();
-                 } // fim do catch 
+                 } 
             }
         }
 ?>

@@ -5,7 +5,6 @@
 	$senha = "";
 	$dbname = "clinica_odontologica";
 	
-	//Criar a conexao
 	$conexao = mysqli_connect($servidor, $usuario, $senha, $dbname);
 	
 	if(!$conexao){

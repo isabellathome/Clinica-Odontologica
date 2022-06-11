@@ -42,7 +42,7 @@
 
                                 <div class="fields">
                                     <div class="input-field">
-                                        <label> Nome completo </label>
+                                        <label> Nome </label>
                                         <input type="text" name="nome" value="<?php echo $nome; ?>">
                                     </div>
 

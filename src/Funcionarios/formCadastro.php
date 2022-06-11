@@ -1,32 +1,38 @@
-<?php include ("../session.php") ?>
-<?php include ("../components/header.php") ?>
+<?php include("../session.php") ?>
+<?php include("../components/header.php") ?>
 
 <!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Cadastro | Funcionários </title>
-        
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-        
-        <link rel="shortcut icon" href="../../so-icon.svg" type="image/x-icon">
+<html lang="pt-br">
 
-        <link rel="stylesheet" type="text/css" href="../../public/css/sidebar.css">
-        <link rel="stylesheet" href="../../public/css/form.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Cadastro | Funcionários </title>
 
-        <script src="../../public/scripts/validar-input.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        
-    </head>
-    <body>
-        <!--========== CONTENTS ==========-->
-        <main>
-            <section>
-                <h2> Funcionários </h2>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
-    <div class="container">
-        <header> Cadastro </header>
+    <link rel="shortcut icon" href="../../so-icon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="../../public/css/sidebar.css">
+    <link rel="stylesheet" href="../../public/css/form.css">
+
+    <script src="../../public/scripts/validacoes.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/igorescobar/jQuery-Mask-Plugin/master/src/jquery.mask.js"></script>
+
+
+</head>
+
+<body>
+    <!--========== CONTENTS ==========-->
+    <main>
+        <section>
+            <h2> Funcionários </h2>
+
+            <div class="container">
+                <header> Cadastro </header>
 
                 <form action="ControleFuncionario.php" method="post">
                     <div class="form first">
@@ -35,13 +41,13 @@
 
                             <div class="fields">
                                 <div class="input-field">
-                                    <label> Nome completo </label>
+                                    <label> Nome </label>
                                     <input type="text" name="nome" required>
                                 </div>
 
                                 <div class="input-field">
                                     <label>CPF</label>
-                                    <input type="text" id="input" name="cpf"/><span id="resposta"></span>
+                                    <input oninput="mascara(this)" type="text" name="cpf" maxlength="14" id="input" /><span id="resposta"></span>
                                 </div>
 
                                 <div class="input-field">
@@ -56,12 +62,12 @@
 
                                 <div class="input-field">
                                     <label>Número celular</label>
-                                    <input type="text" maxlength="15" id="OpTelefone" patern="(\(?\d{2}\)?\s)?(\d{4,5}\-\d{4})" name="celular">
+                                    <input type="text" maxlength="15" class="phone" id="celular" patern="(\(?\d{2}\)?\s)?(\d{4,5}\-\d{4})" name="celular">
                                 </div>
 
                                 <div class="input-field">
-                                    <label> Salário </label>
-                                    <input type="text" name="salario">
+                                    <label> Salário (R$) </label>
+                                    <input type="text" maxlength="15" name="salario" onkeypress="return(moeda(this,'.',',',event))">
                                 </div>
                             </div>
                         </div>
@@ -77,7 +83,7 @@
 
                                 <div class="input-field">
                                     <label> Senha </label>
-                                    <input type="text" name="senha_usuario">
+                                    <input type="password" name="senha_usuario">
                                 </div>
 
                                 <div class="input-field">
@@ -85,8 +91,8 @@
                                     <input type="text" name="funcao">
                                 </div>
                             </div>
-                        </div> 
-                    
+                        </div>
+
                         <div class="details address">
                             <span class="title">Endereço</span>
 
@@ -98,7 +104,7 @@
 
                                 <div class="input-field">
                                     <label>CEP</label>
-                                    <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);">
+                                    <input name="cep" type="text" id="cep" class="mascCEP" value="" maxlength="9" onblur="pesquisacep(this.value);">
                                 </div>
 
                                 <div class="input-field">
@@ -108,44 +114,51 @@
 
                                 <div class="input-field">
                                     <label for="bairro">Bairro</label>
-                                    <input type="text" name="bairro">
+                                    <input name="bairro" type="text" id="bairro">
                                 </div>
 
                                 <div class="input-field">
-                                    <label for="complemento">Complemento</label>
-                                    <input type="text" name="complemento">
+                                    <label for="rua">Rua</label>
+                                    <input name="complemento" type="text" id="rua">
                                 </div>
 
                                 <div class="input-field">
                                     <label for="cidade">Cidade</label>
-                                    <input type="text" name="cidade">
+                                    <input name="cidade" type="text" id="cidade">
                                 </div>
 
                                 <div class="input-field">
                                     <label for="estado">Estado</label>
-                                    <input type="text" name="estado">
+                                    <input name="estado" type="text" id="uf">
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="buttons">                                                         
+
+                        <div class="buttons">
                             <button class="sumbit">
                                 <span class="btnText"> Cadastrar </span>
                                 <i class="uil uil-navigator"></i>
                             </button>
                         </div>
                     </div>
-                </div>
+            </div>
             </form>
-        </div>
+            </div>
         </section>
-        </main>
+    </main>
 
-        <!--========== MAIN JS ==========-->
-        <script src="../../public/scripts/sidebar.js"> </script>  
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="../../public/scripts/validar-input.js"></script>
+    <!--========== MAIN JS ==========-->
+    <script src="../../public/scripts/sidebar.js"> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../../public/scripts/validacoes.js"></script>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/igorescobar/jQuery-Mask-Plugin/master/src/jquery.mask.js"></script>
+
+</body>
+
 </html>

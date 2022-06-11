@@ -13,7 +13,9 @@
         <link rel="shortcut icon" href="../../so-icon.svg" type="image/x-icon">
 
         <link rel="stylesheet" type="text/css" href="../../public/css/sidebar.css">
-        <link rel="stylesheet" href="../../public/css/form.css">
+        <link rel="stylesheet" href="../../public/css/form-second.css">
+
+        <script src="../../public/scripts/validacoes.js"></script>
         
     </head>
     <body>
@@ -33,7 +35,7 @@
                             <div class="fields">
                                 <div class="input-field">
                                     <label> Valor </label>
-                                    <input type="text" name="valor" required>
+                                    <input type="text" maxlength="15" name="valor" onkeypress="return(moeda(this,'.',',',event))">
                                 </div>
 
                                 <div class="input-field">

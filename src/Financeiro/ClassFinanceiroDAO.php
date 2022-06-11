@@ -1,9 +1,8 @@
-<!--  ClassUsuarioDAO.php  -->
+
 <?php require_once '../ConexaoBD.php' ?>
 
 <?php 
 
-    // Cadastrar os usuarios
         class ClassFinanceiroDAO {
             public function cadastrar($novoFinanceiro) {
                 try {
@@ -23,13 +22,13 @@
 
                 } catch(PDOException $erro) {
                     echo $erro->getMessage();
-                } // fim do catch            
+                }             
            }
 
-        // Listar todos os usuarios
+
             public function listar() {
                 try {
-                    $pdo=Conexao::getInstance(); // PARA ACESSAR O MÉTODO NA CLASS CONEXAO INSTACIANDO O OBJETO CHAMADO PDO
+                    $pdo=Conexao::getInstance(); 
                     $sql="SELECT * FROM financeiro";
                     $stmt=$pdo->prepare($sql);
                     $stmt->execute();
@@ -38,10 +37,9 @@
 
                 } catch(PDOException $erro) {
                     echo $erro->getMessage();
-                } // fim do catch 
+                }  
             }
 
-        // Atualizar
             public function alterar($id, $valor, $vencimento, $parcelas, $tipo_pagamento, $motivo, $autor, $status_pag) {
                 try {
                     $pdo=Conexao::getInstance();
@@ -61,7 +59,7 @@
  
                  } catch(PDOException $erro) {
                      echo $erro->getMessage();
-                 } // fim do catch 
+                 }  
             }
         }
 ?>

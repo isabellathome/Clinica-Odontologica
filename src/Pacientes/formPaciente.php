@@ -15,6 +15,8 @@
         <link rel="stylesheet" type="text/css" href="../../public/css/sidebar.css">
         <link rel="stylesheet" href="../../public/css/form.css">
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+        <script src="../../public/scripts/validacoes.js"></script>
     </head>
     <body>
         <!--========== CONTENTS ==========-->
@@ -32,13 +34,13 @@
 
                             <div class="fields">
                                 <div class="input-field">
-                                    <label> Nome completo </label>
+                                    <label> Nome </label>
                                     <input type="text" name="nome" required>
                                 </div>
 
                                 <div class="input-field">
-                                    <label> CPF </label>
-                                    <input type="text" name="cpf">
+                                    <label>CPF</label>
+                                    <input oninput="mascara(this)" type="text" name="cpf" maxlength="14" id="input" /><span id="resposta"></span>
                                 </div>
 
                                 <div class="input-field">
@@ -53,7 +55,7 @@
 
                                 <div class="input-field">
                                     <label> Número celular </label>
-                                    <input type="number" name="celular">
+                                    <input type="text" name="celular">
                                 </div>
 
                                 <div class="input-field">

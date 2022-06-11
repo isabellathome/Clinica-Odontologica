@@ -31,7 +31,11 @@
     <body>
 
 <?php
-    $nome = $_GET['nome'];
+
+    $classPacienteDAO = new ClassPacienteDAO();
+    $array= $classPacienteDAO->listar();
+
+    $array['nome'] = $_GET['nome'];
     $cpf = $_GET['cpf'];
     $nascimento = $_GET['nascimento'];
     $email = $_GET['email'];
@@ -47,6 +51,9 @@
     $complemento = $_GET['complemento'];
     $cidade = $_GET['cidade'];
     $estado = $_GET['estado'];
+
+    
+
 ?>
 
  <!--========== CONTENTS ==========-->
@@ -67,8 +74,8 @@
 
                                 <div class="fields">
                                     <div class="input-field">
-                                        <label> Nome completo </label>
-                                        <input type="text" name="nome" value="<?php echo $nome; ?>" disabled>
+                                        <label> Nome </label>
+                                        <input type="text" name="nome" value="<?php echo $array['nome']; ?>" disabled>
                                         <!--  -->
                                     </div>
 
@@ -92,7 +99,7 @@
 
                                     <div class="input-field">
                                         <label>Número celular</label>
-                                        <input type="number" name="celular" value="<?php echo $celular; ?>" disabled>
+                                        <input type="text" name="celular" value="<?php echo $celular; ?>" disabled>
                                         <!--  -->
                                     </div>
 

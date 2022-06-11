@@ -162,14 +162,14 @@
       <div class="sales-boxes">
         <div class="recent-sales box">
           <div class="title"> Olá! </div>              
-              <p style="margin-top: 15px;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus sequi, libero accusamus at obcaecati </p>
+              <p style="margin-top: 15px; text-align: justify;"> Trabalhar em equipe é saber lutar em conjunto por um mesmo objetivo. Nem sempre é fácil manter a união e a concordância entre todos quando uma equipe é composta por diferentes individualidades. </p>
 
                 <br>
 
-              <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod excepturi itaque enim, culpa repellendus assumenda fugit exercitationem sequi doloremque magnam distinctio, vitae recusandae, est id fugiat fuga! Quibusdam, sit similique. </p>
+              <p style="text-align: justify;"> Mas é importante saber separar o que é individual do que é de interesse para o grupo. A vitória apenas será alcançada se todos se unirem e trabalharem em conjunto. No final todo sacrifício valerá a pena e sei que pequenos desentendimentos serão esquecidos. </p>
               
                   <br>
-              <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, quisquam. Ex ullam nostrum quidem deserunt? Porro molestias in nostrum natus quibusdam, obcaecati ut eaque consequatur officia dicta neque nobis accusamus! </p>
+              <p style="text-align: justify;"> "As pessoas mudam, as circunstâncias mudam, mas Deus sempre permanece o mesmo" - Justin Bieber. </p>
             </div>
 
         <div class="top-sales box">

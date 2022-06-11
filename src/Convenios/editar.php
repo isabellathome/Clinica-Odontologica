@@ -1,4 +1,4 @@
-<!-- alterarProcesso.php -->
+
 <?php require_once 'ClassConvenio.php'; ?>
 <?php require_once 'ClassConvenioDAO.php';?>
 

@@ -4,7 +4,7 @@
                 <a href="../AdminGeral/Dashboard.php" class="header__logo"> Sorriso Odonto </a>
     
                 <form class="header__search" action="../View/Search.php?a=buscar" method="post">
-                    <input type="search" placeholder="Pesquisar" name="palavra" class="header__input">                        
+                    <input type="search" placeholder="Pesquise paciente por sobrenome" name="palavra" class="header__input">                        
                     <button class="btn-search" type="submit"> <i class='bx bx-search'></i> </button>
                 </form>
     

@@ -62,6 +62,46 @@
       }
     </script>
 
+    <?php
+
+      $a = 0;
+      $b = 0;
+      $c = 0;
+
+        $result_desconto_ava = "SELECT * FROM financeiro";
+        $resultado_desconto_ava = mysqli_query($con, $result_desconto_ava);
+          while($row_desconto_ava = mysqli_fetch_assoc($resultado_desconto_ava)){
+            if($row_desconto_ava['tipo_pagamento'] == "Entrada"){
+                $a++;
+            } else  if($row_desconto_ava['tipo_pagamento'] == "Saída"){
+                $b++;
+            }
+        }
+    ?>
+    
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Desconto', 'por Convênio'],
+          ['Entrada', <?=$a?>], 
+          ['Saída', <?=$b?>]
+        ]);
+
+        var options = {
+          colors: ['#2BD47D', '#66b0ff', '#ec8f6e', '#f3b49f', '#f6c7b6']
+        };
+          
+        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
     </head>
     <body>
 
@@ -162,24 +202,13 @@
         <div class="recent-sales box">
           <div class="title">Lançamentos do financeiro</div>
               <div class="sales-details">
-                <?php 
-                  $query = $con->query("SELECT * FROM financeiro");
-
-                  foreach($query as $data)
-                  {
-                    $valor[] = $data['valor'];
-                    $tipo_pagamento[] = $data['tipo_pagamento'];
-                  }
-                ?>
-            <div style="width: 500px; margin-left: 70px; margin-top: 25px;">
-                <canvas id="myChart"></canvas>
-            </div>          
+              <div id="piechart2" style="width: 420px; height: 300px; margin-left: 170px;"></div>         
           </div>
         </div>
 
         <div class="top-sales box">
           <div class="title">Descontos de Convênios (%)</div>
-          <div id="piechart" style="width: 392px; height: 310px;"></div>
+          <div id="piechart" style="width: 352px; height: 310px; margin-left: 30px;"></div>
         </div>
       </div>
     </div>

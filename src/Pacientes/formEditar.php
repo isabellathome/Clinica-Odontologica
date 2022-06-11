@@ -58,7 +58,7 @@
 
                                 <div class="fields">
                                     <div class="input-field">
-                                        <label> Nome completo </label>
+                                        <label> Nome </label>
                                         <input type="text" name="nome" value="<?php echo $nome; ?>">
                                         <!--  -->
                                     </div>
@@ -83,7 +83,7 @@
 
                                     <div class="input-field">
                                         <label>Número celular</label>
-                                        <input type="number" name="celular" value="<?php echo $celular; ?>">
+                                        <input type="text" name="celular" value="<?php echo $celular; ?>">
                                         <!--  -->
                                     </div>
 

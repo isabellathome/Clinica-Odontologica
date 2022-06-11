@@ -2,6 +2,7 @@
 <?php include ("../conexao.php") ?>
 <?php include ("../components/header.php") ?>
 <?php include ("../ConexaoBD.php") ?>
+<?php include ("config.php") ?>
 
 <!DOCTYPE html>
     <html lang="pt-br">
@@ -15,7 +16,7 @@
         <link rel="shortcut icon" href="../../so-icon.svg" type="image/x-icon">
 
         <link rel="stylesheet" type="text/css" href="../../public/css/sidebar.css">
-        <link rel="stylesheet" type="text/css" href="../../public/css/form.css">
+        <link rel="stylesheet" type="text/css" href="../../public/css/form-second.css">
 
     </head>
     <body>
@@ -40,7 +41,7 @@
                                         <option>Selecione</option>
                                         <?php
                                             $result_pacientes = "SELECT * FROM pacientes";
-                                            $resultado_paciente = mysqli_query($conexao, $result_pacientes);
+                                            $resultado_paciente = mysqli_query($con, $result_pacientes);
 
                                             while($row_pacientes = mysqli_fetch_assoc($resultado_paciente)){ ?>
                                                 <option value="<?php echo $row_pacientes['nome']; ?>"><?php echo $row_pacientes['nome']; ?></option> <?php
@@ -55,7 +56,7 @@
                                         <option>Selecione</option>
                                         <?php
                                             $result_dentistas = "SELECT * FROM funcionarios WHERE funcao = 'dentista'";
-                                            $resultado_dentista = mysqli_query($conexao, $result_dentistas);
+                                            $resultado_dentista = mysqli_query($con, $result_dentistas);
 
                                             while($row_dentistas = mysqli_fetch_assoc($resultado_dentista)){ ?>
                                                 <option value="<?php echo $row_dentistas['nome']; ?>"><?php echo $row_dentistas['nome']; ?></option> <?php
@@ -70,7 +71,7 @@
                                         <option>Selecione</option>
                                         <?php
                                             $result_dentistas = "SELECT * FROM consultas";
-                                            $resultado_dentista = mysqli_query($conexao, $result_dentistas);
+                                            $resultado_dentista = mysqli_query($con, $result_dentistas);
 
                                             while($row_dentistas = mysqli_fetch_assoc($resultado_dentista)){ ?>
                                                 <option value="<?php echo $row_dentistas['procedimento']; ?>"><?php echo $row_dentistas['procedimento']; ?></option> <?php
@@ -90,7 +91,7 @@
                                         <option>Selecione</option>
                                         <?php
                                             $result_dentistas = "SELECT * FROM consultas";
-                                            $resultado_dentista = mysqli_query($conexao, $result_dentistas);
+                                            $resultado_dentista = mysqli_query($con, $result_dentistas);
 
                                             while($row_dentistas = mysqli_fetch_assoc($resultado_dentista)){ ?>
                                                 <option value="<?php echo $row_dentistas['data']; ?>"><?php echo $row_dentistas['data']; ?></option> <?php
@@ -105,7 +106,7 @@
                                         <option>Selecione</option>
                                         <?php
                                             $result_dentistas = "SELECT * FROM consultas";
-                                            $resultado_dentista = mysqli_query($conexao, $result_dentistas);
+                                            $resultado_dentista = mysqli_query($con, $result_dentistas);
 
                                             while($row_dentistas = mysqli_fetch_assoc($resultado_dentista)){ ?>
                                                 <option value="<?php echo $row_dentistas['hora']; ?>"><?php echo $row_dentistas['hora']; ?></option> <?php

@@ -25,7 +25,9 @@
         <link rel="shortcut icon" href="../../so-icon.svg" type="image/x-icon">
 
         <link rel="stylesheet" type="text/css" href="../../public/css/sidebar.css">
-        <link rel="stylesheet" href="../../public/css/form.css">       
+        <link rel="stylesheet" href="../../public/css/form-second.css">     
+        
+        <script src="../../public/scripts/validacoes.js"></script>
     </head>
 
     <body>
@@ -60,7 +62,7 @@
                                 <div class="fields">
                                     <div class="input-field">
                                         <label> Valor </label>
-                                        <input type="text" name="valor" value="<?php echo $valor; ?>">
+                                        <input type="text" maxlength="15" name="valor" onkeypress="return(moeda(this,'.',',',event))" value="<?php echo $valor; ?>">
                                         <!--  -->
                                     </div>
 
@@ -84,7 +86,7 @@
 
                                     <div class="input-field">
                                         <label> Motivo </label>
-                                        <input type="number" name="motivo" value="<?php echo $motivo; ?>">
+                                        <input type="text" name="motivo" value="<?php echo $motivo; ?>">
                                         <!--  -->
                                     </div>
 
