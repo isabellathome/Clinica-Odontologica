@@ -57,24 +57,25 @@
 
                 ?>
 
-                <form action="Detalhes.php" method="get">
-                    <input type=hidden value= <?php echo $array['id'];?> name=id>
-                    <input type=hidden value= <?php echo $array['nome'];?> name=nome>
-                    <input type=hidden value= <?php echo $array['cpf'];?> name=cpf>
-                    <input type=hidden value= <?php echo $array['nascimento'];?> name=nascimento>
-                    <input type=hidden value= <?php echo $array['email'];?> name=email>
-                    <input type=hidden value= <?php echo $array['celular'];?> name=celular>
-                    <input type=hidden value= <?php echo $array['salario'];?> name=salario>
-                    <input type=hidden value= <?php echo $array['usuario'];?> name=usuario>
-                    <input type=hidden value= <?php echo $array['senha_usuario'];?> name=senha_usuario>
-                    <input type=hidden value= <?php echo $array['funcao'];?> name=funcao>
-                    <input type=hidden value= <?php echo $array['logradouro'];?> name=logradouro>
-                    <input type=hidden value= <?php echo $array['cep'];?> name=cep>
-                    <input type=hidden value= <?php echo $array['numero'];?> name=numero>
-                    <input type=hidden value= <?php echo $array['bairro'];?> name=bairro>
-                    <input type=hidden value= <?php echo $array['complemento'];?> name=complemento>
-                    <input type=hidden value= <?php echo $array['cidade'];?> name=cidade>
-                    <input type=hidden value= <?php echo $array['estado'];?> name=estado>
+                <form action="Detalhes.php" method="post">
+                    <input type=hidden value=" <?php echo $array['id'];?>"            name=id>
+                    <input type=hidden value=" <?php echo $array['nome'];?>"          name=nome>
+                    <input type=hidden value=" <?php echo $array['cpf'];?>"           name=cpf>
+                    <input type=hidden value=" <?php echo $array['nascimento'];?>"    name=nascimento>
+                    <input type=hidden value=" <?php echo $array['email'];?>"         name=email>
+                    <input type=hidden value=" <?php echo $array['celular'];?>"       name=celular>
+                    <input type=hidden value=" <?php echo $array['salario'];?>"       name=salario>
+                    <input type=hidden value=" <?php echo $array['usuario'];?>"       name=usuario>
+                    <input type=hidden value=" <?php echo $array['senha_usuario'];?>" name=senha_usuario>
+                    <input type=hidden value=" <?php echo $array['funcao'];?>"        name=funcao>
+                    <input type=hidden value=" <?php echo $array['logradouro'];?>"    name=logradouro>
+                    <input type=hidden value=" <?php echo $array['cep'];?>"           name=cep>
+                    <input type=hidden value=" <?php echo $array['numero'];?>"        name=numero>
+                    <input type=hidden value=" <?php echo $array['bairro'];?>"        name=bairro>
+                    <input type=hidden value=" <?php echo $array['complemento'];?>"   name=complemento>
+                    <input type=hidden value=" <?php echo $array['cidade'];?>"        name=cidade>
+                    <input type=hidden value=" <?php echo $array['estado'];?>"        name=estado>
+
                     <button class="btn-del"> <i class='bx bxs-user-detail bx-sm'></i> </button>
                 </form>		  
                 <?php	
@@ -82,23 +83,24 @@
                 echo  "<td> "; 
                 ?>
                 <form action="formEditar.php" method="get">
-                    <input type=hidden value= <?php echo $array['id'];?> name=id>
-                    <input type=hidden value= <?php echo $array['nome'];?> name=nome>
-                    <input type=hidden value= <?php echo $array['cpf'];?> name=cpf>
-                    <input type=hidden value= <?php echo $array['nascimento'];?> name=nascimento>
-                    <input type=hidden value= <?php echo $array['email'];?> name=email>
-                    <input type=hidden value= <?php echo $array['celular'];?> name=celular>
-                    <input type=hidden value= <?php echo $array['salario'];?> name=salario>
-                    <input type=hidden value= <?php echo $array['usuario'];?> name=usuario>
-                    <input type=hidden value= <?php echo $array['senha_usuario'];?> name=senha_usuario>
-                    <input type=hidden value= <?php echo $array['funcao'];?> name=funcao>
-                    <input type=hidden value= <?php echo $array['logradouro'];?> name=logradouro>
-                    <input type=hidden value= <?php echo $array['cep'];?> name=cep>
-                    <input type=hidden value= <?php echo $array['numero'];?> name=numero>
-                    <input type=hidden value= <?php echo $array['bairro'];?> name=bairro>
-                    <input type=hidden value= <?php echo $array['complemento'];?> name=complemento>
-                    <input type=hidden value= <?php echo $array['cidade'];?> name=cidade>
-                    <input type=hidden value= <?php echo $array['estado'];?> name=estado>
+                    <input type=hidden value=" <?php echo $array['id'];?>"            name=id>
+                    <input type=hidden value=" <?php echo $array['nome'];?>"          name=nome>
+                    <input type=hidden value=" <?php echo $array['cpf'];?>"           name=cpf>
+                    <input type=hidden value=" <?php echo $array['nascimento'];?>"    name=nascimento>
+                    <input type=hidden value=" <?php echo $array['email'];?>"         name=email>
+                    <input type=hidden value=" <?php echo $array['celular'];?>"       name=celular>
+                    <input type=hidden value=" <?php echo $array['salario'];?>"       name=salario>
+                    <input type=hidden value=" <?php echo $array['usuario'];?>"       name=usuario>
+                    <input type=hidden value=" <?php echo $array['senha_usuario'];?>" name=senha_usuario>
+                    <input type=hidden value=" <?php echo $array['funcao'];?>"        name=funcao>
+                    <input type=hidden value=" <?php echo $array['logradouro'];?>"    name=logradouro>
+                    <input type=hidden value=" <?php echo $array['cep'];?>"           name=cep>
+                    <input type=hidden value=" <?php echo $array['numero'];?>"        name=numero>
+                    <input type=hidden value=" <?php echo $array['bairro'];?>"        name=bairro>
+                    <input type=hidden value=" <?php echo $array['complemento'];?>"   name=complemento>
+                    <input type=hidden value=" <?php echo $array['cidade'];?>"        name=cidade>
+                    <input type=hidden value=" <?php echo $array['estado'];?>"        name=estado>
+
                     <button class="btn-del"> <i class='bx bxs-edit bx-sm'></i></button>
                 </form>		  
                 <?php	

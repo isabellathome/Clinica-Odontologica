@@ -52,14 +52,14 @@
  
                 ?>
                 <form action="../Consultas/Detalhes-Dentista.php" method="get">
-                    <input type=hidden value= <?php echo $array['id'];?> name=id>
-                    <input type=hidden value= <?php echo $array['nome_paciente'];?> name=nome_paciente>
-                    <input type=hidden value= <?php echo $array['email'];?> name=email>
-                    <input type=hidden value= <?php echo $array['data'];?> name=data>
-                    <input type=hidden value= <?php echo $array['hora'];?> name=hora>
-                    <input type=hidden value= <?php echo $array['nome_dentista'];?> name=nome_dentista>
-                    <input type=hidden value= <?php echo $array['procedimento'];?> name=procedimento>
-                    <input type=hidden value= <?php echo $array['descricao'];?> name=descricao>
+                    <input type=hidden value="<?php echo $array['id'];?>"            name=id>
+                    <input type=hidden value="<?php echo $array['nome_paciente'];?>" name=nome_paciente>
+                    <input type=hidden value="<?php echo $array['email'];?>"         name=email>
+                    <input type=hidden value="<?php echo $array['data'];?>"          name=data>
+                    <input type=hidden value="<?php echo $array['hora'];?>"          name=hora>
+                    <input type=hidden value="<?php echo $array['nome_dentista'];?>" name=nome_dentista>
+                    <input type=hidden value="<?php echo $array['procedimento'];?>"  name=procedimento>
+                    <input type=hidden value="<?php echo $array['descricao'];?>"     name=descricao>
                     <button class="btn-del"> <i class='bx bxs-user-detail bx-sm'></i> </button>
                 </form>		  
                 <?php	

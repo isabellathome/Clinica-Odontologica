@@ -57,37 +57,38 @@
 
                 ?>
                 <form action="Detalhes.php" method="get">
-                        <input type=hidden value= <?php echo $array['id'];?> name=id>
-                        <input type=hidden value= <?php echo $array['nome'];?> name=nome>
-                        <input type=hidden value= <?php echo $array['codigo'];?> name=codigo>
-                        <input type=hidden value= <?php echo $array['valor'];?> name=valor>
-                        <input type=hidden value= <?php echo $array['procedimento'];?> name=procedimento>
-                        <input type=hidden value= <?php echo $array['desconto'];?> name=desconto>
-                        <input type=hidden value= <?php echo $array['num_contemplados'];?> name=num_contemplados>
+                    <input type=hidden value="<?php echo $array['id'];?>"               name=id>
+                    <input type=hidden value="<?php echo $array['nome'];?>"             name=nome>
+                    <input type=hidden value="<?php echo $array['codigo'];?>"           name=codigo>
+                    <input type=hidden value="<?php echo $array['valor'];?>"            name=valor>
+                    <input type=hidden value="<?php echo $array['procedimento'];?>"     name=procedimento>
+                    <input type=hidden value="<?php echo $array['desconto'];?>"         name=desconto>
+                    <input type=hidden value="<?php echo $array['num_contemplados'];?>" name=num_contemplados>
                         
-                        <button class="btn-del"> <i class='bx bxs-user-detail bx-sm'></i> </button>
+                    <button class="btn-del"> <i class='bx bxs-user-detail bx-sm'></i> </button>
                 </form>		  
                 <?php	
                 echo "</td> ";
                 echo  "<td> "; 
                 ?>
                 <form action="formEditar.php" method="get">
-                        <input type=hidden value= <?php echo $array['id'];?> name=id>
-                        <input type=hidden value= <?php echo $array['nome'];?> name=nome>
-                        <input type=hidden value= <?php echo $array['codigo'];?> name=codigo>
-                        <input type=hidden value= <?php echo $array['valor'];?> name=valor>
-                        <input type=hidden value= <?php echo $array['procedimento'];?> name=procedimento>
-                        <input type=hidden value= <?php echo $array['desconto'];?> name=desconto>
-                        <input type=hidden value= <?php echo $array['num_contemplados'];?> name=num_contemplados>
-                        <button class="btn-del"> <i class='bx bxs-edit bx-sm'></i></button>
+                    <input type=hidden value="<?php echo $array['id'];?>"               name=id>
+                    <input type=hidden value="<?php echo $array['nome'];?>"             name=nome>
+                    <input type=hidden value="<?php echo $array['codigo'];?>"           name=codigo>
+                    <input type=hidden value="<?php echo $array['valor'];?>"            name=valor>
+                    <input type=hidden value="<?php echo $array['procedimento'];?>"     name=procedimento>
+                    <input type=hidden value="<?php echo $array['desconto'];?>"         name=desconto>
+                    <input type=hidden value="<?php echo $array['num_contemplados'];?>" name=num_contemplados>
+                    
+                    <button class="btn-del"> <i class='bx bxs-edit bx-sm'></i></button>
                 </form>		  
                 <?php	
                 echo "</td> ";
                 echo  "<td> "; 
                 ?>
                 <form action="Modal-excluir.php" method="get">
-                        <input type=hidden value= <?php echo $array['codigo'];?> name=codigo>
-                        <button class="btn-del"> <i class='bx bxs-trash bx-sm'></i></button>
+                    <input type=hidden value="<?php echo $array['codigo'];?>" name=codigo>
+                    <button class="btn-del"> <i class='bx bxs-trash bx-sm'></i></button>
                 </form>		  
                 <?php	
                 echo "</td> ";
