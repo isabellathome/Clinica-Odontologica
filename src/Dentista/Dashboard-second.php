@@ -159,8 +159,8 @@
         </div>
       </div>
 
-      <div class="sales-boxes">
-        <div class="recent-sales box">
+      <div class="info-boxes">
+        <div class="recent-info box">
           <div class="title"> Olá! </div>              
               <p style="margin-top: 15px; text-align: justify;"> Trabalhar em equipe é saber lutar em conjunto por um mesmo objetivo. Nem sempre é fácil manter a união e a concordância entre todos quando uma equipe é composta por diferentes individualidades. </p>
 
@@ -172,7 +172,7 @@
               <p style="text-align: justify;"> "As pessoas mudam, as circunstâncias mudam, mas Deus sempre permanece o mesmo" - Justin Bieber. </p>
             </div>
 
-        <div class="top-sales box">
+        <div class="top-info box">
           <div class="title">Descontos de Convênios (%)</div>
           <div id="donutchart" style="width: 392px; height: 310px;"></div>
         </div>

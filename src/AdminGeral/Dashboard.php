@@ -87,7 +87,7 @@
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Desconto', 'por Convênio'],
+          ['Tipo', 'de Pagamento'],
           ['Entrada', <?=$a?>], 
           ['Saída', <?=$b?>]
         ]);
@@ -198,15 +198,15 @@
         </div>
       </div>
 
-      <div class="sales-boxes">
-        <div class="recent-sales box">
+      <div class="info-boxes">
+        <div class="recent-info box">
           <div class="title">Lançamentos do financeiro</div>
-              <div class="sales-details">
+              <div class="info-details">
               <div id="piechart2" style="width: 420px; height: 300px; margin-left: 170px;"></div>         
           </div>
         </div>
 
-        <div class="top-sales box">
+        <div class="top-info box">
           <div class="title">Descontos de Convênios (%)</div>
           <div id="piechart" style="width: 352px; height: 310px; margin-left: 30px;"></div>
         </div>

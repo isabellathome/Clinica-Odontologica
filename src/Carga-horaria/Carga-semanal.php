@@ -15,7 +15,7 @@
         <link rel="shortcut icon" href="../../so-icon.svg" type="image/x-icon">
 
         <link rel="stylesheet" type="text/css" href="../../public/css/sidebar.css">
-        <link rel="stylesheet" href="../../public/css/table.css">
+        <link rel="stylesheet" href="../../public/css/form-second.css">
 
     </head>
     <body>
@@ -29,49 +29,70 @@
 
         $saida = $hora_saida;
         $entrada = $hora_entrada;
-        $semana = 5;
  
 	    $diario = gmdate('H:i:s', abs(strtotime($saida) - strtotime($entrada)));
-        //$semanal = gmdate('H:i:s', abs( strtotime( $diario )) * 7);
-
-        $semanal = date("H:i:s", strtotime($diario) * $semana);
 
     ?>
 
-    <main>
+        <!--========== CONTENTS ==========-->
+        <main>
             <section>
+                <h2> Carga Horária </h2>
 
-                <p> Carga Horária </p>
+            <div class="container">
+                <header> Visualizar </header>
 
-                <?php
-                    $classCargaDAO = new ClassCargaDAO();
-                    $array= $classCargaDAO->listar();
+                    <form action="pageValidar.php" method="POST">
+                    <div class="form first">
+                            <div class="details personal">
+                                <span class="title"> Informações </span>
 
-                    echo "<div class='container'>";
-                    echo "<table id='tabela'>";
-                    echo "<thead>";
-                    echo "  <tr>";
-                    echo "      <th> Nome do Funcionário </th> ";
-                    echo "      <th> Horário de entrada </th> ";
-                    echo "      <th> Horário de saída </th> ";                
-                    echo "      <th> Total de horas diária </th> ";
-                    echo "      <th> Semanais </th> ";
-                    echo "  <tr>";
-                    echo "</thead>";
+                                <input type="hidden" name="id" value="<?php echo $id; ?>" disabled>
 
-                    foreach ($array as $array) {
-                        echo "<tr>";
-                        echo "<td>". $array['nome_funcionario']  . "</td>";   
-                        echo "<td>". $array['hora_entrada']        . "</td>";
-                        echo "<td>". $array['hora_saida'] . "</td>";                  
-                        echo "<td>". $diario ." </td>";
-                        echo "<td>". $semanal ." </td>";         
-                    }            
-                ?>
+                                <div class="fields">
+                                    <div class="input-field">
+                                        <label> Nome do Funcionário </label>
+                                        <input type="text" name="nome" value="<?php echo $nome_funcionario; ?>" disabled>
+                                    </div>
+
+                                    <div class="input-field">
+                                        <label> Data </label>
+                                        <input type="date" name="data" value="<?php echo $data; ?>" disabled>
+                                    </div>
+
+                                    <div class="input-field">
+                                        <label> Hora de Entrada </label>
+                                        <input type="time" name="hora_entrada" value="<?php echo $hora_entrada; ?>" disabled>
+                                    </div>
+
+                                    <div class="input-field">
+                                        <label> Hora de Saída </label>
+                                        <input type="time" name="hora_saida" value="<?php echo $hora_saida; ?>" disabled>
+                                    </div>
+
+                                    <div class="input-field">
+                                        <label> Total de Horas Diárias </label>
+                                        <input type="text" name="diario" value="<?php echo $diario; ?>" disabled>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="buttons">
+                                <button class="submit">
+                                    <span class="btnText"> Voltar </span>
+                                    <i class="uil uil-navigator"></i>
+                                </button>                                
+                            </div>
+
+                        </div>
+
+                        </div>
+                    </form>
+                </div>
             </section>
-    </main>
+        </main>
 
-            <!--========== MAIN JS ==========-->
-            <script src="../../public/scripts/sidebar.js"> </script>
+        <!--========== MAIN JS ==========-->
+        <script src="../../public/scripts/sidebar.js"> </script>     
     </body>
 </html>

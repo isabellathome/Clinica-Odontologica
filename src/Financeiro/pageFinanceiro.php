@@ -49,12 +49,15 @@
             echo "</thead>";
 
             foreach ($array as $array) {
+
+                $data = date("d-m-Y", strtotime($array['vencimento']));
+
                 echo "<tr>";
                 echo "<td>". $array['id']         . "</td>";
                 echo "<td>". $array['valor']      . "</td>";
-                echo "<td>". $array['vencimento'] . "</td>";
+                echo "<td>". $data                . "</td>";
                 echo "<td>". $array['autor']      . "</td>";
-                echo "<td>". $array['status_pag']     . "</td>";
+                echo "<td>". $array['status_pag'] . "</td>";
                 echo "<td> ";
 
                 ?>

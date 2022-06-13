@@ -187,7 +187,7 @@ nav .profile-details i{
   font-size: 20px;
   font-weight: 500;
 }
-.home-content .sales-boxes{
+.home-content .info-boxes{
   display: flex;
   justify-content: space-between;
   /* padding: 0 20px; */
@@ -195,7 +195,7 @@ nav .profile-details i{
 }
 
 /* left box */
-.home-content .sales-boxes .recent-sales{
+.home-content .info-boxes .recent-info{
   width: 65%;
   background: #fff;
   padding: 20px 30px;
@@ -203,34 +203,34 @@ nav .profile-details i{
   border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
-.home-content .sales-boxes .sales-details{
+.home-content .info-boxes .info-details{
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 10px;
 }
-.sales-boxes .box .title{
+.info-boxes .box .title{
   font-size: 24px;
   font-weight: 500;
 }
-.sales-boxes .sales-details li.topic{
+.info-boxes .info-details li.topic{
   font-size: 20px;
   font-weight: 500;
 }
-.sales-boxes .sales-details li{
+.info-boxes .info-details li{
   list-style: none;
   margin: 8px 0;
 }
-.sales-boxes .sales-details li a{
+.info-boxes .info-details li a{
   color: #333;
   text-decoration: none;
 }
-.sales-boxes .box .button{
+.info-boxes .box .button{
   width: 100%;
   display: flex;
   justify-content: flex-end;
 }
-.sales-boxes .box .button a{
+.info-boxes .box .button a{
   color: #fff;
   background: #3C096C;
   padding: 4px 12px;
@@ -241,12 +241,12 @@ nav .profile-details i{
   transition: all 0.3s ease;
   margin-top: 8px;
 }
-.sales-boxes .box .button a:hover{
+.info-boxes .box .button a:hover{
   background:  #674EA7;
 }
 
 /* Right box */
-.home-content .sales-boxes .top-sales{
+.home-content .info-boxes .top-info{
   width: 35%;
   background: #fff;
   padding: 20px 30px;
@@ -254,13 +254,13 @@ nav .profile-details i{
   border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
-.sales-boxes .top-sales li{
+.info-boxes .top-info li{
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 10px 0;
 }
-.sales-boxes .top-sales li a img{
+.info-boxes .top-info li a img{
   height: 40px;
   width: 40px;
   object-fit: cover;
@@ -268,12 +268,12 @@ nav .profile-details i{
   margin-right: 10px;
   background: #333;
 }
-.sales-boxes .top-sales li a{
+.info-boxes .top-info li a{
   display: flex;
   align-items: center;
   text-decoration: none;
 }
-.sales-boxes .top-sales li .product,
+.info-boxes .top-info li .product,
 .acessar{
   font-size: 17px;
   font-weight: 400;
@@ -306,16 +306,16 @@ nav .profile-details i{
   }
 }
 @media (max-width: 1150px) {
-  .home-content .sales-boxes{
+  .home-content .info-boxes{
     flex-direction: column;
   }
-  .home-content .sales-boxes .box{
+  .home-content .info-boxes .box{
     width: 100%;
     overflow-x: scroll;
     margin-bottom: 30px;
     margin: 0;
   }
-  .home-content .sales-boxes .top-sales{
+  .home-content .info-boxes .top-info{
     margin: 0;
   }
 }
@@ -335,7 +335,7 @@ nav .profile-details i{
     height: 50px;
     min-width: 40px;
   }
-  .home-content .sales-boxes .sales-details{
+  .home-content .info-boxes .info-details{
     width: 560px;
   }
 }

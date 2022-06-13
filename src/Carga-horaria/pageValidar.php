@@ -64,11 +64,14 @@
                 echo "</thead>";
 
                 foreach ($array as $array) {
+
+                    $data = date("d-m-Y", strtotime($array['data']));
+                    
                     echo "<tr>";
                     echo "<td>". $array['nome_funcionario']  . "</td>";   
-                    echo "<td>". $array['data']        . "</td>";
-                    echo "<td>". $array['hora_entrada'] . "</td>";
-                    echo "<td>". $array['hora_saida'] . "</td>";                   
+                    echo "<td>". $data                       . "</td>";
+                    echo "<td>". $array['hora_entrada']      . "</td>";
+                    echo "<td>". $array['hora_saida']        . "</td>";                   
                     echo "<td> ";
                                     
                     ?>

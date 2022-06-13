@@ -36,17 +36,7 @@
                             <div class="fields">
                                 <div class="input-field">
                                     <label> Nome do Paciente </label>
-                                    <select name="nome_paciente">
-                                        <option>Selecione</option>
-                                        <?php
-                                            $result_pacientes = "SELECT * FROM pacientes";
-                                            $resultado_paciente = mysqli_query($conexao, $result_pacientes);
-
-                                            while($row_pacientes = mysqli_fetch_assoc($resultado_paciente)){ ?>
-                                                <option value="<?php echo $row_pacientes['nome']; ?>"><?php echo $row_pacientes['nome']; ?></option> <?php
-                                            }
-                                        ?>   
-				                    </select>
+                                    <input type="text" name="nome_paciente">
                                 </div>
 
                                 <div class="input-field">

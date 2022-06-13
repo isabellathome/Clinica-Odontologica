@@ -24,12 +24,15 @@
     <?php
         $id = $_GET['id'];
         $valor = $_GET['valor'];
-        $vencimento = $_GET['vencimento'];
+        $vencimento_format = $_GET['vencimento'];
         $parcelas = $_GET['parcelas'];
         $tipo_pagamento = $_GET['tipo_pagamento'];
         $motivo = $_GET['motivo'];
         $autor = $_GET['autor'];
         $status_pag = $_GET['status_pag'];
+
+        $vencimento = date("d-m-Y", strtotime($vencimento_format));
+
     ?>
     
     <body>

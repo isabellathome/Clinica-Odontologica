@@ -20,11 +20,13 @@
         $id = $_GET['id'];
         $nome_paciente = $_GET['nome_paciente'];
         $email = $_GET['email'];
-        $data = $_GET['data'];
+        $data_format = $_GET['data'];
         $hora = $_GET['hora'];
         $nome_dentista = $_GET['nome_dentista'];
         $procedimento = $_GET['procedimento'];
         $descricao = $_GET['descricao'];
+
+        $data = date("d-m-Y", strtotime($data_format));
     ?>
     
     <body>
@@ -54,7 +56,7 @@
             
             $mail->isHTML(true);                                 
             $mail->Subject = 'Lembra da sua consulta?';
-            $mail->Body = "Olá ".$nome_paciente."! Passando para te lembrar da sua consulta na Clinica Sorriso Odonto. <br> Data: ".$data." Hora: ".$hora." <br> Se houver um imprevisto e você não puder comparecer, envie uma mensagem comunicando para o nosso whatsapp. Obrigado! Tenha um excelente dia!";
+            $mail->Body = "Olá ".$nome_paciente."! Passando para te lembrar da sua consulta na Clinica Sorriso Odonto. <br> No dia: ".$data." ás ".$hora." horas. <br> Se houver um imprevisto e você não puder comparecer, envie uma mensagem comunicando para o nosso whatsapp. Obrigado! Tenha um excelente dia!";
             $mail->AltBody = "Se houver um imprevisto e você não puder comparecer, envie uma mensagem comunicando para o nosso whatsapp. Obrigado! Tenha um excelente dia!";
 
             $mail->send();

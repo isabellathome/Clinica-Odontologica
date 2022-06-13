@@ -25,11 +25,13 @@
     <?php
         $id = $_GET['id'];
         $nome_paciente = $_GET['nome_paciente'];
-        $data = $_GET['data'];
+        $data_format = $_GET['data'];
         $hora = $_GET['hora'];
         $nome_dentista = $_GET['nome_dentista'];
         $procedimento = $_GET['procedimento'];
         $descricao = $_GET['descricao'];  
+
+        $data = date("d-m-Y", strtotime($data_format));
     ?>
     
     <body>
