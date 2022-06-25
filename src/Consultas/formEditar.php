@@ -2,7 +2,7 @@
 <?php require_once 'ClassConsultaDAO.php'; ?>
 <?php include ("../session.php") ?>
 <?php include ("../components/header.php") ?>
-<?php include ("../conexao.php") ?>
+<?php include ("../Consultas/conexao.php") ?>
 
 <!DOCTYPE html>
     <html lang="pt-br">
@@ -22,6 +22,7 @@
 <?php
     $id = $_GET['id'];
     $nome_paciente = $_GET['nome_paciente'];
+    $email = $_GET['email'];
     $data = $_GET['data'];
     $hora = $_GET['hora'];
     $nome_dentista = $_GET['nome_dentista'];
@@ -49,17 +50,7 @@
                                 <div class="fields">
                                     <div class="input-field">
                                         <label> Nome do Paciente </label>
-                                        <select name="nome_paciente">
-                                        <option>Selecione</option>
-                                        <?php
-                                            $result_pacientes = "SELECT * FROM pacientes";
-                                            $resultado_paciente = mysqli_query($conexao, $result_pacientes);
-
-                                            while($row_pacientes = mysqli_fetch_assoc($resultado_paciente)){ ?>
-                                                <option value="<?php echo $row_pacientes['nome']; ?>"><?php echo $row_pacientes['nome']; ?></option> <?php
-                                            }
-                                        ?>   
-				                    </select>
+                                        <input type="text" name="nome_paciente" value="<?php echo $nome_paciente; ?>">
                                     </div>
 
                                     <div class="input-field">

@@ -15,7 +15,11 @@
         <link rel="shortcut icon" href="../../so-icon.svg" type="image/x-icon">
 
         <link rel="stylesheet" type="text/css" href="../../public/css/sidebar.css">
-        <link rel="stylesheet" href="../../public/css/form.css">       
+        <link rel="stylesheet" href="../../public/css/form.css">  
+
+        <script src="../../public/scripts/validacoes.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdn.rawgit.com/igorescobar/jQuery-Mask-Plugin/master/src/jquery.mask.js"></script>
     </head>
 
 <?php
@@ -53,44 +57,37 @@
                             <div class="details personal">
                                 <span class="title"> Informações </span>
 
-                                <input type="hidden" name="id" value="<?php echo $id; ?>">
-                                <!--  -->
+                                <input type="hidden" name="id" value="<?php echo $id; ?>">                                
 
                                 <div class="fields">
                                     <div class="input-field">
                                         <label> Nome </label>
-                                        <input type="text" name="nome" value="<?php echo $nome; ?>">
-                                        <!--  -->
+                                        <input type="text" name="nome" value="<?php echo $nome; ?>">                                        
                                     </div>
 
                                     <div class="input-field">
                                         <label>CPF</label>
-                                        <input type="text" name="cpf" value="<?php echo $cpf; ?>">
-                                        <!--  -->
+                                        <input oninput="mascara(this)" type="text" name="cpf" maxlength="14" id="input" value="<?php echo $cpf; ?>"/><span id="resposta"></span>                                       
                                     </div>
 
                                     <div class="input-field">
                                         <label>Data de nascimento</label>
-                                        <input type="date" name="nascimento" value="<?php echo $nascimento; ?>">
-                                        <!--  -->
+                                        <input type="date" name="nascimento" value="<?php echo $nascimento; ?>">                                        
                                     </div>
 
                                     <div class="input-field">
                                         <label>Email</label>
-                                        <input type="text" name="email" value="<?php echo $email; ?>">
-                                        <!--  -->
+                                        <input type="text" name="email" value="<?php echo $email; ?>">                                        
                                     </div>
 
                                     <div class="input-field">
                                         <label>Número celular</label>
-                                        <input type="text" name="celular" value="<?php echo $celular; ?>">
-                                        <!--  -->
+                                        <input type="text" maxlength="15" class="phone" id="celular" patern="(\(?\d{2}\)?\s)?(\d{4,5}\-\d{4})" name="celular" value="<?php echo $celular; ?>">                       
                                     </div>
 
                                     <div class="input-field">
                                         <label> Telefone </label>
-                                        <input type="text" name="telefone" value="<?php echo $telefone; ?>">
-                                        <!--  -->
+                                        <input type="text" maxlength="15" class="phone" id="celular" patern="(\(?\d{2}\)?\s)?(\d{4,5}\-\d{4})" name="telefone" value="<?php echo $telefone; ?>">                                        
                                     </div>
                                 </div>
                             </div>
@@ -102,19 +99,19 @@
                                     <div class="input-field">
                                         <label> Último tratamento </label>
                                         <input type="text" name="ultimo_trat" value="<?php echo $ultimo_trat; ?>">
-                                        <!--  -->
+                                        
                                     </div>
 
                                     <div class="input-field">
                                         <label> Realiza/realizou quimioterapia? </label>
                                         <input type="text" name="quimio" value="<?php echo $quimio; ?>">
-                                        <!--  -->
+                                        
                                     </div>
 
                                     <div class="input-field">
                                         <label> Possui alergias? Qual? </label>
                                         <input type="text" name="alergias" value="<?php echo $alergias; ?>">
-                                        <!--  -->
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -126,57 +123,47 @@
                                     <div class="input-field">
                                         <label>Logradouro</label>
                                         <input type="text" name="logradouro" value="<?php echo $logradouro; ?>">
-                                        <!--  -->
+                                        
                                     </div>
 
                                     <div class="input-field">
                                         <label>CEP</label>
                                         <input type="text" name="cep" value="<?php echo $cep; ?>">
-                                        <!--  -->
+                                        
                                     </div>
 
                                     <div class="input-field">
                                         <label>Número</label>
                                         <input type="text" name="numero" value="<?php echo $numero; ?>">
-                                        <!--  -->
+                                        
                                     </div>
 
                                     <div class="input-field">
                                         <label>Bairro</label>
                                         <input type="text" name="bairro" value="<?php echo $bairro; ?>">
-                                        <!--  -->
+                                        
                                     </div>
 
                                     <div class="input-field">
                                         <label>Complemento</label>
                                         <input type="text" name="complemento" value="<?php echo $complemento; ?>">
-                                        <!--  -->
+                                        
                                     </div>
 
                                     <div class="input-field">
                                         <label>Cidade</label>
                                         <input type="text" name="cidade" value="<?php echo $cidade; ?>">
-                                        <!--  -->
+                                        
                                     </div>
 
                                     <div class="input-field">
                                         <label>Estado</label>
                                         <input type="text" name="estado" value="<?php echo $estado; ?>">
-                                        <!--  -->
+                                        
                                     </div>
                                 </div>
                             </div>
-                            
-                            <!-- <div class="buttons">                                                         
-                                <button class="sumbit">
-                                    <a href="listar.php">
-                                        <span class="btnText"> Voltar </span>                                    
-                                        <i class="uil uil-navigator"></i>
-                                    </a>
-                                </button>
-                                </div>
-                            </div> -->
-
+                          
                             <div class="buttons">
                                 <button class="submit">
                                     <span class="btnText"> Editar </span>
@@ -193,7 +180,12 @@
         </main>
 
         <!--========== MAIN JS ==========-->
-        <script src="../../public/scripts/sidebar.js"> </script>   
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>     
+        <script src="../../public/scripts/sidebar.js"> </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="../../public/scripts/validacoes.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://cdn.rawgit.com/igorescobar/jQuery-Mask-Plugin/master/src/jquery.mask.js"></script>     
+        
     </body>
 </html>

@@ -1,4 +1,3 @@
-<!-- alterarProcesso.php -->
 <?php require_once 'ClassPaciente.php'; ?>
 <?php require_once 'ClassPacienteDAO.php';?>
 
@@ -25,7 +24,6 @@
     $classPacienteDAO = new ClassPacienteDAO();
     $array = $classPacienteDAO->alterar($id, $nome, $cpf, $nascimento, $email, $celular, $telefone, $ultimo_trat, $quimio, $alergias, $logradouro, $cep, $numero, $bairro, $complemento, $cidade, $estado);
 
-     /*echo $array;*/
     if($array==true) {
         header('Location: pagePacientes.php');
     } else {

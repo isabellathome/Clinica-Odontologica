@@ -2,7 +2,7 @@
 <?php require_once 'ClassProntuarioDAO.php'; ?>
 <?php include ("../session.php") ?>
 <?php include ("../components/header.php") ?>
-<?php include ("../conexao.php") ?>
+<?php include ("../Consultas/conexao.php") ?>
 
 <!DOCTYPE html>
     <html lang="pt-br">

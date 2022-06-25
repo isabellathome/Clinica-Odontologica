@@ -52,63 +52,42 @@
                             <div class="details personal">
                                 <span class="title"> Informações </span>
 
-                                <input type="hidden" name="id" value="<?php echo $id; ?>" disabled>
-                                <!--  -->
+                                <input type="hidden" name="id" value="<?php echo $id; ?>" disabled>                                
 
                                 <div class="fields">
                                     <div class="input-field">
                                         <label> Nome </label>
-                                        <input type="text" name="nome" value="<?php echo $nome; ?>" disabled>
-                                        <!--  -->
+                                        <input type="text" name="nome" value="<?php echo $nome; ?>" disabled>                                        
                                     </div>
 
                                     <div class="input-field">
                                         <label> Código </label>
-                                        <input type="text" name="codigo" value="<?php echo $codigo; ?>" disabled>
-                                        <!--  -->
+                                        <input type="text" name="codigo" value="<?php echo $codigo; ?>" disabled>                                        
                                     </div>
 
                                     <div class="input-field">
                                         <label> Valor </label>
-                                        <input type="number" name="valor" value="<?php echo $valor; ?>" disabled>
-                                        <!--  -->
+                                        <input type="text" name="valor" value="<?php echo $valor; ?>" disabled>                                        
                                     </div>
 
                                     <div class="input-field">
                                         <label> Procedimento </label>
-                                        <input type="text" name="procedimento" value="<?php echo $procedimento; ?>" disabled>
-                                        <!--  -->
+                                        <input type="text" name="procedimento" value="<?php echo $procedimento; ?>" disabled>                                        
                                     </div>
 
                                     <div class="input-field">
                                         <label> Desconto </label>
-                                        <input type="number" name="desconto" value="<?php echo $desconto; ?>" disabled>
-                                        <!--  -->
+                                        <input type="number" name="desconto" value="<?php echo $desconto; ?>" disabled>                                        
                                     </div>
 
                                     <div class="input-field">
                                         <label> Números de Contemplados </label>
-                                        <input type="text" name="num_contemplados" value="<?php echo $num_contemplados; ?>" disabled>
-                                        <!--  -->
+                                        <input type="text" name="num_contemplados" value="<?php echo $num_contemplados; ?>" disabled>                                        
                                     </div>
                                 </div>
                             </div>
-
-                            
-                            
-                            <!-- <div class="buttons">                                                         
-                                <button class="sumbit">
-                                    <a href="listar.php">
-                                        <span class="btnText"> Voltar </span>                                    
-                                        <i class="uil uil-navigator"></i>
-                                    </a>
-                                </button>
-                                </div>
-                            </div> -->
-
-                            <div class="buttons">       
-
-                                <button class="sumbit">
+                            <div class="buttons">  
+                                <button class="submit">
                                     <a href="listar.php" >
                                         <span class="btnText"> Voltar </span>
                                         <i class="uil uil-navigator"></i>

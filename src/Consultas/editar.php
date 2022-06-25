@@ -5,6 +5,7 @@
  
     $id = $_GET['id'];
     $nome_paciente = $_GET['nome_paciente'];
+    $email = $_GET['email'];
     $data = $_GET['data'];
     $hora = $_GET['hora'];
     $nome_dentista = $_GET['nome_dentista'];

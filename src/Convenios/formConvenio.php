@@ -15,6 +15,8 @@
         <link rel="stylesheet" type="text/css" href="../../public/css/sidebar.css">
         <link rel="stylesheet" href="../../public/css/form-second.css">
         
+        <script src="../../public/scripts/validacoes.js"></script>
+        
     </head>
     <body>
         <!--========== CONTENTS ==========-->
@@ -42,8 +44,8 @@
                                 </div>
 
                                 <div class="input-field">
-                                    <label> Valor </label>
-                                    <input type="number" name="valor">
+                                    <label> Valor (R$) </label>
+                                    <input type="text" maxlength="15" name="valor" onkeypress="return(moeda(this,'.',',',event))">
                                 </div>
 
                                 <div class="input-field">
@@ -52,7 +54,7 @@
                                 </div>
 
                                 <div class="input-field">
-                                    <label> Desconto </label>
+                                    <label> Desconto (%) </label>
                                     <input type="number" name="desconto">
                                 </div>
 
@@ -63,9 +65,8 @@
                             </div>
                         </div>
 
-                        
-                        <div class="buttons">                                                         
-                            <button class="sumbit">
+                        <div class="buttons"> 
+                            <button class="submit">
                                 <span class="btnText"> Cadastrar </span>
                                 <i class="uil uil-navigator"></i>
                             </button>

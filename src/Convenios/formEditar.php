@@ -42,66 +42,48 @@
                             <div class="details personal">
                                 <span class="title"> Informações </span>
 
-                                <input type="hidden" name="id" value="<?php echo $id; ?>">
-                                <!--  -->
+                                <input type="hidden" name="id" value="<?php echo $id; ?>">                                
 
                                 <div class="fields">
                                     <div class="input-field">
                                         <label> Nome </label>
-                                        <input type="text" name="nome" value="<?php echo $nome; ?>">
-                                        <!--  -->
+                                        <input type="text" name="nome" value="<?php echo $nome; ?>">                                        
                                     </div>
 
                                     <div class="input-field">
                                         <label> Código </label>
-                                        <input type="text" name="codigo" value="<?php echo $codigo; ?>">
-                                        <!--  -->
+                                        <input type="text" name="codigo" value="<?php echo $codigo; ?>">                                        
                                     </div>
 
                                     <div class="input-field">
-                                        <label> Valor </label>
-                                        <input type="number" name="valor" value="<?php echo $valor; ?>">
-                                        <!--  -->
+                                        <label> Valor (R$) </label>
+                                        <input type="text" maxlength="15" name="valor" onkeypress="return(moeda(this,'.',',',event))" value="<?php echo $valor; ?>">                                        
                                     </div>
 
                                     <div class="input-field">
                                         <label> Procedimento </label>
-                                        <input type="text" name="procedimento" value="<?php echo $procedimento; ?>">
-                                        <!--  -->
+                                        <input type="text" name="procedimento" value="<?php echo $procedimento; ?>">                                        
                                     </div>
 
                                     <div class="input-field">
-                                        <label> Desconto </label>
-                                        <input type="number" name="desconto" value="<?php echo $desconto; ?>">
-                                        <!--  -->
+                                        <label> Desconto (%) </label>
+                                        <input type="number" name="desconto" value="<?php echo $desconto; ?>">                                        
                                     </div>
 
                                     <div class="input-field">
                                         <label> Números de Contemplados </label>
-                                        <input type="text" name="num_contemplados" value="<?php echo $num_contemplados; ?>">
-                                        <!--  -->
+                                        <input type="text" name="num_contemplados" value="<?php echo $num_contemplados; ?>">                                        
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="buttons">       
-
-                                <button class="sumbit">
-                                    <span class="btnText"> Salvar </span>
+                            <div class="buttons"> 
+                                <button class="submit">
+                                    <span class="btnText"> Editar </span>
                                     <i class="uil uil-navigator"></i>
                                 </button>
-
-                                <button class="sumbit">
-                                    <a href="pageConvenios.php" >
-                                        <span class="btnText"> Voltar </span>
-                                        <i class="uil uil-navigator"></i>
-                                    </a>
-                                </button>
-                                
                             </div>
-
                             </div>
-
                         </div>
                     </form>
                 </div>
@@ -109,7 +91,12 @@
         </main>
 
         <!--========== MAIN JS ==========-->
-        <script src="../../public/scripts/sidebar.js"> </script>   
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>     
+        <script src="../../public/scripts/sidebar.js"> </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="../../public/scripts/validacoes.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://cdn.rawgit.com/igorescobar/jQuery-Mask-Plugin/master/src/jquery.mask.js"></script>
+    
     </body>
 </html>

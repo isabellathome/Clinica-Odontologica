@@ -17,6 +17,8 @@
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
         <script src="../../public/scripts/validacoes.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdn.rawgit.com/igorescobar/jQuery-Mask-Plugin/master/src/jquery.mask.js"></script>
     </head>
     <body>
         <!--========== CONTENTS ==========-->
@@ -44,23 +46,23 @@
                                 </div>
 
                                 <div class="input-field">
-                                    <label> Data de nascimento </label>
+                                    <label>Data de nascimento</label>
                                     <input type="date" name="nascimento">
                                 </div>
 
                                 <div class="input-field">
-                                    <label> Email </label>
-                                    <input type="text" name="email">
+                                    <label>Email</label>
+                                    <input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                                 </div>
 
                                 <div class="input-field">
-                                    <label> Número celular </label>
-                                    <input type="text" name="celular">
+                                    <label>Número celular</label>
+                                    <input type="text" maxlength="15" class="phone" id="celular" patern="(\(?\d{2}\)?\s)?(\d{4,5}\-\d{4})" name="celular">
                                 </div>
 
                                 <div class="input-field">
-                                    <label> Telefone fixo </label>
-                                    <input type="text" name="telefone">
+                                    <label>Telefone Fixo</label>
+                                    <input type="text" maxlength="15" class="phone" id="telefone" patern="(\(?\d{2}\)?\s)?(\d{4,5}\-\d{4})" name="telefone">
                                 </div>
                             </div>
                         </div>
@@ -92,38 +94,38 @@
 
                             <div class="fields">
                                 <div class="input-field">
-                                    <label>Logradouro</label>
+                                    <label for="logradouro">Logradouro</label>
                                     <input type="text" name="logradouro">
                                 </div>
 
                                 <div class="input-field">
                                     <label>CEP</label>
-                                    <input type="text" name="cep">
+                                    <input name="cep" type="text" id="cep" class="mascCEP" value="" maxlength="9" onblur="pesquisacep(this.value);">
                                 </div>
 
                                 <div class="input-field">
-                                    <label>Número</label>
+                                    <label for="numero">Número</label>
                                     <input type="text" name="numero">
                                 </div>
 
                                 <div class="input-field">
-                                    <label>Bairro</label>
-                                    <input type="text" name="bairro">
+                                    <label for="bairro">Bairro</label>
+                                    <input name="bairro" type="text" id="bairro">
                                 </div>
 
                                 <div class="input-field">
-                                    <label>Complemento</label>
-                                    <input type="text" name="complemento">
+                                    <label for="rua">Rua</label>
+                                    <input name="complemento" type="text" id="rua">
                                 </div>
 
                                 <div class="input-field">
-                                    <label>Cidade</label>
-                                    <input type="text" name="cidade">
+                                    <label for="cidade">Cidade</label>
+                                    <input name="cidade" type="text" id="cidade">
                                 </div>
 
                                 <div class="input-field">
-                                    <label>Estado</label>
-                                    <input type="text" name="estado">
+                                    <label for="estado">Estado</label>
+                                    <input name="estado" type="text" id="uf">
                                 </div>
                             </div>
                         </div>
@@ -142,6 +144,11 @@
         </main>
 
         <!--========== MAIN JS ==========-->
-        <script src="../../public/scripts/sidebar.js"> </script>      
+        <script src="../../public/scripts/sidebar.js"> </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="../../public/scripts/validacoes.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://cdn.rawgit.com/igorescobar/jQuery-Mask-Plugin/master/src/jquery.mask.js"></script>     
     </body>
 </html>

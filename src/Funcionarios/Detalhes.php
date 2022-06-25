@@ -111,7 +111,7 @@
 
                                     <div class="input-field">
                                         <label> Senha </label>
-                                        <input type="text" name="senha_usuario" value="<?php echo $senha_usuario; ?>" disabled>
+                                        <input type="password" name="senha_usuario" value="<?php echo $senha_usuario; ?>" disabled>
                                     </div>
 
                                     <div class="input-field">

@@ -1,7 +1,5 @@
-<!-- ClassUsuario.php -->
 <?php
 
-    // é a classe responsavel pelo get e set
     class ClassPaciente {
         private $id;
         private $nome;

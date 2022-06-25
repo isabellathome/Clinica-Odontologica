@@ -1,5 +1,5 @@
-<?php require_once '../FuncionariosDao/ClassUsuario.php'; ?>
-<?php require_once '../FuncionariosDao/ClassUsuarioDAO.php'; ?>
+<?php require_once 'ClassConvenio.php'; ?>
+<?php require_once 'ClassConvenioDAO.php'; ?>
 <?php include ("../session.php") ?>
 
 <!DOCTYPE html>

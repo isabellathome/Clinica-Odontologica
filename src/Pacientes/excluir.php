@@ -1,4 +1,3 @@
-<!-- excluir.php -->
 <?php require_once 'ClassPaciente.php'; ?>
 <?php require_once 'ClassPacienteDAO.php'; ?>
 <?php
