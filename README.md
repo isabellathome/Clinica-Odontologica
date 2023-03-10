@@ -1,2 +1,2 @@
 # Clinica Odontologica
- Sistema de gestão de uma clínicas odontológica.
+ Sistema de gestão de uma clínica odontológica.
